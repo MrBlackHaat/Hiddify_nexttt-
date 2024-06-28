@@ -1,0 +1,768 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "www.speedtest.net",
+          "eagle.hafezdivan.online.",
+          "hms19.best-tizi.top"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3",
+        "104.17.148.22",
+        "104.17.147.22",
+        "188.114.97.1",
+        "188.114.96.1"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450,
+      "override_address": "1.1.1.1",
+      "override_port": 53
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🩵|Telegram : @tv2rayrr💓💓 § 0",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 1",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 2",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 3",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 4",
+        "🩵|Telegram : @tv2rayrr💓💓 § 5",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 6",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 7",
+        "🩵|Telegram : @tv2rayrr💓💓 § 8",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 9",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 10",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 11",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 12",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 13",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 14",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 15",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 16",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 17",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 18",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 19",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 20",
+        "🩵|Telegram : @tv2rayrr💓💓 § 21",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 22",
+        "🩵|Telegram : @tv2rayrr💓💓 § 23",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 24",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 25",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 26",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 27",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 28",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 29",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 30",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 31",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 32",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 33",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 34"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🩵|Telegram : @tv2rayrr💓💓 § 0",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 1",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 2",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 3",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 4",
+        "🩵|Telegram : @tv2rayrr💓💓 § 5",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 6",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 7",
+        "🩵|Telegram : @tv2rayrr💓💓 § 8",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 9",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 10",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 11",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 12",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 13",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 14",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 15",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 16",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 17",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 18",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 19",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 20",
+        "🩵|Telegram : @tv2rayrr💓💓 § 21",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 22",
+        "🩵|Telegram : @tv2rayrr💓💓 § 23",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 24",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 25",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 26",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 27",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 28",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 29",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 30",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 31",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 32",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 33",
+        "🩵|Telegram+:+@tv2rayrr💓💓 § 34"
+      ],
+      "url": "http://cp.cloudflare.com/",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vmess",
+      "tag": "🩵|Telegram : @tv2rayrr💓💓 § 0",
+      "server": "104.21.75.142",
+      "server_port": 443,
+      "uuid": "251780c1-1501-43b3-be2a-d144a20d479a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "hdfy5c1.foriran.trade",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Nbs2DSTSkFW6MrrFQHeSDQ7",
+        "headers": {
+          "Host": "hdfy5c1.foriran.trade"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 1",
+      "server": "172.66.44.135",
+      "server_port": 80,
+      "uuid": "5df7962e-f9fe-41e6-ab49-ed96ccb856a7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "v2ra1.ecrgpk.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 2",
+      "server": "2.189.59.5",
+      "server_port": 443,
+      "uuid": "7a5a4624-df8d-4955-bccc-b3fa6161411f",
+      "tls": {
+        "enabled": true,
+        "server_name": "pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram/XV2ray",
+        "headers": {
+          "Host": "tmcir.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 3",
+      "server": "45.158.171.148",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 4",
+      "server": "www.speedtest.net",
+      "server_port": 2096,
+      "uuid": "b41e1631-ceb3-47c9-ba87-c65a46f2f5a8",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpNeRor.SAjadHADadi.WEbsiTe",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/eOwMtmADY6cWup8R?ed",
+        "headers": {
+          "Host": "VPnerOr.sajAdHaDaDI.WEbSITe"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🩵|Telegram : @tv2rayrr💓💓 § 5",
+      "server": "104.21.83.108",
+      "server_port": 443,
+      "uuid": "6c168fcc-2231-4f3b-8c1e-f6391692df4a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "hms02.fxiaomi.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/link",
+        "headers": {
+          "Host": "hms02.fxiaomi.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 6",
+      "server": "104.18.84.115",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "B458aB02.caA-CHAnel-worKer-Page-FREE-JhUiHNujHPHjKL-NIhGKJn.PaGEs.deV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/bmkpskkiym1rrlxm",
+        "headers": {
+          "Host": "B458aB02.caA-CHAnel-worKer-Page-FREE-JhUiHNujHPHjKL-NIhGKJn.PaGEs.deV"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 7",
+      "server": "www.speedtest.net",
+      "server_port": 2096,
+      "uuid": "b41e1631-ceb3-47c9-ba87-c65a46f2f5a8",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpNeRor.SAjadHADadi.WEbsiTe",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/eOwMtmADY6cWup8R",
+        "headers": {
+          "Host": "VPnerOr.sajAdHaDaDI.WEbSITe"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🩵|Telegram : @tv2rayrr💓💓 § 8",
+      "server": "104.21.4.6",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 9",
+      "server": "31.14.115.163",
+      "server_port": 55375,
+      "uuid": "5f9fc2af-5e32-4e06-9f46-bbdb8a9d306d",
+      "transport": {
+        "type": "http",
+        "host": "speedtest.net",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 10",
+      "server": "eagle.Hafezdivan.Online.",
+      "server_port": 80,
+      "uuid": "c416be20-32b3-467f-83c2-735e04d639f7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 11",
+      "server": "127.0.0.1",
+      "server_port": 1080,
+      "password": "bacabac-abca-caba-dabc-cccaaacbbabb",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 12",
+      "server": "95.38.210.142",
+      "server_port": 8443,
+      "uuid": "3582dc4f-0098-4321-a2b7-948e77969ee3",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 13",
+      "server": "178.239.145.4",
+      "server_port": 53960,
+      "uuid": "d8445535-eac9-4d1d-e418-42f89c6d5274",
+      "transport": {
+        "type": "http",
+        "host": "webmail.yjc.ir",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 14",
+      "server": "85.133.151.142",
+      "server_port": 35349,
+      "uuid": "86632902-c329-40f8-a7a2-43fb983f7e7c",
+      "transport": {
+        "type": "http",
+        "host": "speedtest.net",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 15",
+      "server": "178.239.145.4",
+      "server_port": 13857,
+      "uuid": "b74122a7-f43e-40b1-ae3d-397d47c63d93",
+      "transport": {
+        "type": "http",
+        "host": "webmail.yjc.ir",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 16",
+      "server": "92.114.17.35",
+      "server_port": 9304,
+      "uuid": "8206019b-0b2c-440e-a12e-6f7003d3e79f",
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 17",
+      "server": "94.182.134.40",
+      "server_port": 8081,
+      "uuid": "724db7a8-3b33-40d2-9935-17b3e195567a",
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 18",
+      "server": "84.47.234.53",
+      "server_port": 6890,
+      "uuid": "e4ccb720-6936-4e90-b029-dec4819fb7cb",
+      "transport": {
+        "type": "http",
+        "host": "trello.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 19",
+      "server": "78.157.36.140",
+      "server_port": 9305,
+      "uuid": "8206019b-0b2c-440e-a12e-6f7003d3e79f",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 20",
+      "server": "188.121.118.55",
+      "server_port": 443,
+      "uuid": "54ef4ecf-ff37-436a-be13-95c8a8a1114d",
+      "tls": {
+        "enabled": true,
+        "server_name": "vIrGiNiAvPn-nL.pAgEs.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "ViRgInIaVpN-Nl.PaGeS.DeV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🩵|Telegram : @tv2rayrr💓💓 § 21",
+      "server": "188.114.97.3",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 22",
+      "server": "195.88.25.214",
+      "server_port": 1026,
+      "method": "chacha20-ietf-poly1305",
+      "password": "56INZqMWGt0o8Rv4"
+    },
+    {
+      "type": "vmess",
+      "tag": "🩵|Telegram : @tv2rayrr💓💓 § 23",
+      "server": "hms19.best-tizi.top",
+      "server_port": 443,
+      "uuid": "62aa5f80-0328-4004-a375-7f5a59df4022",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "hms19.best-tizi.top",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "hms19.best-tizi.top"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 24",
+      "server": "54.180.251.250",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 25",
+      "server": "213.183.63.69",
+      "server_port": 9030,
+      "method": "aes-256-gcm",
+      "password": "GeregetR8cvQHzYr"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 26",
+      "server": "121.127.46.147",
+      "server_port": 989,
+      "method": "aes-256-gcm",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 27",
+      "server": "77.72.5.150",
+      "server_port": 989,
+      "method": "aes-256-gcm",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 28",
+      "server": "77.72.5.113",
+      "server_port": 989,
+      "method": "aes-256-gcm",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 29",
+      "server": "45.89.52.66",
+      "server_port": 9040,
+      "method": "aes-256-gcm",
+      "password": "p9z5BVADH2YFs3MN"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 30",
+      "server": "185.90.61.153",
+      "server_port": 989,
+      "method": "aes-256-gcm",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 31",
+      "server": "18.181.170.157",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 32",
+      "server": "80.92.204.106",
+      "server_port": 9042,
+      "method": "aes-256-gcm",
+      "password": "S7KwUu7yBy58S3Ga"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 33",
+      "server": "80.92.204.106",
+      "server_port": 9010,
+      "method": "aes-256-gcm",
+      "password": "f63gg8EruDnUrmz4"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🩵|Telegram+:+@tv2rayrr💓💓 § 34",
+      "server": "109.201.152.181",
+      "server_port": 443,
+      "method": "aes-256-gcm",
+      "password": "shadowsocks"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "geoip": {
+      "path": "geo-assets/sagernet-sing-geoip-geoip.db"
+    },
+    "geosite": {
+      "path": "geo-assets/sagernet-sing-geosite-geosite.db"
+    },
+    "rules": [
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      },
+      {
+        "domain_suffix": ".ir",
+        "geosite": "ir",
+        "geoip": "ir",
+        "outbound": "bypass"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "gmoX5ZkJtN0rvxm5"
+    }
+  }
+}
