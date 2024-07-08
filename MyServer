@@ -1,0 +1,1069 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "web.onecheer.cn",
+          "www.svep.com",
+          "www.bmcollege.gov.bd",
+          "www.arrendify.com",
+          "www.360heymedia.com",
+          "www.syphilisisback.ca",
+          "ashleynishee.com",
+          "www.plothost.com",
+          "www.vzug.com",
+          "loulakis.gr",
+          "mcdowellsrepair.com",
+          "www.teletrans.ro",
+          "headbrookeincharge.com",
+          "download.osgrid.org",
+          "www.wheatleygaso.com",
+          "www.tadartcom.com",
+          "jive-germany.com",
+          "www.reedexport.cn",
+          "tastewp.com",
+          "carlsbergbackend.hummingfood.com",
+          "www.jeguue.com",
+          "www.smartsupp.com",
+          "prolifeaction.org",
+          "intra.ninja"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.96.2",
+        "188.114.97.2",
+        "2a06:98c1:3121::2",
+        "2a06:98c1:3120::2",
+        "104.17.148.22",
+        "104.17.147.22",
+        "188.114.96.2",
+        "188.114.97.2",
+        "2a06:98c1:3121::2",
+        "2a06:98c1:3120::2"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇫🇷 🇳🇱 🇺🇸 🇮🇹 \n🇬🇧 🇩🇪  § 0",
+        "🇺🇸 🌎 🇺🇲  § 1",
+        "🇰🇿 🇰🇿  § 2",
+        "🇸🇪 🚁 § 3",
+        "🇳🇱 🇧🇶 🇳🇱  § 4",
+        "❄️ eula 🇩🇪  § 5",
+        "🇫🇷 🇳🇱 🇺🇸 🇮🇹\n   🇩🇪   azn § 6",
+        "🇫🇷 § 7",
+        "  🇫🇷 👀 🇺🇸 🇩🇪  § 8",
+        "🇺🇦                          🇺🇦  § 9",
+        "🇫🇷 🙂 🇩🇪 🇩🇪 § 10",
+        "🇩🇪 shinobu 🇩🇪  § 11",
+        "🍷 🇫🇷 🇩🇪  🇬🇧  § 12",
+        "germany 🇩🇪 🇩🇪 🇩🇪 🇩🇪  § 13",
+        "🇫🇷 🇫🇷 🇫🇷 🇫🇷 🇫🇷 OVH § 14",
+        "🇫🇷 🇫🇷 and 🇩🇪 🇩🇪  § 15",
+        "🇩🇪 🇩🇪 🇩🇪 🇩🇪 😏 § 16",
+        "🇬🇧  UK 🇬🇧  § 17",
+        "🕊🇩🇪     🕊🇩🇪  § 18",
+        "🇹🇷  § 19",
+        "🇩🇪 🇬🇧 🇺🇸 🌎 🤔 § 20",
+        " 🇩🇪         🚁          ✌🏻 § 21",
+        "🇫🇮       🇫🇮    🇫🇮       🇫🇮  § 22",
+        "🇮🇹 🇮🇹 🇮🇹 🍕  § 23",
+        "🇧🇪 🇧🇪  § 24",
+        "🇬🇧  🇬🇧 🇬🇧  § 25",
+        "🇫🇷 🇫🇷 🇫🇷  § 26",
+        "🇨🇦  § 27",
+        "🇩🇪 § 28",
+        "🇪🇸 🇪🇸 🇪🇸  § 29",
+        "🇺🇸  ln 🇩🇪  § 30",
+        "🕊🇺🇸 🇫🇷  🇩🇪 🕊 § 31"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇫🇷 🇳🇱 🇺🇸 🇮🇹 \n🇬🇧 🇩🇪  § 0",
+        "🇺🇸 🌎 🇺🇲  § 1",
+        "🇰🇿 🇰🇿  § 2",
+        "🇸🇪 🚁 § 3",
+        "🇳🇱 🇧🇶 🇳🇱  § 4",
+        "❄️ eula 🇩🇪  § 5",
+        "🇫🇷 🇳🇱 🇺🇸 🇮🇹\n   🇩🇪   azn § 6",
+        "🇫🇷 § 7",
+        "  🇫🇷 👀 🇺🇸 🇩🇪  § 8",
+        "🇺🇦                          🇺🇦  § 9",
+        "🇫🇷 🙂 🇩🇪 🇩🇪 § 10",
+        "🇩🇪 shinobu 🇩🇪  § 11",
+        "🍷 🇫🇷 🇩🇪  🇬🇧  § 12",
+        "germany 🇩🇪 🇩🇪 🇩🇪 🇩🇪  § 13",
+        "🇫🇷 🇫🇷 🇫🇷 🇫🇷 🇫🇷 OVH § 14",
+        "🇫🇷 🇫🇷 and 🇩🇪 🇩🇪  § 15",
+        "🇩🇪 🇩🇪 🇩🇪 🇩🇪 😏 § 16",
+        "🇬🇧  UK 🇬🇧  § 17",
+        "🕊🇩🇪     🕊🇩🇪  § 18",
+        "🇹🇷  § 19",
+        "🇩🇪 🇬🇧 🇺🇸 🌎 🤔 § 20",
+        " 🇩🇪         🚁          ✌🏻 § 21",
+        "🇫🇮       🇫🇮    🇫🇮       🇫🇮  § 22",
+        "🇮🇹 🇮🇹 🇮🇹 🍕  § 23",
+        "🇧🇪 🇧🇪  § 24",
+        "🇬🇧  🇬🇧 🇬🇧  § 25",
+        "🇫🇷 🇫🇷 🇫🇷  § 26",
+        "🇨🇦  § 27",
+        "🇩🇪 § 28",
+        "🇪🇸 🇪🇸 🇪🇸  § 29",
+        "🇺🇸  ln 🇩🇪  § 30",
+        "🕊🇺🇸 🇫🇷  🇩🇪 🕊 § 31"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 🇳🇱 🇺🇸 🇮🇹 \n🇬🇧 🇩🇪  § 0",
+      "server": "ashleynishee.com",
+      "server_port": 443,
+      "uuid": "96c437b3-c993-4217-b228-21fbb67d5ff8",
+      "tls": {
+        "enabled": true,
+        "server_name": "yaemiko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "yaemiko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 🌎 🇺🇲  § 1",
+      "server": "download.osgrid.org",
+      "server_port": 443,
+      "uuid": "5f403166-acb8-4c87-b43b-96dffd96bd80",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelhhjan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/us-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇰🇿 🇰🇿  § 2",
+      "server": "web.onecheer.cn",
+      "server_port": 443,
+      "uuid": "e5a2dca7-1fde-486c-accd-d74c020499a7",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelannn.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/kz-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪 🚁 § 3",
+      "server": "www.plothost.com",
+      "server_port": 443,
+      "uuid": "8d78e397-55b6-4ca8-8ab0-ffc3c7353944",
+      "tls": {
+        "enabled": true,
+        "server_name": "yellxan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/se-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 🇧🇶 🇳🇱  § 4",
+      "server": "www.vzug.com",
+      "server_port": 443,
+      "uuid": "5481091d-2e58-4e04-9893-a3bc89c85106",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/nl2-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "❄️ eula 🇩🇪  § 5",
+      "server": "www.wheatleygaso.com",
+      "server_port": 443,
+      "uuid": "31aa719b-742f-430d-8a59-6abfbf538842",
+      "tls": {
+        "enabled": true,
+        "server_name": "eula.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "eula.raidenshogun.cloudns.org"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 🇳🇱 🇺🇸 🇮🇹\n   🇩🇪   azn § 6",
+      "server": "www.svep.com",
+      "server_port": 443,
+      "uuid": "0b4b623c-2914-494d-b6b8-b03fbf4d6655",
+      "tls": {
+        "enabled": true,
+        "server_name": "navia.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "navia.raidenshogun.cloudns.org"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷 § 7",
+      "server": "loulakis.gr",
+      "server_port": 443,
+      "uuid": "93ea486a-bada-42a4-ac38-d088b320fa1e",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/xmivideo.cfd",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "  🇫🇷 👀 🇺🇸 🇩🇪  § 8",
+      "server": "mcdowellsrepair.com",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/afrhms16v.bestxray.buzz",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇦                          🇺🇦  § 9",
+      "server": "www.bmcollege.gov.bd",
+      "server_port": 443,
+      "uuid": "61a1381a-f464-439e-8f3a-2ae2c8314b74",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/ua-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷 🙂 🇩🇪 🇩🇪 § 10",
+      "server": "www.teletrans.ro",
+      "server_port": 443,
+      "uuid": "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/obdii.cfd",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 shinobu 🇩🇪  § 11",
+      "server": "tastewp.com",
+      "server_port": 443,
+      "uuid": "7bedf632-b4c2-4e90-9d8b-f42ee7145534",
+      "tls": {
+        "enabled": true,
+        "server_name": "mitsuri.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "mitsuri.raidenshogun.cloudns.org"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🍷 🇫🇷 🇩🇪  🇬🇧  § 12",
+      "server": "carlsbergbackend.hummingfood.com",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "mikasa.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/glweidf.cfd/linkws",
+        "headers": {
+          "Host": "mikasa.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "germany 🇩🇪 🇩🇪 🇩🇪 🇩🇪  § 13",
+      "server": "www.wheatleygaso.com",
+      "server_port": 443,
+      "uuid": "84f02f85-5ec5-498f-8034-55ee0f0a611e",
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/de-full.privateip.net",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 🇫🇷 🇫🇷 🇫🇷 🇫🇷 OVH § 14",
+      "server": "www.arrendify.com",
+      "server_port": 443,
+      "uuid": "584836fa-2fe8-4452-9252-fd18fcdd8402",
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/fr-full.privateip.net",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷 🇫🇷 and 🇩🇪 🇩🇪  § 15",
+      "server": "www.jeguue.com",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/afrhms16v.bestxray.buzz",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 🇩🇪 🇩🇪 🇩🇪 😏 § 16",
+      "server": "www.tadartcom.com",
+      "server_port": 443,
+      "uuid": "c97b82e1-8957-45e0-8fff-32ea1b694e12",
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/de2-full.privateip.net",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧  UK 🇬🇧  § 17",
+      "server": "headbrookeincharge.com",
+      "server_port": 443,
+      "uuid": "699f6a94-b96e-4bb8-a955-9d16f2146e76",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/uk-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🕊🇩🇪     🕊🇩🇪  § 18",
+      "server": "www.360heymedia.com",
+      "server_port": 2096,
+      "uuid": "95ca2c9b-d135-48cf-94d1-6c710f062188",
+      "tls": {
+        "enabled": true,
+        "server_name": "crolinde.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "crolinde.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇷  § 19",
+      "server": "headbrookeincharge.com",
+      "server_port": 443,
+      "uuid": "773fb40f-b6f2-41d1-90c4-9b6f572c8e42",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/tr-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪 🇬🇧 🇺🇸 🌎 🤔 § 20",
+      "server": "www.svep.com",
+      "server_port": 443,
+      "uuid": "441da342-ce90-441e-bff9-d2ceb55e68ca",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/ivideos.sbs",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": " 🇩🇪         🚁          ✌🏻 § 21",
+      "server": "www.smartsupp.com",
+      "server_port": 2096,
+      "uuid": "e94000b3-3fe6-45ef-90c4-4965917a408e",
+      "tls": {
+        "enabled": true,
+        "server_name": "riasgremory.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "riasgremory.raidenshogun.cloudns.org"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮       🇫🇮    🇫🇮       🇫🇮  § 22",
+      "server": "www.bmcollege.gov.bd",
+      "server_port": 443,
+      "uuid": "f6e5a328-1a2a-4d93-aaf1-a3f63ec0ef90",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless/fi1.v2vless.xyz",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇮🇹 🇮🇹 🇮🇹 🍕  § 23",
+      "server": "www.arrendify.com",
+      "server_port": 443,
+      "uuid": "d36b3f3c-2b18-48bf-9cad-e759f5253acd",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/it-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇧🇪 🇧🇪  § 24",
+      "server": "www.bmcollege.gov.bd",
+      "server_port": 443,
+      "uuid": "38965742-a1e4-4b2f-8c3a-09b2766e381c",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless/be1.v2vless.xyz",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧  🇬🇧 🇬🇧  § 25",
+      "server": "www.smartsupp.com",
+      "server_port": 2096,
+      "uuid": "a42e545d-7e55-48cc-afee-356b6195d774",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/uk2-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 🇫🇷 🇫🇷  § 26",
+      "server": "jive-germany.com",
+      "server_port": 443,
+      "uuid": "029b2274-47e2-4831-9f03-3bbe9d7ad0e8",
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/fr-freevmess.privateip.net",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇦  § 27",
+      "server": "prolifeaction.org",
+      "server_port": 443,
+      "uuid": "ae594206-e877-4778-91a4-0ddd33a46b9b",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/ca-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 § 28",
+      "server": "www.syphilisisback.ca",
+      "server_port": 2096,
+      "uuid": "1f61d666-59d2-42cb-b390-3ebaf6c51839",
+      "tls": {
+        "enabled": true,
+        "server_name": "akenohimejima.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "akenohimejima.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇪🇸 🇪🇸 🇪🇸  § 29",
+      "server": "intra.ninja",
+      "server_port": 443,
+      "uuid": "124fca2e-4f5b-402f-afc4-27b98a9da5e0",
+      "tls": {
+        "enabled": true,
+        "server_name": "yelan.yaemiko.cloudns.biz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/VLESS/es-full.privateip.net",
+        "headers": {
+          "Host": "yelan.yaemiko.cloudns.biz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸  ln 🇩🇪  § 30",
+      "server": "www.reedexport.cn",
+      "server_port": 443,
+      "uuid": "a1655f51-1e20-4a92-8a11-b7ca30a7a353",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/afrhms07.xfixedfloat.cfd",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🕊🇺🇸 🇫🇷  🇩🇪 🕊 § 31",
+      "server": "carlsbergbackend.hummingfood.com",
+      "server_port": 443,
+      "uuid": "6c168fcc-2231-4f3b-8c1e-f6391692df4a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/link/hms02.fxiaomi.sbs",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-sing-box-rules/rule-set/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "H33eA9S4W_JTyWWf"
+    }
+  }
+}
