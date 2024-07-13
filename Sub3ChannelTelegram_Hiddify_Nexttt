@@ -1,0 +1,5114 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "moscow.telegavpn.com",
+          "a.baradiha.com",
+          "hms182.glweidf.sbs",
+          "series-a2-mec.varzesh360.co",
+          "sareikela.com",
+          "cdn.discordapp.com",
+          "series-a2-me.varzesh360.co",
+          "www.paypal.com.cn",
+          "sha.majidcttls.ggff.net",
+          "mankadmu.com",
+          "www.speedtest.net",
+          "irancell.xn--g28h.dns-dynamic.net.cdn.cloudflare.net",
+          "de6i.mifastip.info",
+          "linde06.indiavideo.sbs",
+          "jahfkjha.cfd",
+          "series-a2-mec.samanehha.co",
+          "my01.trojanyyds.xyz",
+          "denc36.xtooltech.cfd",
+          "upload.ir",
+          "to.tilebani.com",
+          "www.teletrans.ro",
+          "speedtest.org",
+          "zula.ir",
+          "cake.capellare.com",
+          "beedoost.org",
+          "max.mankadmu.com",
+          "xs.wxtv.cc",
+          "series-a2-me.samanehha.co",
+          "my02.trojanyyds.xyz"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.148.22",
+        "104.17.147.22",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt👈جوین چنل1 § 0",
+        "@Hiddify_Nexttt👈جوین چنل2 § 1",
+        "@Hiddify_Nexttt👈جوین چنل3 § 2",
+        "@Hiddify_Nexttt👈جوین چنل4 § 3",
+        "@Hiddify_Nexttt👈جوین چنل5 § 4",
+        "@Hiddify_Nexttt👈جوین چنل6 § 5",
+        "@Hiddify_Nexttt👈جوین چنل7 § 6",
+        "@Hiddify_Nexttt👈جوین چنل8 § 7",
+        "@Hiddify_Nexttt👈جوین چنل9 § 8",
+        "@Hiddify_Nexttt👈جوین چنل10 § 9",
+        "@Hiddify_Nexttt👈جوین چنل11 § 10",
+        "@Hiddify_Nexttt👈جوین چنل12 § 11",
+        "@Hiddify_Nexttt👈جوین چنل13 § 12",
+        "@Hiddify_Nexttt👈جوین چنل14 § 13",
+        "@Hiddify_Nexttt👈جوین چنل15 § 14",
+        "@Hiddify_Nexttt👈جوین چنل16 § 15",
+        "@Hiddify_Nexttt👈جوین چنل17 § 16",
+        "@Hiddify_Nexttt👈جوین چنل18 § 17",
+        "@Hiddify_Nexttt👈جوین چنل19 § 18",
+        "@Hiddify_Nexttt👈جوین چنل20 § 19",
+        "@Hiddify_Nexttt👈جوین چنل21 § 20",
+        "@Hiddify_Nexttt👈جوین چنل22 § 21",
+        "@Hiddify_Nexttt👈جوین چنل23 § 22",
+        "@Hiddify_Nexttt👈جوین چنل24 § 23",
+        "@Hiddify_Nexttt👈جوین چنل25 § 24",
+        "@Hiddify_Nexttt👈جوین چنل26 § 25",
+        "@Hiddify_Nexttt👈جوین چنل27 § 26",
+        "@Hiddify_Nexttt👈جوین چنل28 § 27",
+        "@Hiddify_Nexttt👈جوین چنل29 § 28",
+        "@Hiddify_Nexttt👈جوین چنل30 § 29",
+        "@Hiddify_Nexttt👈جوین چنل31 § 30",
+        "@Hiddify_Nexttt👈جوین چنل32 § 31",
+        "@Hiddify_Nexttt👈جوین چنل33 § 32",
+        "@Hiddify_Nexttt👈جوین چنل34 § 33",
+        "@Hiddify_Nexttt👈جوین چنل35 § 34",
+        "@Hiddify_Nexttt👈جوین چنل36 § 35",
+        "@Hiddify_Nexttt👈جوین چنل37 § 36",
+        "@Hiddify_Nexttt👈جوین چنل38 § 37",
+        "@Hiddify_Nexttt👈جوین چنل39 § 38",
+        "@Hiddify_Nexttt👈جوین چنل40 § 39",
+        "@Hiddify_Nexttt👈جوین چنل41 § 40",
+        "@Hiddify_Nexttt👈جوین چنل42 § 41",
+        "@Hiddify_Nexttt👈جوین چنل43 § 42",
+        "@Hiddify_Nexttt👈جوین چنل44 § 43",
+        "@Hiddify_Nexttt👈جوین چنل45 § 44",
+        "@Hiddify_Nexttt👈جوین چنل46 § 45",
+        "@Hiddify_Nexttt👈جوین چنل47 § 46",
+        "@Hiddify_Nexttt👈جوین چنل48 § 47",
+        "@Hiddify_Nexttt👈جوین چنل49 § 48",
+        "@Hiddify_Nexttt👈جوین چنل50 § 49",
+        "@Hiddify_Nexttt👈جوین چنل51 § 50",
+        "@Hiddify_Nexttt👈جوین چنل52 § 51",
+        "@Hiddify_Nexttt👈جوین چنل53 § 52",
+        "@Hiddify_Nexttt👈جوین چنل54 § 53",
+        "@Hiddify_Nexttt👈جوین چنل55 § 54",
+        "@Hiddify_Nexttt👈جوین چنل56 § 55",
+        "@Hiddify_Nexttt👈جوین چنل57 § 56",
+        "@Hiddify_Nexttt👈جوین چنل58 § 57",
+        "@Hiddify_Nexttt👈جوین چنل59 § 58",
+        "@Hiddify_Nexttt👈جوین چنل60 § 59",
+        "@Hiddify_Nexttt👈جوین چنل61 § 60",
+        "@Hiddify_Nexttt👈جوین چنل62 § 61",
+        "@Hiddify_Nexttt👈جوین چنل63 § 62",
+        "@Hiddify_Nexttt👈جوین چنل64 § 63",
+        "@Hiddify_Nexttt👈جوین چنل65 § 64",
+        "@Hiddify_Nexttt👈جوین چنل66 § 65",
+        "@Hiddify_Nexttt👈جوین چنل67 § 66",
+        "@Hiddify_Nexttt👈جوین چنل68 § 67",
+        "@Hiddify_Nexttt👈جوین چنل69 § 68",
+        "@Hiddify_Nexttt👈جوین چنل70 § 69",
+        "@Hiddify_Nexttt👈جوین چنل71 § 70",
+        "@Hiddify_Nexttt👈جوین چنل72 § 71",
+        "@Hiddify_Nexttt👈جوین چنل73 § 72",
+        "@Hiddify_Nexttt👈جوین چنل74 § 73",
+        "@Hiddify_Nexttt👈جوین چنل75 § 74",
+        "@Hiddify_Nexttt👈جوین چنل76 § 75",
+        "@Hiddify_Nexttt👈جوین چنل77 § 76",
+        "@Hiddify_Nexttt👈جوین چنل78 § 77",
+        "@Hiddify_Nexttt👈جوین چنل79 § 78",
+        "@Hiddify_Nexttt👈جوین چنل80 § 79",
+        "@Hiddify_Nexttt👈جوین چنل81 § 80",
+        "@Hiddify_Nexttt👈جوین چنل82 § 81",
+        "@Hiddify_Nexttt👈جوین چنل83 § 82",
+        "@Hiddify_Nexttt👈جوین چنل84 § 83",
+        "@Hiddify_Nexttt👈جوین چنل85 § 84",
+        "@Hiddify_Nexttt👈جوین چنل86 § 85",
+        "@Hiddify_Nexttt👈جوین چنل87 § 86",
+        "@Hiddify_Nexttt👈جوین چنل88 § 87",
+        "@Hiddify_Nexttt👈جوین چنل89 § 88",
+        "@Hiddify_Nexttt👈جوین چنل90 § 89",
+        "@Hiddify_Nexttt👈جوین چنل91 § 90",
+        "@Hiddify_Nexttt👈جوین چنل92 § 91",
+        "@Hiddify_Nexttt👈جوین چنل93 § 92",
+        "@Hiddify_Nexttt👈جوین چنل94 § 93",
+        "@Hiddify_Nexttt👈جوین چنل95 § 94",
+        "@Hiddify_Nexttt👈جوین چنل96 § 95",
+        "@Hiddify_Nexttt👈جوین چنل97 § 96",
+        "@Hiddify_Nexttt👈جوین چنل98 § 97",
+        "@Hiddify_Nexttt👈جوین چنل99 § 98",
+        "@Hiddify_Nexttt👈جوین چنل100 § 99",
+        "@Hiddify_Nexttt👈جوین چنل101 § 100",
+        "@Hiddify_Nexttt👈جوین چنل102 § 101",
+        "@Hiddify_Nexttt👈جوین چنل103 § 102",
+        "@Hiddify_Nexttt👈جوین چنل104 § 103",
+        "@Hiddify_Nexttt👈جوین چنل105 § 104",
+        "@Hiddify_Nexttt👈جوین چنل106 § 105",
+        "@Hiddify_Nexttt👈جوین چنل107 § 106",
+        "@Hiddify_Nexttt👈جوین چنل108 § 107",
+        "@Hiddify_Nexttt👈جوین چنل109 § 108",
+        "@Hiddify_Nexttt👈جوین چنل110 § 109",
+        "@Hiddify_Nexttt👈جوین چنل111 § 110",
+        "@Hiddify_Nexttt👈جوین چنل112 § 111",
+        "@Hiddify_Nexttt👈جوین چنل113 § 112",
+        "@Hiddify_Nexttt👈جوین چنل114 § 113",
+        "@Hiddify_Nexttt👈جوین چنل115 § 114",
+        "@Hiddify_Nexttt👈جوین چنل116 § 115",
+        "@Hiddify_Nexttt👈جوین چنل117 § 116",
+        "@Hiddify_Nexttt👈جوین چنل118 § 117",
+        "@Hiddify_Nexttt👈جوین چنل119 § 118",
+        "@Hiddify_Nexttt👈جوین چنل120 § 119",
+        "@Hiddify_Nexttt👈جوین چنل121 § 120",
+        "@Hiddify_Nexttt👈جوین چنل122 § 121",
+        "@Hiddify_Nexttt👈جوین چنل123 § 122",
+        "@Hiddify_Nexttt👈جوین چنل124 § 123",
+        "@Hiddify_Nexttt👈جوین چنل125 § 124",
+        "@Hiddify_Nexttt👈جوین چنل126 § 125",
+        "@Hiddify_Nexttt👈جوین چنل127 § 126",
+        "@Hiddify_Nexttt👈جوین چنل128 § 127",
+        "@Hiddify_Nexttt👈جوین چنل129 § 128",
+        "@Hiddify_Nexttt👈جوین چنل130 § 129",
+        "@Hiddify_Nexttt👈جوین چنل131 § 130",
+        "@Hiddify_Nexttt👈جوین چنل132 § 131",
+        "@Hiddify_Nexttt👈جوین چنل133 § 132",
+        "@Hiddify_Nexttt👈جوین چنل134 § 133",
+        "@Hiddify_Nexttt👈جوین چنل135 § 134",
+        "@Hiddify_Nexttt👈جوین چنل136 § 135",
+        "@Hiddify_Nexttt👈جوین چنل137 § 136",
+        "@Hiddify_Nexttt👈جوین چنل138 § 137",
+        "@Hiddify_Nexttt👈جوین چنل139 § 138",
+        "@Hiddify_Nexttt👈جوین چنل140 § 139",
+        "@Hiddify_Nexttt👈جوین چنل141 § 140",
+        "@Hiddify_Nexttt👈جوین چنل142 § 141",
+        "@Hiddify_Nexttt👈جوین چنل143 § 142",
+        "@Hiddify_Nexttt👈جوین چنل144 § 143",
+        "@Hiddify_Nexttt👈جوین چنل145 § 144",
+        "@Hiddify_Nexttt👈جوین چنل146 § 145",
+        "@Hiddify_Nexttt👈جوین چنل147 § 146",
+        "@Hiddify_Nexttt👈جوین چنل148 § 147",
+        "@Hiddify_Nexttt👈جوین چنل149 § 148",
+        "@Hiddify_Nexttt👈جوین چنل150 § 149",
+        "@Hiddify_Nexttt👈جوین چنل151 § 150",
+        "@Hiddify_Nexttt👈جوین چنل152 § 151",
+        "@Hiddify_Nexttt👈جوین چنل153 § 152",
+        "@Hiddify_Nexttt👈جوین چنل154 § 153",
+        "@Hiddify_Nexttt👈جوین چنل155 § 154",
+        "@Hiddify_Nexttt👈جوین چنل156 § 155",
+        "@Hiddify_Nexttt👈جوین چنل157 § 156",
+        "@Hiddify_Nexttt👈جوین چنل158 § 157",
+        "@Hiddify_Nexttt👈جوین چنل159 § 158",
+        "@Hiddify_Nexttt👈جوین چنل160 § 159",
+        "@Hiddify_Nexttt👈جوین چنل161 § 160",
+        "@Hiddify_Nexttt👈جوین چنل162 § 161",
+        "@Hiddify_Nexttt👈جوین چنل163 § 162",
+        "@Hiddify_Nexttt👈جوین چنل164 § 163",
+        "@Hiddify_Nexttt👈جوین چنل165 § 164",
+        "@Hiddify_Nexttt👈جوین چنل166 § 165",
+        "@Hiddify_Nexttt👈جوین چنل167 § 166",
+        "@Hiddify_Nexttt👈جوین چنل168 § 167",
+        "@Hiddify_Nexttt👈جوین چنل169 § 168",
+        "@Hiddify_Nexttt👈جوین چنل170 § 169",
+        "@Hiddify_Nexttt👈جوین چنل171 § 170",
+        "@Hiddify_Nexttt👈جوین چنل172 § 171",
+        "@Hiddify_Nexttt👈جوین چنل173 § 172",
+        "@Hiddify_Nexttt👈جوین چنل174 § 173",
+        "@Hiddify_Nexttt👈جوین چنل175 § 174",
+        "@Hiddify_Nexttt👈جوین چنل176 § 175",
+        "@Hiddify_Nexttt👈جوین چنل177 § 176",
+        "@Hiddify_Nexttt👈جوین چنل178 § 177",
+        "@Hiddify_Nexttt👈جوین چنل179 § 178",
+        "@Hiddify_Nexttt👈جوین چنل180 § 179",
+        "@Hiddify_Nexttt👈جوین چنل181 § 180",
+        "@Hiddify_Nexttt👈جوین چنل182 § 181",
+        "@Hiddify_Nexttt👈جوین چنل183 § 182",
+        "@Hiddify_Nexttt👈جوین چنل184 § 183",
+        "@Hiddify_Nexttt👈جوین چنل185 § 184",
+        "@Hiddify_Nexttt👈جوین چنل186 § 185",
+        "@Hiddify_Nexttt👈جوین چنل187 § 186",
+        "@Hiddify_Nexttt👈جوین چنل188 § 187",
+        "@Hiddify_Nexttt👈جوین چنل189 § 188",
+        "@Hiddify_Nexttt👈جوین چنل190 § 189",
+        "@Hiddify_Nexttt👈جوین چنل191 § 190",
+        "@Hiddify_Nexttt👈جوین چنل192 § 191",
+        "@Hiddify_Nexttt👈جوین چنل193 § 192",
+        "@Hiddify_Nexttt👈جوین چنل194 § 193",
+        "@Hiddify_Nexttt👈جوین چنل195 § 194",
+        "@Hiddify_Nexttt👈جوین چنل196 § 195",
+        "@Hiddify_Nexttt👈جوین چنل197 § 196",
+        "@Hiddify_Nexttt👈جوین چنل198 § 197",
+        "@Hiddify_Nexttt👈جوین چنل199 § 198",
+        "@Hiddify_Nexttt👈جوین چنل200 § 199",
+        "@Hiddify_Nexttt👈جوین چنل201 § 200",
+        "@Hiddify_Nexttt👈جوین چنل202 § 201",
+        "@Hiddify_Nexttt👈جوین چنل203 § 202",
+        "@Hiddify_Nexttt👈جوین چنل204 § 203",
+        "@Hiddify_Nexttt👈جوین چنل205 § 204",
+        "@Hiddify_Nexttt👈جوین چنل206 § 205",
+        "@Hiddify_Nexttt👈جوین چنل207 § 206",
+        "@Hiddify_Nexttt👈جوین چنل208 § 207",
+        "@Hiddify_Nexttt👈جوین چنل209 § 208",
+        "@Hiddify_Nexttt👈جوین چنل210 § 209",
+        "@Hiddify_Nexttt👈جوین چنل211 § 210",
+        "@Hiddify_Nexttt👈جوین چنل212 § 211",
+        "@Hiddify_Nexttt👈جوین چنل213 § 212",
+        "@Hiddify_Nexttt👈جوین چنل214 § 213",
+        "@Hiddify_Nexttt👈جوین چنل215 § 214",
+        "@Hiddify_Nexttt👈جوین چنل216 § 215",
+        "@Hiddify_Nexttt👈جوین چنل217 § 216",
+        "@Hiddify_Nexttt👈جوین چنل218 § 217",
+        "@Hiddify_Nexttt👈جوین چنل219 § 218",
+        "@Hiddify_Nexttt👈جوین چنل220 § 219",
+        "@Hiddify_Nexttt👈جوین چنل221 § 220",
+        "@Hiddify_Nexttt👈جوین چنل222 § 221",
+        "@Hiddify_Nexttt👈جوین چنل223 § 222",
+        "@Hiddify_Nexttt👈جوین چنل224 § 223",
+        "@Hiddify_Nexttt👈جوین چنل225 § 224",
+        "@Hiddify_Nexttt👈جوین چنل226 § 225",
+        "@Hiddify_Nexttt👈جوین چنل227 § 226",
+        "@Hiddify_Nexttt👈جوین چنل228 § 227",
+        "@Hiddify_Nexttt👈جوین چنل229 § 228",
+        "@Hiddify_Nexttt👈جوین چنل230 § 229",
+        "@Hiddify_Nexttt👈جوین چنل231 § 230",
+        "@Hiddify_Nexttt👈جوین چنل232 § 231",
+        "@Hiddify_Nexttt👈جوین چنل233 § 232",
+        "@Hiddify_Nexttt👈جوین چنل234 § 233",
+        "@Hiddify_Nexttt👈جوین چنل235 § 234",
+        "@Hiddify_Nexttt👈جوین چنل236 § 235",
+        "@Hiddify_Nexttt👈جوین چنل237 § 236",
+        "@Hiddify_Nexttt👈جوین چنل238 § 237",
+        "@Hiddify_Nexttt👈جوین چنل239 § 238",
+        "@Hiddify_Nexttt👈جوین چنل240 § 239",
+        "@Hiddify_Nexttt👈جوین چنل241 § 240",
+        "@Hiddify_Nexttt👈جوین چنل242 § 241",
+        "@Hiddify_Nexttt👈جوین چنل243 § 242",
+        "@Hiddify_Nexttt👈جوین چنل244 § 243",
+        "@Hiddify_Nexttt👈جوین چنل245 § 244",
+        "@Hiddify_Nexttt👈جوین چنل246 § 245",
+        "@Hiddify_Nexttt👈جوین چنل247 § 246",
+        "@Hiddify_Nexttt👈جوین چنل248 § 247",
+        "@Hiddify_Nexttt👈جوین چنل249 § 248",
+        "@Hiddify_Nexttt👈جوین چنل250 § 249",
+        "@Hiddify_Nexttt👈جوین چنل251 § 250",
+        "@Hiddify_Nexttt👈جوین چنل252 § 251",
+        "@Hiddify_Nexttt👈جوین چنل253 § 252",
+        "@Hiddify_Nexttt👈جوین چنل254 § 253",
+        "@Hiddify_Nexttt👈جوین چنل255 § 254",
+        "@Hiddify_Nexttt👈جوین چنل256 § 255",
+        "@Hiddify_Nexttt👈جوین چنل257 § 256",
+        "@Hiddify_Nexttt👈جوین چنل258 § 257",
+        "@Hiddify_Nexttt👈جوین چنل259 § 258"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt👈جوین چنل1 § 0",
+        "@Hiddify_Nexttt👈جوین چنل2 § 1",
+        "@Hiddify_Nexttt👈جوین چنل3 § 2",
+        "@Hiddify_Nexttt👈جوین چنل4 § 3",
+        "@Hiddify_Nexttt👈جوین چنل5 § 4",
+        "@Hiddify_Nexttt👈جوین چنل6 § 5",
+        "@Hiddify_Nexttt👈جوین چنل7 § 6",
+        "@Hiddify_Nexttt👈جوین چنل8 § 7",
+        "@Hiddify_Nexttt👈جوین چنل9 § 8",
+        "@Hiddify_Nexttt👈جوین چنل10 § 9",
+        "@Hiddify_Nexttt👈جوین چنل11 § 10",
+        "@Hiddify_Nexttt👈جوین چنل12 § 11",
+        "@Hiddify_Nexttt👈جوین چنل13 § 12",
+        "@Hiddify_Nexttt👈جوین چنل14 § 13",
+        "@Hiddify_Nexttt👈جوین چنل15 § 14",
+        "@Hiddify_Nexttt👈جوین چنل16 § 15",
+        "@Hiddify_Nexttt👈جوین چنل17 § 16",
+        "@Hiddify_Nexttt👈جوین چنل18 § 17",
+        "@Hiddify_Nexttt👈جوین چنل19 § 18",
+        "@Hiddify_Nexttt👈جوین چنل20 § 19",
+        "@Hiddify_Nexttt👈جوین چنل21 § 20",
+        "@Hiddify_Nexttt👈جوین چنل22 § 21",
+        "@Hiddify_Nexttt👈جوین چنل23 § 22",
+        "@Hiddify_Nexttt👈جوین چنل24 § 23",
+        "@Hiddify_Nexttt👈جوین چنل25 § 24",
+        "@Hiddify_Nexttt👈جوین چنل26 § 25",
+        "@Hiddify_Nexttt👈جوین چنل27 § 26",
+        "@Hiddify_Nexttt👈جوین چنل28 § 27",
+        "@Hiddify_Nexttt👈جوین چنل29 § 28",
+        "@Hiddify_Nexttt👈جوین چنل30 § 29",
+        "@Hiddify_Nexttt👈جوین چنل31 § 30",
+        "@Hiddify_Nexttt👈جوین چنل32 § 31",
+        "@Hiddify_Nexttt👈جوین چنل33 § 32",
+        "@Hiddify_Nexttt👈جوین چنل34 § 33",
+        "@Hiddify_Nexttt👈جوین چنل35 § 34",
+        "@Hiddify_Nexttt👈جوین چنل36 § 35",
+        "@Hiddify_Nexttt👈جوین چنل37 § 36",
+        "@Hiddify_Nexttt👈جوین چنل38 § 37",
+        "@Hiddify_Nexttt👈جوین چنل39 § 38",
+        "@Hiddify_Nexttt👈جوین چنل40 § 39",
+        "@Hiddify_Nexttt👈جوین چنل41 § 40",
+        "@Hiddify_Nexttt👈جوین چنل42 § 41",
+        "@Hiddify_Nexttt👈جوین چنل43 § 42",
+        "@Hiddify_Nexttt👈جوین چنل44 § 43",
+        "@Hiddify_Nexttt👈جوین چنل45 § 44",
+        "@Hiddify_Nexttt👈جوین چنل46 § 45",
+        "@Hiddify_Nexttt👈جوین چنل47 § 46",
+        "@Hiddify_Nexttt👈جوین چنل48 § 47",
+        "@Hiddify_Nexttt👈جوین چنل49 § 48",
+        "@Hiddify_Nexttt👈جوین چنل50 § 49",
+        "@Hiddify_Nexttt👈جوین چنل51 § 50",
+        "@Hiddify_Nexttt👈جوین چنل52 § 51",
+        "@Hiddify_Nexttt👈جوین چنل53 § 52",
+        "@Hiddify_Nexttt👈جوین چنل54 § 53",
+        "@Hiddify_Nexttt👈جوین چنل55 § 54",
+        "@Hiddify_Nexttt👈جوین چنل56 § 55",
+        "@Hiddify_Nexttt👈جوین چنل57 § 56",
+        "@Hiddify_Nexttt👈جوین چنل58 § 57",
+        "@Hiddify_Nexttt👈جوین چنل59 § 58",
+        "@Hiddify_Nexttt👈جوین چنل60 § 59",
+        "@Hiddify_Nexttt👈جوین چنل61 § 60",
+        "@Hiddify_Nexttt👈جوین چنل62 § 61",
+        "@Hiddify_Nexttt👈جوین چنل63 § 62",
+        "@Hiddify_Nexttt👈جوین چنل64 § 63",
+        "@Hiddify_Nexttt👈جوین چنل65 § 64",
+        "@Hiddify_Nexttt👈جوین چنل66 § 65",
+        "@Hiddify_Nexttt👈جوین چنل67 § 66",
+        "@Hiddify_Nexttt👈جوین چنل68 § 67",
+        "@Hiddify_Nexttt👈جوین چنل69 § 68",
+        "@Hiddify_Nexttt👈جوین چنل70 § 69",
+        "@Hiddify_Nexttt👈جوین چنل71 § 70",
+        "@Hiddify_Nexttt👈جوین چنل72 § 71",
+        "@Hiddify_Nexttt👈جوین چنل73 § 72",
+        "@Hiddify_Nexttt👈جوین چنل74 § 73",
+        "@Hiddify_Nexttt👈جوین چنل75 § 74",
+        "@Hiddify_Nexttt👈جوین چنل76 § 75",
+        "@Hiddify_Nexttt👈جوین چنل77 § 76",
+        "@Hiddify_Nexttt👈جوین چنل78 § 77",
+        "@Hiddify_Nexttt👈جوین چنل79 § 78",
+        "@Hiddify_Nexttt👈جوین چنل80 § 79",
+        "@Hiddify_Nexttt👈جوین چنل81 § 80",
+        "@Hiddify_Nexttt👈جوین چنل82 § 81",
+        "@Hiddify_Nexttt👈جوین چنل83 § 82",
+        "@Hiddify_Nexttt👈جوین چنل84 § 83",
+        "@Hiddify_Nexttt👈جوین چنل85 § 84",
+        "@Hiddify_Nexttt👈جوین چنل86 § 85",
+        "@Hiddify_Nexttt👈جوین چنل87 § 86",
+        "@Hiddify_Nexttt👈جوین چنل88 § 87",
+        "@Hiddify_Nexttt👈جوین چنل89 § 88",
+        "@Hiddify_Nexttt👈جوین چنل90 § 89",
+        "@Hiddify_Nexttt👈جوین چنل91 § 90",
+        "@Hiddify_Nexttt👈جوین چنل92 § 91",
+        "@Hiddify_Nexttt👈جوین چنل93 § 92",
+        "@Hiddify_Nexttt👈جوین چنل94 § 93",
+        "@Hiddify_Nexttt👈جوین چنل95 § 94",
+        "@Hiddify_Nexttt👈جوین چنل96 § 95",
+        "@Hiddify_Nexttt👈جوین چنل97 § 96",
+        "@Hiddify_Nexttt👈جوین چنل98 § 97",
+        "@Hiddify_Nexttt👈جوین چنل99 § 98",
+        "@Hiddify_Nexttt👈جوین چنل100 § 99",
+        "@Hiddify_Nexttt👈جوین چنل101 § 100",
+        "@Hiddify_Nexttt👈جوین چنل102 § 101",
+        "@Hiddify_Nexttt👈جوین چنل103 § 102",
+        "@Hiddify_Nexttt👈جوین چنل104 § 103",
+        "@Hiddify_Nexttt👈جوین چنل105 § 104",
+        "@Hiddify_Nexttt👈جوین چنل106 § 105",
+        "@Hiddify_Nexttt👈جوین چنل107 § 106",
+        "@Hiddify_Nexttt👈جوین چنل108 § 107",
+        "@Hiddify_Nexttt👈جوین چنل109 § 108",
+        "@Hiddify_Nexttt👈جوین چنل110 § 109",
+        "@Hiddify_Nexttt👈جوین چنل111 § 110",
+        "@Hiddify_Nexttt👈جوین چنل112 § 111",
+        "@Hiddify_Nexttt👈جوین چنل113 § 112",
+        "@Hiddify_Nexttt👈جوین چنل114 § 113",
+        "@Hiddify_Nexttt👈جوین چنل115 § 114",
+        "@Hiddify_Nexttt👈جوین چنل116 § 115",
+        "@Hiddify_Nexttt👈جوین چنل117 § 116",
+        "@Hiddify_Nexttt👈جوین چنل118 § 117",
+        "@Hiddify_Nexttt👈جوین چنل119 § 118",
+        "@Hiddify_Nexttt👈جوین چنل120 § 119",
+        "@Hiddify_Nexttt👈جوین چنل121 § 120",
+        "@Hiddify_Nexttt👈جوین چنل122 § 121",
+        "@Hiddify_Nexttt👈جوین چنل123 § 122",
+        "@Hiddify_Nexttt👈جوین چنل124 § 123",
+        "@Hiddify_Nexttt👈جوین چنل125 § 124",
+        "@Hiddify_Nexttt👈جوین چنل126 § 125",
+        "@Hiddify_Nexttt👈جوین چنل127 § 126",
+        "@Hiddify_Nexttt👈جوین چنل128 § 127",
+        "@Hiddify_Nexttt👈جوین چنل129 § 128",
+        "@Hiddify_Nexttt👈جوین چنل130 § 129",
+        "@Hiddify_Nexttt👈جوین چنل131 § 130",
+        "@Hiddify_Nexttt👈جوین چنل132 § 131",
+        "@Hiddify_Nexttt👈جوین چنل133 § 132",
+        "@Hiddify_Nexttt👈جوین چنل134 § 133",
+        "@Hiddify_Nexttt👈جوین چنل135 § 134",
+        "@Hiddify_Nexttt👈جوین چنل136 § 135",
+        "@Hiddify_Nexttt👈جوین چنل137 § 136",
+        "@Hiddify_Nexttt👈جوین چنل138 § 137",
+        "@Hiddify_Nexttt👈جوین چنل139 § 138",
+        "@Hiddify_Nexttt👈جوین چنل140 § 139",
+        "@Hiddify_Nexttt👈جوین چنل141 § 140",
+        "@Hiddify_Nexttt👈جوین چنل142 § 141",
+        "@Hiddify_Nexttt👈جوین چنل143 § 142",
+        "@Hiddify_Nexttt👈جوین چنل144 § 143",
+        "@Hiddify_Nexttt👈جوین چنل145 § 144",
+        "@Hiddify_Nexttt👈جوین چنل146 § 145",
+        "@Hiddify_Nexttt👈جوین چنل147 § 146",
+        "@Hiddify_Nexttt👈جوین چنل148 § 147",
+        "@Hiddify_Nexttt👈جوین چنل149 § 148",
+        "@Hiddify_Nexttt👈جوین چنل150 § 149",
+        "@Hiddify_Nexttt👈جوین چنل151 § 150",
+        "@Hiddify_Nexttt👈جوین چنل152 § 151",
+        "@Hiddify_Nexttt👈جوین چنل153 § 152",
+        "@Hiddify_Nexttt👈جوین چنل154 § 153",
+        "@Hiddify_Nexttt👈جوین چنل155 § 154",
+        "@Hiddify_Nexttt👈جوین چنل156 § 155",
+        "@Hiddify_Nexttt👈جوین چنل157 § 156",
+        "@Hiddify_Nexttt👈جوین چنل158 § 157",
+        "@Hiddify_Nexttt👈جوین چنل159 § 158",
+        "@Hiddify_Nexttt👈جوین چنل160 § 159",
+        "@Hiddify_Nexttt👈جوین چنل161 § 160",
+        "@Hiddify_Nexttt👈جوین چنل162 § 161",
+        "@Hiddify_Nexttt👈جوین چنل163 § 162",
+        "@Hiddify_Nexttt👈جوین چنل164 § 163",
+        "@Hiddify_Nexttt👈جوین چنل165 § 164",
+        "@Hiddify_Nexttt👈جوین چنل166 § 165",
+        "@Hiddify_Nexttt👈جوین چنل167 § 166",
+        "@Hiddify_Nexttt👈جوین چنل168 § 167",
+        "@Hiddify_Nexttt👈جوین چنل169 § 168",
+        "@Hiddify_Nexttt👈جوین چنل170 § 169",
+        "@Hiddify_Nexttt👈جوین چنل171 § 170",
+        "@Hiddify_Nexttt👈جوین چنل172 § 171",
+        "@Hiddify_Nexttt👈جوین چنل173 § 172",
+        "@Hiddify_Nexttt👈جوین چنل174 § 173",
+        "@Hiddify_Nexttt👈جوین چنل175 § 174",
+        "@Hiddify_Nexttt👈جوین چنل176 § 175",
+        "@Hiddify_Nexttt👈جوین چنل177 § 176",
+        "@Hiddify_Nexttt👈جوین چنل178 § 177",
+        "@Hiddify_Nexttt👈جوین چنل179 § 178",
+        "@Hiddify_Nexttt👈جوین چنل180 § 179",
+        "@Hiddify_Nexttt👈جوین چنل181 § 180",
+        "@Hiddify_Nexttt👈جوین چنل182 § 181",
+        "@Hiddify_Nexttt👈جوین چنل183 § 182",
+        "@Hiddify_Nexttt👈جوین چنل184 § 183",
+        "@Hiddify_Nexttt👈جوین چنل185 § 184",
+        "@Hiddify_Nexttt👈جوین چنل186 § 185",
+        "@Hiddify_Nexttt👈جوین چنل187 § 186",
+        "@Hiddify_Nexttt👈جوین چنل188 § 187",
+        "@Hiddify_Nexttt👈جوین چنل189 § 188",
+        "@Hiddify_Nexttt👈جوین چنل190 § 189",
+        "@Hiddify_Nexttt👈جوین چنل191 § 190",
+        "@Hiddify_Nexttt👈جوین چنل192 § 191",
+        "@Hiddify_Nexttt👈جوین چنل193 § 192",
+        "@Hiddify_Nexttt👈جوین چنل194 § 193",
+        "@Hiddify_Nexttt👈جوین چنل195 § 194",
+        "@Hiddify_Nexttt👈جوین چنل196 § 195",
+        "@Hiddify_Nexttt👈جوین چنل197 § 196",
+        "@Hiddify_Nexttt👈جوین چنل198 § 197",
+        "@Hiddify_Nexttt👈جوین چنل199 § 198",
+        "@Hiddify_Nexttt👈جوین چنل200 § 199",
+        "@Hiddify_Nexttt👈جوین چنل201 § 200",
+        "@Hiddify_Nexttt👈جوین چنل202 § 201",
+        "@Hiddify_Nexttt👈جوین چنل203 § 202",
+        "@Hiddify_Nexttt👈جوین چنل204 § 203",
+        "@Hiddify_Nexttt👈جوین چنل205 § 204",
+        "@Hiddify_Nexttt👈جوین چنل206 § 205",
+        "@Hiddify_Nexttt👈جوین چنل207 § 206",
+        "@Hiddify_Nexttt👈جوین چنل208 § 207",
+        "@Hiddify_Nexttt👈جوین چنل209 § 208",
+        "@Hiddify_Nexttt👈جوین چنل210 § 209",
+        "@Hiddify_Nexttt👈جوین چنل211 § 210",
+        "@Hiddify_Nexttt👈جوین چنل212 § 211",
+        "@Hiddify_Nexttt👈جوین چنل213 § 212",
+        "@Hiddify_Nexttt👈جوین چنل214 § 213",
+        "@Hiddify_Nexttt👈جوین چنل215 § 214",
+        "@Hiddify_Nexttt👈جوین چنل216 § 215",
+        "@Hiddify_Nexttt👈جوین چنل217 § 216",
+        "@Hiddify_Nexttt👈جوین چنل218 § 217",
+        "@Hiddify_Nexttt👈جوین چنل219 § 218",
+        "@Hiddify_Nexttt👈جوین چنل220 § 219",
+        "@Hiddify_Nexttt👈جوین چنل221 § 220",
+        "@Hiddify_Nexttt👈جوین چنل222 § 221",
+        "@Hiddify_Nexttt👈جوین چنل223 § 222",
+        "@Hiddify_Nexttt👈جوین چنل224 § 223",
+        "@Hiddify_Nexttt👈جوین چنل225 § 224",
+        "@Hiddify_Nexttt👈جوین چنل226 § 225",
+        "@Hiddify_Nexttt👈جوین چنل227 § 226",
+        "@Hiddify_Nexttt👈جوین چنل228 § 227",
+        "@Hiddify_Nexttt👈جوین چنل229 § 228",
+        "@Hiddify_Nexttt👈جوین چنل230 § 229",
+        "@Hiddify_Nexttt👈جوین چنل231 § 230",
+        "@Hiddify_Nexttt👈جوین چنل232 § 231",
+        "@Hiddify_Nexttt👈جوین چنل233 § 232",
+        "@Hiddify_Nexttt👈جوین چنل234 § 233",
+        "@Hiddify_Nexttt👈جوین چنل235 § 234",
+        "@Hiddify_Nexttt👈جوین چنل236 § 235",
+        "@Hiddify_Nexttt👈جوین چنل237 § 236",
+        "@Hiddify_Nexttt👈جوین چنل238 § 237",
+        "@Hiddify_Nexttt👈جوین چنل239 § 238",
+        "@Hiddify_Nexttt👈جوین چنل240 § 239",
+        "@Hiddify_Nexttt👈جوین چنل241 § 240",
+        "@Hiddify_Nexttt👈جوین چنل242 § 241",
+        "@Hiddify_Nexttt👈جوین چنل243 § 242",
+        "@Hiddify_Nexttt👈جوین چنل244 § 243",
+        "@Hiddify_Nexttt👈جوین چنل245 § 244",
+        "@Hiddify_Nexttt👈جوین چنل246 § 245",
+        "@Hiddify_Nexttt👈جوین چنل247 § 246",
+        "@Hiddify_Nexttt👈جوین چنل248 § 247",
+        "@Hiddify_Nexttt👈جوین چنل249 § 248",
+        "@Hiddify_Nexttt👈جوین چنل250 § 249",
+        "@Hiddify_Nexttt👈جوین چنل251 § 250",
+        "@Hiddify_Nexttt👈جوین چنل252 § 251",
+        "@Hiddify_Nexttt👈جوین چنل253 § 252",
+        "@Hiddify_Nexttt👈جوین چنل254 § 253",
+        "@Hiddify_Nexttt👈جوین چنل255 § 254",
+        "@Hiddify_Nexttt👈جوین چنل256 § 255",
+        "@Hiddify_Nexttt👈جوین چنل257 § 256",
+        "@Hiddify_Nexttt👈جوین چنل258 § 257",
+        "@Hiddify_Nexttt👈جوین چنل259 § 258"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل1 § 0",
+      "server": "107.148.192.150",
+      "server_port": 41911,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل2 § 1",
+      "server": "198.2.218.100",
+      "server_port": 41400,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "none",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل3 § 2",
+      "server": "120.210.205.82",
+      "server_port": 50002,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل4 § 3",
+      "server": "104.21.15.212",
+      "server_port": 443,
+      "uuid": "76221bfb-e92f-4e80-81c5-6fe48f50ac0b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل5 § 4",
+      "server": "104.17.147.22",
+      "server_port": 2053,
+      "uuid": "00fb7867-95ad-4eaf-99f1-22255beb6251",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "/",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل6 § 5",
+      "server": "172.67.204.84",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل7 § 6",
+      "server": "112.132.212.19",
+      "server_port": 50004,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل8 § 7",
+      "server": "104.17.147.22",
+      "server_port": 80,
+      "uuid": "cc142606-f36d-4004-bd2d-c5c2aa7efd4d",
+      "security": "auto",
+      "authenticated_length": true,
+      "transport": {
+        "type": "ws",
+        "path": "/RACEVPN",
+        "headers": {
+          "Host": "DeV2RaY.IsVpHp.IR."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل9 § 8",
+      "server": "198.2.218.100",
+      "server_port": 41400,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "none",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل10 § 9",
+      "server": "112.132.212.19",
+      "server_port": 50004,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل11 § 10",
+      "server": "104.21.69.44",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل12 § 11",
+      "server": "198.2.218.100",
+      "server_port": 41400,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "none",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل13 § 12",
+      "server": "104.17.148.22",
+      "server_port": 80,
+      "uuid": "cc142606-f36d-4004-bd2d-c5c2aa7efd4d",
+      "security": "auto",
+      "authenticated_length": true,
+      "transport": {
+        "type": "ws",
+        "path": "/RACEVPN",
+        "headers": {
+          "Host": "DeV2RaY.IsVpHp.IR."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل14 § 13",
+      "server": "198.2.218.100",
+      "server_port": 41400,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "none",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل15 § 14",
+      "server": "104.17.147.22",
+      "server_port": 2053,
+      "uuid": "00fb7867-95ad-4eaf-99f1-22255beb6251",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "/",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل16 § 15",
+      "server": "104.17.147.22",
+      "server_port": 80,
+      "uuid": "cc142606-f36d-4004-bd2d-c5c2aa7efd4d",
+      "security": "auto",
+      "authenticated_length": true,
+      "transport": {
+        "type": "ws",
+        "path": "/RACEVPN",
+        "headers": {
+          "Host": "DeV2RaY.IsVpHp.IR."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل17 § 16",
+      "server": "104.17.148.22",
+      "server_port": 2082,
+      "uuid": "1368893d-58cb-4a25-9105-a5fa3f6a1a88",
+      "security": "auto",
+      "authenticated_length": true,
+      "transport": {
+        "type": "ws",
+        "path": "/@config_shahin,@config_shahin,@config_shahin,@config_shahin",
+        "headers": {
+          "Host": "2.irvn.debian.6.i.6.6.fxp.debian.org.speedtest.net.列列男事的事列上赛男.ghormehsabzi.cyou."
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل18 § 17",
+      "server": "109.201.152.181",
+      "server_port": 443,
+      "method": "aes-128-cfb",
+      "password": "shadowsocks"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل19 § 18",
+      "server": "45.145.42.70",
+      "server_port": 25366,
+      "method": "aes-128-gcm",
+      "password": "join--ZEDMODEON"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل20 § 19",
+      "server": "45.158.171.138",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل21 § 20",
+      "server": "172.67.204.84",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل22 § 21",
+      "server": "sha.majidcttls.ggff.net",
+      "server_port": 443,
+      "method": "aes-128-cfb",
+      "password": "shadowsocks"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل23 § 22",
+      "server": "45.158.171.129",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل24 § 23",
+      "server": "77.72.5.113",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل25 § 24",
+      "server": "45.158.171.141",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل26 § 25",
+      "server": "moscow.telegavpn.com",
+      "server_port": 60422,
+      "method": "chacha20-ietf-poly1305",
+      "password": "HtsTX0nRblVP7gtYJjPWLk"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل27 § 26",
+      "server": "45.158.171.131",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل28 § 27",
+      "server": "104.21.55.234",
+      "server_port": 443,
+      "uuid": "bc864078-dcf3-4bf4-8dbf-ca9f200b56be",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gwdef.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "gwdef.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل29 § 28",
+      "server": "185.90.61.153",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل30 § 29",
+      "server": "104.21.15.36",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل31 § 30",
+      "server": "188.114.97.7",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل32 § 31",
+      "server": "92.38.163.53",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل33 § 32",
+      "server": "188.212.132.20",
+      "server_port": 52952,
+      "method": "chacha20-ietf-poly1305",
+      "password": "LMSNh21TrXjR2ok25Q2nE8ENT2zoBmPvka3RCCUAHZELCnWoekVjvaf89qwcRkdbxEfep2bc2aUtmnxqvF1ayQRez1JHjULj"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل34 § 33",
+      "server": "188.114.97.3",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل35 § 34",
+      "server": "217.30.10.18",
+      "server_port": 9033,
+      "method": "aes-256-cfb",
+      "password": "UTJA57ypk2XKQpnm"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل36 § 35",
+      "server": "45.89.52.66",
+      "server_port": 9040,
+      "method": "aes-256-cfb",
+      "password": "p9z5BVADH2YFs3MN"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل37 § 36",
+      "server": "172.67.161.77",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل38 § 37",
+      "server": "104.21.83.208",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل39 § 38",
+      "server": "172.67.164.164",
+      "server_port": 443,
+      "uuid": "a1655f51-1e20-4a92-8a11-b7ca30a7a353",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms07.xfixedfloat.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms07.xfixedfloat.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل40 § 39",
+      "server": "13.74.171.103",
+      "server_port": 46541,
+      "method": "chacha20-ietf-poly1305",
+      "password": "lZJqAB32wR97hbobEBmWV0"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل41 § 40",
+      "server": "103.172.116.94",
+      "server_port": 9043,
+      "method": "aes-256-cfb",
+      "password": "HSZuyJQcWe8dxNdF"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل42 § 41",
+      "server": "185.164.35.9",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل43 § 42",
+      "server": "205.134.180.145",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "hgLCgfLRgB6d"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل44 § 43",
+      "server": "205.134.180.139",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "lWaGPVFjmnag"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل45 § 44",
+      "server": "51.222.157.179",
+      "server_port": 49602,
+      "method": "aes-256-gcm",
+      "password": "7gaTTlW73G"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل46 § 45",
+      "server": "37.235.49.152",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل47 § 46",
+      "server": "69.50.93.80",
+      "server_port": 3306,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل48 § 47",
+      "server": "38.121.43.97",
+      "server_port": 6697,
+      "method": "aes-256-gcm",
+      "password": "TEzjfAYq2IjtuoS"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل49 § 48",
+      "server": "134.195.196.178",
+      "server_port": 811,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل50 § 49",
+      "server": "38.121.43.97",
+      "server_port": 8080,
+      "method": "aes-256-gcm",
+      "password": "KixLvKzwjekG00rm"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل51 § 50",
+      "server": "31.171.153.181",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل52 § 51",
+      "server": "134.195.196.178",
+      "server_port": 808,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل53 § 52",
+      "server": "38.111.114.133",
+      "server_port": 2375,
+      "method": "aes-256-gcm",
+      "password": "faBAoD54k87UJG7"
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل54 § 53",
+      "server": "172.66.47.125",
+      "server_port": 443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل55 § 54",
+      "server": "134.195.196.178",
+      "server_port": 807,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل56 § 55",
+      "server": "38.111.114.133",
+      "server_port": 8080,
+      "method": "aes-256-gcm",
+      "password": "KixLvKzwjekG00rm"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل57 § 56",
+      "server": "31.171.153.178",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل58 § 57",
+      "server": "134.195.196.178",
+      "server_port": 806,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل59 § 58",
+      "server": "134.195.196.178",
+      "server_port": 803,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل60 § 59",
+      "server": "134.195.196.178",
+      "server_port": 804,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل61 § 60",
+      "server": "38.111.114.133",
+      "server_port": 6679,
+      "method": "aes-256-gcm",
+      "password": "TEzjfAYq2IjtuoS"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل62 § 61",
+      "server": "38.111.114.133",
+      "server_port": 5601,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل63 § 62",
+      "server": "134.195.196.178",
+      "server_port": 805,
+      "method": "chacha20-ietf-poly1305",
+      "password": "G!yBwPWH3Vao"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل64 § 63",
+      "server": "46.183.184.60",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل65 § 64",
+      "server": "104.21.4.6",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل66 § 65",
+      "server": "38.111.114.133",
+      "server_port": 7001,
+      "method": "aes-256-gcm",
+      "password": "RexnBgU7EV5ADxG"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل67 § 66",
+      "server": "195.88.25.214",
+      "server_port": 1026,
+      "method": "chacha20-ietf-poly1305",
+      "password": "56INZqMWGt0o8Rv4"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل68 § 67",
+      "server": "38.111.114.133",
+      "server_port": 9090,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل69 § 68",
+      "server": "mankadmu.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "mankadmu.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "mankadmu.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل70 § 69",
+      "server": "23.162.200.133",
+      "server_port": 2375,
+      "method": "aes-256-gcm",
+      "password": "faBAoD54k87UJG7"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل71 § 70",
+      "server": "104.21.95.165",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "sareikela.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "sareikela.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل72 § 71",
+      "server": "23.150.152.112",
+      "server_port": 7001,
+      "method": "aes-256-gcm",
+      "password": "RexnBgU7EV5ADxG"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل73 § 72",
+      "server": "103.172.116.94",
+      "server_port": 9026,
+      "method": "aes-256-cfb",
+      "password": "QWDDvVE9npNurQfA"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل74 § 73",
+      "server": "146.185.248.22",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل75 § 74",
+      "server": "23.150.152.24",
+      "server_port": 9090,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل76 § 75",
+      "server": "23.150.152.24",
+      "server_port": 8888,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل77 § 76",
+      "server": "172.67.131.108",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل78 § 77",
+      "server": "23.150.152.24",
+      "server_port": 5003,
+      "method": "aes-256-gcm",
+      "password": "g5MeD6Ft3CWlJId"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل79 § 78",
+      "server": "upload.ir",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل80 § 79",
+      "server": "23.150.152.16",
+      "server_port": 9102,
+      "method": "aes-256-gcm",
+      "password": "e4FCWrgpkji3QY"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل81 § 80",
+      "server": "a.baradiha.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "a.baradiha.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "a.baradiha.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل82 § 81",
+      "server": "23.150.152.112",
+      "server_port": 8009,
+      "method": "aes-256-gcm",
+      "password": "XKFKl2rULjIp74"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل83 § 82",
+      "server": "23.150.152.16",
+      "server_port": 5001,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل84 § 83",
+      "server": "23.150.152.112",
+      "server_port": 5498,
+      "method": "aes-256-gcm",
+      "password": "lGqs95QkFHo2NV"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل85 § 84",
+      "server": "23.150.152.16",
+      "server_port": 8091,
+      "method": "aes-256-gcm",
+      "password": "PCnnH6SQSnfoS27"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل86 § 85",
+      "server": "23.150.152.112",
+      "server_port": 9102,
+      "method": "aes-256-gcm",
+      "password": "e4FCWrgpkji3QY"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل87 § 86",
+      "server": "23.150.152.16",
+      "server_port": 2376,
+      "method": "aes-256-gcm",
+      "password": "faBAoD54k87UJG7"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل88 § 87",
+      "server": "138.186.142.4",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل89 § 88",
+      "server": "190.120.229.28",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل90 § 89",
+      "server": "192.71.166.102",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل91 § 90",
+      "server": "46.183.185.15",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل92 § 91",
+      "server": "67.220.86.72",
+      "server_port": 8882,
+      "method": "aes-256-gcm",
+      "password": "kDWvXYZoTBcGkC4"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل93 § 92",
+      "server": "107.148.192.153",
+      "server_port": 41911,
+      "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+      "security": "auto",
+      "alter_id": 64,
+      "authenticated_length": true
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل94 § 93",
+      "server": "series-a2-me.samanehha.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "Bog0ELmMM9DSxDdQ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل95 § 94",
+      "server": "series-a2-mec.samanehha.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل96 § 95",
+      "server": "to.tilebani.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "to.tilebani.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "to.tilebani.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل97 § 96",
+      "server": "185.146.173.59",
+      "server_port": 443,
+      "uuid": "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "obdii.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "obdii.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل98 § 97",
+      "server": "104.16.190.131",
+      "server_port": 443,
+      "uuid": "17a7bf97-fef5-4101-a5c5-7c730fabeeee",
+      "tls": {
+        "enabled": true,
+        "server_name": "bpb-worker-panel-h5f.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل99 § 98",
+      "server": "188.114.96.1",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل100 § 99",
+      "server": "upload.ir",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل101 § 100",
+      "server": "104.18.12.229",
+      "server_port": 2053,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل102 § 101",
+      "server": "104.21.40.63",
+      "server_port": 443,
+      "uuid": "f4f69ee1-09df-4ca2-a002-89ee0ec8156a",
+      "tls": {
+        "enabled": true,
+        "server_name": "accolade.toptechnonews.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/nimws",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل103 § 102",
+      "server": "104.18.15.166",
+      "server_port": 8443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل104 § 103",
+      "server": "172.66.47.54",
+      "server_port": 443,
+      "uuid": "cc771b27-27ad-4bf3-bc42-f42cd673edbe",
+      "tls": {
+        "enabled": true,
+        "server_name": "ircp-617.pages.dev.",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل105 § 104",
+      "server": "188.114.96.54",
+      "server_port": 2096,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "EB043cC5.mkhAliLi.paGES.DeV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/SWlj0tTbCWJhL8au",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل106 § 105",
+      "server": "188.114.96.54",
+      "server_port": 8443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "Eb043cc5.MKhalili.PaGes.DeV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/bbVsFQ6vyf55tadz",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل107 § 106",
+      "server": "172.66.47.91",
+      "server_port": 8443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "Eb043cc5.mkHALILI.pAgES.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/1I5kFrJb2nJW3PZH",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل108 § 107",
+      "server": "104.18.84.115",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "B458aB02.caA-CHAnel-worKer-Page-FREE-JhUiHNujHPHjKL-NIhGKJn.PaGEs.deV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/bmkpskkiym1rrlxm",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل109 § 108",
+      "server": "188.114.99.205",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل110 § 109",
+      "server": "104.16.159.7",
+      "server_port": 443,
+      "password": "   i  ק",
+      "tls": {
+        "enabled": true,
+        "server_name": "bangladeshipatri.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "bangladeshipatri.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل111 § 110",
+      "server": "172.67.161.77",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل112 § 111",
+      "server": "104.21.83.208",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل113 § 112",
+      "server": "188.114.97.7",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل114 § 113",
+      "server": "104.21.4.6",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل115 § 114",
+      "server": "104.21.47.176",
+      "server_port": 443,
+      "password": "52701795-3c3b-46b4-b7cf-c5978b3a4cf2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hdfyc1.achaemenidempireofpersia.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل116 § 115",
+      "server": "172.66.46.251",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "bBF9c21A.tECHNeTbpb.paGEs.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-@v2ray_alpha/",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل117 § 116",
+      "server": "108.162.192.79",
+      "server_port": 443,
+      "uuid": "fb710ee0-f2d3-421c-8556-d23e5075f57e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bpb-worker-panel-chf.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل118 § 117",
+      "server": "104.18.5.2",
+      "server_port": 2096,
+      "uuid": "85b94f20-e563-498b-9d4b-a75438a51101",
+      "tls": {
+        "enabled": true,
+        "server_name": "VFIvE-teLeGram.PAGEs.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/5fz4m1ggihzpkyya",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل119 § 118",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "uuid": "e6aedcd2-24ad-4bdd-82c5-006d84179197",
+      "tls": {
+        "enabled": true,
+        "server_name": "4d3d6f00.garywelch.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل120 § 119",
+      "server": "185.146.173.31",
+      "server_port": 443,
+      "password": "ItSjMC37sc",
+      "tls": {
+        "enabled": true,
+        "server_name": "sus.suski2025.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل121 § 120",
+      "server": "104.21.42.39",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/afrhms16v.bestxray.buzz",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل122 § 121",
+      "server": "172.66.46.252",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "94391e80.uvPN-OrG.PAGes.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل123 § 122",
+      "server": "172.67.175.56",
+      "server_port": 443,
+      "uuid": "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "obdii.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "obdii.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل124 § 123",
+      "server": "172.67.71.160",
+      "server_port": 443,
+      "uuid": "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "obdii.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "obdii.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل125 § 124",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل126 § 125",
+      "server": "172.67.204.84",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل127 § 126",
+      "server": "172.67.156.22",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/afrhms16v.bestxray.buzz",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل128 § 127",
+      "server": "188.114.97.3",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل129 § 128",
+      "server": "zula.ir",
+      "server_port": 2096,
+      "password": "b12f4be0-e874-568e-954f-942dcc3a67e9",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.trojan0.woRkeRS.deV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/trojan-ws/",
+        "headers": {
+          "Host": "trojan.trojan0.woRkeRS.deVhttp/1.1"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل130 § 129",
+      "server": "104.21.24.170",
+      "server_port": 443,
+      "uuid": "b321fd5d-e6ec-4293-a644-164e3885f52e",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "adenc36v.xtooltech.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "adenc36v.xtooltech.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل131 § 130",
+      "server": "107.173.146.129",
+      "server_port": 80,
+      "uuid": "5820093a-bb7d-4e15-8575-1a529f2d8282",
+      "security": "auto",
+      "authenticated_length": true,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "107.173.146.129"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل132 § 131",
+      "server": "142.4.216.225",
+      "server_port": 80,
+      "method": "chacha20-ietf-poly1305",
+      "password": "JIhN6rBKkaEboLNXVSv5rq"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل133 § 132",
+      "server": "41.203.4.34",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل134 § 133",
+      "server": "179.27.200.28",
+      "server_port": 989,
+      "method": "aes-256-cfb",
+      "password": "f8f7aCzcPKbsF8p3"
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل135 § 134",
+      "server": "104.17.148.22",
+      "server_port": 8443,
+      "password": "agrVcE92Pu",
+      "tls": {
+        "enabled": true,
+        "server_name": "J0in-Telegram-EiiiM.danesh-bonyan.Store",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل136 § 135",
+      "server": "13.212.62.12",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل137 § 136",
+      "server": "172.67.176.206",
+      "server_port": 2053,
+      "password": "ZJU29smXwp",
+      "tls": {
+        "enabled": true,
+        "server_name": "damn-mci-again-3.danesh-bonyan.Store",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل138 § 137",
+      "server": "45.76.33.120",
+      "server_port": 443,
+      "password": "19c80ce9-0935-41b9-b077-277621316a87",
+      "tls": {
+        "enabled": true,
+        "server_name": "hidd2.afsharidempire.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل139 § 138",
+      "server": "136.244.110.189",
+      "server_port": 443,
+      "password": "19c80ce9-0935-41b9-b077-277621316a87",
+      "tls": {
+        "enabled": true,
+        "server_name": "hidd2.parthianempire.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل140 § 139",
+      "server": "188.114.97.210",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل141 § 140",
+      "server": "172.67.170.11",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل142 § 141",
+      "server": "linde06.indiavideo.sbs",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل143 § 142",
+      "server": "103.172.116.94",
+      "server_port": 9026,
+      "method": "aes-256-cfb",
+      "password": "QWDDvVE9npNurQfA"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل144 § 143",
+      "server": "188.114.97.1",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل145 § 144",
+      "server": "104.21.34.74",
+      "server_port": 443,
+      "uuid": "d6f79630-aa94-4536-b2ef-899b5acb3b49",
+      "tls": {
+        "enabled": true,
+        "server_name": "unmanliest.appreviewcenter.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/nimws",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل146 § 145",
+      "server": "188.114.99.183",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل147 § 146",
+      "server": "jahfkjha.cfd",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل148 § 147",
+      "server": "172.67.196.100",
+      "server_port": 2083,
+      "uuid": "9af577f2-0a7a-4448-ae0b-6985c53ea634",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-netplus1.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل149 § 148",
+      "server": "172.67.131.108",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل150 § 149",
+      "server": "103.172.116.94",
+      "server_port": 9043,
+      "method": "aes-256-cfb",
+      "password": "HSZuyJQcWe8dxNdF"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل151 § 150",
+      "server": "104.26.0.95",
+      "server_port": 443,
+      "uuid": "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "obdii.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "obdii.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل152 § 151",
+      "server": "172.64.103.211",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل153 § 152",
+      "server": "www.teletrans.ro",
+      "server_port": 443,
+      "uuid": "05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nezuko.raidenshogun.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws/obdii.cfd",
+        "headers": {
+          "Host": "nezuko.raidenshogun.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل154 § 153",
+      "server": "172.66.44.165",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "Eb043Cc5.MkhaLILi.PagEs.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/wstBteiWzlzWfZGp",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل155 § 154",
+      "server": "172.67.174.42",
+      "server_port": 443,
+      "uuid": "bc864078-dcf3-4bf4-8dbf-ca9f200b56be",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gwdef.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "gwdef.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل156 § 155",
+      "server": "104.21.55.234",
+      "server_port": 443,
+      "uuid": "bc864078-dcf3-4bf4-8dbf-ca9f200b56be",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "gwdef.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "gwdef.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل157 § 156",
+      "server": "173.245.59.181",
+      "server_port": 443,
+      "uuid": "e555a459-6070-4000-b019-1a0a3d673e59",
+      "tls": {
+        "enabled": true,
+        "server_name": "menu-in-pages-template-flutters.nigc-ar.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/44376/Template",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل158 § 157",
+      "server": "172.64.133.252",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/...",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل159 § 158",
+      "server": "172.66.47.44",
+      "server_port": 443,
+      "uuid": "826e43d2-dbe9-41a6-bbf8-3aed2f93f5d4",
+      "tls": {
+        "enabled": true,
+        "server_name": "pardazeshvpn-tg20.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-@SiNABiGO-@SiNABiGO/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل160 § 159",
+      "server": "172.66.47.91",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "eB043CC5.MkHALili.pAgEs.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/GWJNSQdfI8oHCARM",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل161 § 160",
+      "server": "104.19.179.196",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل162 § 161",
+      "server": "www.speedtest.net",
+      "server_port": 2053,
+      "uuid": "00fb7867-95ad-4eaf-99f1-22255beb6251",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "/",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل163 § 162",
+      "server": "104.24.20.71",
+      "server_port": 443,
+      "uuid": "9902fc94-31f9-4afe-b37a-82f5790b3d2a",
+      "tls": {
+        "enabled": true,
+        "server_name": "de1-moryvpnbot.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل164 § 163",
+      "server": "13.124.244.90",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل165 § 164",
+      "server": "172.67.207.26",
+      "server_port": 443,
+      "uuid": "76221bfb-e92f-4e80-81c5-6fe48f50ac0b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل166 § 165",
+      "server": "104.27.62.243",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "MIumIumADrEkOsE.pAGeS.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@VPNHTTPInjectorfree",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل167 § 166",
+      "server": "104.21.83.108",
+      "server_port": 443,
+      "uuid": "6c168fcc-2231-4f3b-8c1e-f6391692df4a",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "hms02.fxiaomi.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/link",
+        "headers": {
+          "Host": "hms02.fxiaomi.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل168 § 167",
+      "server": "hms182.glweidf.sbs",
+      "server_port": 443,
+      "uuid": "76221bfb-e92f-4e80-81c5-6fe48f50ac0b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل169 § 168",
+      "server": "162.159.246.186",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-marambashi/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل170 § 169",
+      "server": "104.21.15.212",
+      "server_port": 443,
+      "uuid": "76221bfb-e92f-4e80-81c5-6fe48f50ac0b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل171 § 170",
+      "server": "185.146.173.22",
+      "server_port": 2082,
+      "uuid": "24347e96-912c-4f53-9c67-9cc895fc6fdf",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل172 § 171",
+      "server": "172.66.46.214",
+      "server_port": 2053,
+      "uuid": "8545c44f-b1b4-4295-ae98-f0b6301a537f",
+      "tls": {
+        "enabled": true,
+        "server_name": "ios-azadnet.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل173 § 172",
+      "server": "series-a2-mec.varzesh360.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل174 § 173",
+      "server": "104.19.30.118",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل175 § 174",
+      "server": "205.134.180.137",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "g13S7doXar0A"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل176 § 175",
+      "server": "172.64.111.69",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل177 § 176",
+      "server": "104.21.44.106",
+      "server_port": 443,
+      "uuid": "93ea486a-bada-42a4-ac38-d088b320fa1e",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "xmivideo.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "xmivideo.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل178 § 177",
+      "server": "104.19.84.84",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل179 § 178",
+      "server": "172.66.44.86",
+      "server_port": 443,
+      "uuid": "cc771b27-27ad-4bf3-bc42-f42cd673edbe",
+      "tls": {
+        "enabled": true,
+        "server_name": "nooshin-2d9.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل180 § 179",
+      "server": "52.25.101.93",
+      "server_port": 443,
+      "method": "aes-256-cfb",
+      "password": "amazonskr05"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل181 § 180",
+      "server": "104.21.79.64",
+      "server_port": 443,
+      "uuid": "c8e6e9d4-4339-4ee2-830b-8ece0f78f46b",
+      "tls": {
+        "enabled": true,
+        "server_name": "selincselincselincselincselincselincselincselinc.selincselinc.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@vpnAndroid2/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل182 § 181",
+      "server": "172.67.170.103",
+      "server_port": 443,
+      "uuid": "76221bfb-e92f-4e80-81c5-6fe48f50ac0b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل183 § 182",
+      "server": "172.67.170.13",
+      "server_port": 443,
+      "uuid": "76221bfb-e92f-4e80-81c5-6fe48f50ac0b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "glweidf.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "glweidf.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل184 § 183",
+      "server": "172.67.196.112",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل185 § 184",
+      "server": "45.158.171.141",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل186 § 185",
+      "server": "45.158.171.148",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل187 § 186",
+      "server": "162.159.252.236",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل188 § 187",
+      "server": "172.66.45.32",
+      "server_port": 443,
+      "uuid": "a8a09765-7681-47ba-9ea0-e0ae79d51088",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-netplus-4vx.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل189 § 188",
+      "server": "172.66.46.224",
+      "server_port": 443,
+      "uuid": "a8a09765-7681-47ba-9ea0-e0ae79d51088",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-netplus-4vx.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل190 § 189",
+      "server": "104.19.255.197",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل191 § 190",
+      "server": "172.67.198.111",
+      "server_port": 443,
+      "uuid": "11e5b771-1d4d-4362-b4b5-e39e75981f01",
+      "tls": {
+        "enabled": true,
+        "server_name": "3e8B07A5.PUb000bpB.PAGes.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ZYgm9Gg9QBkAXfbG",
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل192 § 191",
+      "server": "172.64.87.52",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل193 § 192",
+      "server": "45.158.171.129",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل194 § 193",
+      "server": "45.158.171.131",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل195 § 194",
+      "server": "51.75.30.8",
+      "server_port": 80,
+      "uuid": "1949f066-bcb0-49be-88e9-74abd940f80e",
+      "transport": {
+        "type": "ws",
+        "path": "/http",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل196 § 195",
+      "server": "173.245.59.8",
+      "server_port": 443,
+      "uuid": "1052f24e-7b09-45eb-b0c5-d858eb124192",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "77h2quiet-dream-5c34.foratay741.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/glweidf.cfd/linkws",
+        "headers": {
+          "Host": "77h2quiet-dream-5c34.foratay741.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل197 § 196",
+      "server": "172.67.178.12",
+      "server_port": 443,
+      "uuid": "03728bdd-745c-4ef6-a01f-70b006d3bbae",
+      "tls": {
+        "enabled": true,
+        "server_name": "thorianite.toptechnonews.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/nimws",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل198 § 197",
+      "server": "172.64.143.172",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل199 § 198",
+      "server": "45.158.171.138",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل200 § 199",
+      "server": "172.64.165.229",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل201 § 200",
+      "server": "172.64.102.151",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل202 § 201",
+      "server": "104.21.42.56",
+      "server_port": 443,
+      "uuid": "63e0ccc3-bceb-46ce-a418-1c6a71d20e3f",
+      "tls": {
+        "enabled": true,
+        "server_name": "182z9jcb6ezumr1jfpg50pa12rebmhitb24aynjgmflkcv78khyhgfit4563fdk.myy1h3.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram%20channel%20:%20@pandavpntc",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل203 § 202",
+      "server": "104.17.147.22",
+      "server_port": 2053,
+      "uuid": "ea040230-e7f4-4a54-8eed-7b02956b66b9",
+      "tls": {
+        "enabled": true,
+        "server_name": "irn-vpn-irn-vpn.veboril990.workers.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@IRN_VPN",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل204 § 203",
+      "server": "104.17.111.121",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل205 § 204",
+      "server": "172.64.133.62",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل206 § 205",
+      "server": "172.67.212.171",
+      "server_port": 2087,
+      "uuid": "242b7fb0-d590-57bd-9924-38092b4a8f21",
+      "tls": {
+        "enabled": true,
+        "server_name": "esetsecuritylicense.ujlqwtae.wORKERS.deV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل207 § 206",
+      "server": "104.17.178.201",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل208 § 207",
+      "server": "172.64.87.146",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل209 § 208",
+      "server": "104.16.205.53",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل210 § 209",
+      "server": "104.19.121.216",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل211 § 210",
+      "server": "104.18.19.163",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-SiNABiGO/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل212 § 211",
+      "server": "my01.trojanyyds.xyz",
+      "server_port": 443,
+      "password": "9bb27128-e6d2-4cac-bbd3-beb46c4417f8",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt👈جوین چنل213 § 212",
+      "server": "my02.trojanyyds.xyz",
+      "server_port": 443,
+      "password": "9bb27128-e6d2-4cac-bbd3-beb46c4417f8",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل214 § 213",
+      "server": "104.17.3.44",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل215 § 214",
+      "server": "104.16.106.91",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل216 § 215",
+      "server": "185.146.173.152",
+      "server_port": 80,
+      "uuid": "af309ad2-c943-48ea-b570-2e51a2f079d9",
+      "transport": {
+        "type": "ws",
+        "path": "/DSDaswd22!11*fdfm55247.COM.",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل217 § 216",
+      "server": "a.baradiha.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "a.baradiha.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "a.baradiha.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل218 § 217",
+      "server": "217.196.103.206",
+      "server_port": 29312,
+      "method": "chacha20-ietf-poly1305",
+      "password": "qgpdyzHj8rZW9fDxxkUHRI"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل219 § 218",
+      "server": "cake.capellare.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "cake.capellare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "cake.capellare.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل220 § 219",
+      "server": "104.19.185.135",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل221 § 220",
+      "server": "172.64.110.145",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل222 § 221",
+      "server": "172.67.101.218",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل223 § 222",
+      "server": "172.64.173.11",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل224 § 223",
+      "server": "104.19.255.223",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل225 § 224",
+      "server": "104.21.95.165",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "sareikela.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "sareikela.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل226 § 225",
+      "server": "beedoost.org",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل227 § 226",
+      "server": "104.16.123.227",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل228 § 227",
+      "server": "172.66.45.45",
+      "server_port": 443,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "edtunnel-csc.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل229 § 228",
+      "server": "172.66.44.212",
+      "server_port": 443,
+      "uuid": "826e43d2-dbe9-41a6-bbf8-3aed2f93f5d4",
+      "tls": {
+        "enabled": true,
+        "server_name": "pardazeshvpn-tg20.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل230 § 229",
+      "server": "irancell.xn--g28h.dns-dynamic.net.cdn.cloudflare.net",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل231 § 230",
+      "server": "172.67.137.11",
+      "server_port": 8080,
+      "uuid": "416f18ec-11f3-4648-9693-8c6480d0662d",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل232 § 231",
+      "server": "104.26.13.72",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "cake.capellare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "cake.capellare.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل233 § 232",
+      "server": "cdn.discordapp.com",
+      "server_port": 8880,
+      "uuid": "82fdc77c-5def-4930-89a6-afb5cc609d4b",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNPROXY",
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل234 § 233",
+      "server": "de6i.mifastip.info",
+      "server_port": 8080,
+      "uuid": "5f7b92f0-1e6e-4611-8aa2-3c37838ae474",
+      "transport": {
+        "type": "ws",
+        "path": "/www.speedtest.net.Jimarkel",
+        "max_early_data": 443,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل235 § 234",
+      "server": "104.19.114.13",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل236 § 235",
+      "server": "172.64.69.44",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل237 § 236",
+      "server": "speedtest.org",
+      "server_port": 443,
+      "uuid": "1d86846c-5a27-43c8-8981-57bb75c82195",
+      "tls": {
+        "enabled": true,
+        "server_name": "iyjil.cfonni.info",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/paradise",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل238 § 237",
+      "server": "moscow.telegavpn.com",
+      "server_port": 60422,
+      "method": "chacha20-ietf-poly1305",
+      "password": "HtsTX0nRblVP7gtYJjPWLk"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل239 § 238",
+      "server": "92.243.27.51",
+      "server_port": 9802,
+      "method": "chacha20-ietf-poly1305",
+      "password": "Okisc6tYTrtYJ7fQlwnr1M"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل240 § 239",
+      "server": "series-a2-me.varzesh360.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "Bog0ELmMM9DSxDdQ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt👈جوین چنل241 § 240",
+      "server": "45.145.42.70",
+      "server_port": 25366,
+      "method": "aes-128-gcm",
+      "password": "join--ZEDMODEON"
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل242 § 241",
+      "server": "denc36.xtooltech.cfd",
+      "server_port": 443,
+      "uuid": "b321fd5d-e6ec-4293-a644-164e3885f52e",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "adenc36v.xtooltech.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "adenc36v.xtooltech.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل243 § 242",
+      "server": "185.146.173.59",
+      "server_port": 2087,
+      "uuid": "1b54598e-8bb4-4bde-d7b4-3302ceb12640",
+      "tls": {
+        "enabled": true,
+        "server_name": "om72.hopeserver.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل244 § 243",
+      "server": "185.146.173.92",
+      "server_port": 2087,
+      "uuid": "1b54598e-8bb4-4bde-d7b4-3302ceb12640",
+      "tls": {
+        "enabled": true,
+        "server_name": "om72.hopeserver.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل245 § 244",
+      "server": "104.19.62.150",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل246 § 245",
+      "server": "max.mankadmu.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "max.mankadmu.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "max.mankadmu.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل247 § 246",
+      "server": "sareikela.com",
+      "server_port": 443,
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "sareikela.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkvws",
+        "headers": {
+          "Host": "sareikela.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل248 § 247",
+      "server": "172.64.104.152",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل249 § 248",
+      "server": "104.19.132.75",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل250 § 249",
+      "server": "104.16.61.8",
+      "server_port": 80,
+      "uuid": "378ac207-38d3-4401-ba96-3a7931968bc5",
+      "transport": {
+        "type": "ws",
+        "path": "/http",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل251 § 250",
+      "server": "162.159.245.217",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل252 § 251",
+      "server": "172.64.196.148",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/JOIN-FILTERK0SH/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل253 § 252",
+      "server": "xs.wxtv.cc",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل254 § 253",
+      "server": "172.67.199.19",
+      "server_port": 2082,
+      "uuid": "416f18ec-11f3-4648-9693-8c6480d0662d",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل255 § 254",
+      "server": "104.19.55.148",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل256 § 255",
+      "server": "151.101.0.0",
+      "server_port": 80,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل257 § 256",
+      "server": "www.paypal.com.cn",
+      "server_port": 80,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt👈جوین چنل258 § 257",
+      "server": "188.114.96.2",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "MIumIumADrEkOsE.pAGeS.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/OyaFdNKpGFcX0BjG",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "@Hiddify_Nexttt👈جوین چنل259 § 258",
+      "server": "188.114.99.183",
+      "server_port": 443,
+      "uuid": "edbb1059-1633-4271-b66e-ed4fba47a1bf",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "linde06.indiavideo.sbs",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "linde06.indiavideo.sbs"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "yODj6qv5So8DVcvN"
+    }
+  }
+}
