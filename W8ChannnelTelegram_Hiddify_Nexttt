@@ -1,0 +1,320 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt ایرانسل § 0",
+        "@Hiddify_Nexttt ایرانسل § 1",
+        "@Hiddify_Nexttt ایرانسل § 2",
+        "@Hiddify_Nexttt ایرانسل § 3",
+        "@Hiddify_Nexttt ایرانسل § 4",
+        "@Hiddify_Nexttt ایرانسل § 5",
+        "@Hiddify_Nexttt ایرانسل § 6"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt ایرانسل § 0",
+        "@Hiddify_Nexttt ایرانسل § 1",
+        "@Hiddify_Nexttt ایرانسل § 2",
+        "@Hiddify_Nexttt ایرانسل § 3",
+        "@Hiddify_Nexttt ایرانسل § 4",
+        "@Hiddify_Nexttt ایرانسل § 5",
+        "@Hiddify_Nexttt ایرانسل § 6"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 0",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8889:751e:37e4:b7f9:ea79/128"
+      ],
+      "private_key": "QJoEmQTM2l1xyo1dX2cqQTILt/ufZqkjeSztg1hH/H4=",
+      "server": "162.159.192.39",
+      "server_port": 943,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "bhcX",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 1",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8657:3277:350d:7f75:9d2d/128"
+      ],
+      "private_key": "mEl7edbISqUGwKFKFKjo907teq6NBN26OD2GwY7pNHM=",
+      "server": "162.159.195.25",
+      "server_port": 903,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "dQLv",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+"fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 2",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8266:2ca3:fbcd:fa59:546/128"
+      ],
+      "private_key": "GAzbegCYsH2zwfSRNh7YMr3eJtNdYWTPxeU1td90BGM=",
+      "server": "162.159.192.217",
+      "server_port": 4233,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "C+ET",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 3",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8c7e:9aaa:f2b2:c450:f1e6/128"
+      ],
+      "private_key": "+IrUh+Q2DQ8FH0fB8Ob43ZuykNYIaxsKy2UNYajl5mw=",
+      "server": "188.114.96.155",
+      "server_port": 5956,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "h3Bn",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 4",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8528:2e74:ef3c:8e95:a1b1/128"
+      ],
+      "private_key": "qE9C0084JenVrPRm/BpZj26ryJdsU6WZa8BjMgvKm1s=",
+      "server": "162.159.192.168",
+      "server_port": 939,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "MSdu",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 5",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:8342:b1fd:eaf4:72be:6a24/128"
+      ],
+      "private_key": "IM2hiu7N3Grc3LVu/Ssxn0IFgS17skue0izNmecuglk=",
+      "server": "162.159.192.21",
+      "server_port": 8886,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "xTjy",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "wireguard",
+      "tag": "@Hiddify_Nexttt ایرانسل § 6",
+      "local_address": [
+        "172.16.0.2/24",
+        "2606:4700:110:89e1:a4a6:cd19:9537:12a2/128"
+      ],
+      "private_key": "qGEKSfvri/upclcdKius2v1I/od72LJsB695yrD/1Wg=",
+      "server": "162.159.192.65",
+      "server_port": 7281,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": "Rv3m",
+      "mtu": 1330,
+      "fake_packets": "5-10",
+      "fake_packets_size": "40-100",
+      "fake_packets_delay": "20-250"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "1-500",
+        "sleep": "0-500"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+"update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "j62jbFI8CfQYn1vQ"
+    }
+  }
+}
