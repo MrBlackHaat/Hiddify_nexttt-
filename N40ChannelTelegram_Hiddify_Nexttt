@@ -1,0 +1,445 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "se2.hosting-ip.com",
+          "www.speedtest.net",
+          "zula.ir",
+          "visa.com",
+          "www.parsvds.ir"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "104.17.147.22",
+        "104.17.148.22",
+        "188.114.97.3",
+        "188.114.96.3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt همه اپراتورا § 0",
+        "@Hiddify_Nexttt همه اپراتورا § 1",
+        "🇩🇪@Hiddify_Nexttt همه اپراتورا § 2",
+        "🇩🇪@Hiddify_Nexttt همه اپراتورا § 3",
+        "@Hiddify_Nexttt همه اپراتورا § 4",
+        "@Hiddify_Nexttt همه اپراتورا § 5",
+        "@Hiddify_Nexttt همه اپراتورا § 6",
+        "@Hiddify_Nexttt همه اپراتورا § 7",
+        "@Hiddify_Nexttt همه اپراتورا § 8",
+        "@Hiddify_Nexttt همه اپراتورا § 9",
+        "@Hiddify_Nexttt همه اپراتورا § 10",
+        "@Hiddify_Nexttt همه اپراتورا § 11",
+        "@Hiddify_Nexttt همه اپراتورا § 12"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt همه اپراتورا § 0",
+        "@Hiddify_Nexttt همه اپراتورا § 1",
+        "🇩🇪@Hiddify_Nexttt همه اپراتورا § 2",
+        "🇩🇪@Hiddify_Nexttt همه اپراتورا § 3",
+        "@Hiddify_Nexttt همه اپراتورا § 4",
+        "@Hiddify_Nexttt همه اپراتورا § 5",
+        "@Hiddify_Nexttt همه اپراتورا § 6",
+        "@Hiddify_Nexttt همه اپراتورا § 7",
+        "@Hiddify_Nexttt همه اپراتورا § 8",
+        "@Hiddify_Nexttt همه اپراتورا § 9",
+        "@Hiddify_Nexttt همه اپراتورا § 10",
+        "@Hiddify_Nexttt همه اپراتورا § 11",
+        "@Hiddify_Nexttt همه اپراتورا § 12"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 0",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+"uuid": "VpNCUSTOMiZE",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 1",
+      "server": "se2.hosting-ip.com",
+      "server_port": 80,
+      "uuid": "67a4bed6-5528-49a2-a0ae-54332babb956",
+      "transport": {
+        "type": "ws",
+        "path": "/@V2fetch-V2fetch-V2fetch-V2fetch",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.自己不去看啥事情基本事事.srtongston.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪@Hiddify_Nexttt همه اپراتورا § 2",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "3fd99f0d-e9c4-41f8-ac0d-f3cb90cb3dee",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy-shhPROXY-SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪@Hiddify_Nexttt همه اپراتورا § 3",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "540e41d4-e906-4233-abfe-136dfb4fe870",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy--shhPROXY--SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 4",
+      "server": "198.41.221.63",
+      "server_port": 8080,
+      "uuid": "ee55bf7a-1002-452a-a5e6-faa10a92caf5",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 5",
+      "server": "185.146.173.50",
+      "server_port": 8080,
+      "uuid": "a6eed1a1-31b6-47dc-a1be-46bf42b79ad7",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 6",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "831f4c16-e26b-411b-85b7-20c3c963172d",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 7",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "4aed80af-e061-4dae-878f-d1408fff3299",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+},
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 8",
+      "server": "Zula.ir",
+      "server_port": 8080,
+      "uuid": "2005337e-0e40-49c1-91b0-a961c7383c85",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 9",
+      "server": "visa.com",
+      "server_port": 8080,
+      "uuid": "3f24ccb9-3c02-4390-b336-8032c83a69ee",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 10",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "v2rayvpn_official",
+      "transport": {
+        "type": "ws",
+        "path": "/ZEDMODEON",
+        "headers": {
+          "Host": "3.speedtest.net.parspack.com.mit.ir.列列男事的事列上赛男84.prime9731007.me.bia2bax.shoP."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 11",
+      "server": "185.146.173.58",
+      "server_port": 8080,
+      "uuid": "540e41d4-e906-4233-abfe-136dfb4fe870",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy--shhPROXY--SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt همه اپراتورا § 12",
+      "server": "188.114.98.224",
+      "server_port": 8080,
+      "uuid": "3fd99f0d-e9c4-41f8-ac0d-f3cb90cb3dee",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy-shhPROXY-SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs","update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "Z4jEsgRjeV7CS4uw"
+    }
+  }
+}
