@@ -1,0 +1,599 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": "www.speedtest.net",
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_nexttt تلگرام § 0",
+        "@Hiddify_nexttt تلگرام § 1",
+        "@Hiddify_nexttt تلگرام § 2",
+        "@Hiddify_nexttt تلگرام § 3",
+        "@Hiddify_nexttt تلگرام § 4",
+        "@Hiddify_nexttt تلگرام § 5",
+        "@Hiddify_nexttt تلگرام § 6",
+        "@Hiddify_nexttt تلگرام § 7",
+        "@Hiddify_nexttt تلگرام § 8",
+        "@Hiddify_nexttt تلگرام § 9",
+        "@Hiddify_nexttt تلگرام § 10",
+        "@Hiddify_nexttt تلگرام § 11",
+        "@Hiddify_nexttt تلگرام § 12",
+        "@Hiddify_nexttt تلگرام § 13",
+        "@Hiddify_nexttt تلگرام § 14",
+        "🩵|Telegram : @tv2rayrr🥵🥵🥵 § 15",
+        "@Hiddify_nexttt تلگرام § 16",
+        "@Hiddify_nexttt تلگرام § 17"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_nexttt تلگرام § 0",
+        "@Hiddify_nexttt تلگرام § 1",
+        "@Hiddify_nexttt تلگرام § 2",
+        "@Hiddify_nexttt تلگرام § 3",
+        "@Hiddify_nexttt تلگرام § 4",
+        "@Hiddify_nexttt تلگرام § 5",
+        "@Hiddify_nexttt تلگرام § 6",
+        "@Hiddify_nexttt تلگرام § 7",
+        "@Hiddify_nexttt تلگرام § 8",
+        "@Hiddify_nexttt تلگرام § 9",
+        "@Hiddify_nexttt تلگرام § 10",
+        "@Hiddify_nexttt تلگرام § 11",
+        "@Hiddify_nexttt تلگرام § 12",
+        "@Hiddify_nexttt تلگرام § 13",
+        "@Hiddify_nexttt تلگرام § 14",
+        "🩵|Telegram : @tv2rayrr🥵🥵🥵 § 15",
+        "@Hiddify_nexttt تلگرام § 16",
+        "@Hiddify_nexttt تلگرام § 17"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 0",
+      "server": "185.146.173.50",
+      "server_port": 8080,
+      "uuid": "717d4bd4-7eaf-4420-b7c8-924ac0f633b5",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_nexttt تلگرام § 1",
+      "server": "45.158.171.131",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 2",
+      "server": "www.Speedtest.Net",
+      "server_port": 2095,
+      "uuid": "DIGiV2RAY",
+      "transport": {
+        "type": "ws",
+        "path": "/DigiconnecT",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--ihqvla424c49bba047b50okggl0rcfo5o3aus3a.website."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 3",
+      "server": "185.146.173.58",
+      "server_port": 8080,
+      "uuid": "30c1c7d4-94c9-4473-902f-8f53d7326c60",
+      "transport": {
+        "type": "ws",
+        "path": "/servernett",
+        "headers": {
+          "Host": "dcc11.servernet.fun."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 4",
+      "server": "146.190.222.102",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 5",
+      "server": "137.184.200.33",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 6",
+      "server": "137.184.200.33",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 7",
+      "server": "45.63.5.65",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 8",
+      "server": "45.140.167.94",
+      "server_port": 2096,
+      "uuid": "c274799d-6bbd-48a8-b985-e203217f79b2",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "2606:4700:4700::1111",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "IqnFESYrPnkV7KUaekX8cL8TSRwDZHuUIKmD0N99Fxc",
+          "short_id": "2880ee24bb417d46"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 9",
+      "server": "64.176.222.249",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 10",
+      "server": "185.146.173.50",
+      "server_port": 8080,
+      "uuid": "717d4bd4-7eaf-4420-b7c8-924ac0f633b5",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILY-CONFIGS",
+        "headers": {
+          "Host": "DAILYconfigs-dailyCONFIGS-DAILYconfigs.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 11",
+      "server": "185.146.173.58",
+      "server_port": 8080,
+      "uuid": "81a88807-185d-4b6c-a1c1-4b7232fc3f70",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/melov2ray/melov2ray/melov2ray/melov2ray/melov2ray/melov2ray/melov2ray/melov2ray/melov2ray/",
+        "headers": {
+          "Host": "http.digicyber.click."
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 12",
+      "server": "185.146.173.93",
+      "server_port": 2095,
+      "uuid": "DIGiV2RAY",
+      "transport": {
+        "type": "ws",
+        "path": "/DigiconnecT",
+        "headers": {
+          "Host": "wWw.vArZeSh3.Com.QUENTIN.1.1.1.1.radiotehran.org."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 13",
+      "server": "104.31.16.85",
+      "server_port": 80,
+      "uuid": "ab178d57-d18c-4658-8362-f06599777cae",
+      "transport": {
+        "type": "ws",
+        "path": "/AfV2ray",
+        "headers": {
+          "Host": "allV2ray.cbr.roghanali.IR."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 14",
+      "server": "151.101.2.219",
+      "server_port": 80,
+      "uuid": "71d85ba3-c15f-4024-f30f-ce3ce3b71a81",
+      "transport": {
+        "type": "ws",
+        "path": "/lw",
+        "headers": {
+          "Host": "softgameriovlioebs69.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🩵|Telegram : @tv2rayrr🥵🥵🥵 § 15",
+      "server": "188.114.97.3",
+      "server_port": 443,
+      "uuid": "f584de15-2034-4170-a723-f48c2bae5e0f",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "afrhms16v.bestxray.buzz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "afrhms16v.bestxray.buzz"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 16",
+      "server": "64.176.222.249",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_nexttt تلگرام § 17",
+      "server": "45.63.5.65",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "D_gvjwgDlU3j0vi-"
+    }
+  }
+}
