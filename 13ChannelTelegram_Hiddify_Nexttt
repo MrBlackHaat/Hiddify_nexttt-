@@ -1,0 +1,3757 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "flixeon.me",
+          "gitlab.com",
+          "naiu-hk.05vr9nyqg5.download",
+          "zula.ir",
+          "w3.org",
+          "icook.hk",
+          "turk-online.zic.internetir.biz.tr",
+          "coinspeaker.com",
+          "cumhuriyet.com.tr",
+          "hinet.mjt001.com",
+          "h.iveze.com",
+          "cdnjs.com"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.96.3",
+        "188.114.97.3",
+        "2a06:98c1:3121::3",
+        "2a06:98c1:3120::3"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "⚠️ FREE TO USE! § 0",
+        "🔄 LATEST-UPDATE 📅 Sat-30-TIR-1403 🕑 16:20 § 1",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 2",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 3",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 4",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 5",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 6",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 7",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 8",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  9ms § 9",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 10",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 11",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 12",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  325ms § 13",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 14",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 15",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  161ms § 16",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  9ms § 17",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 18",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 19",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 20",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 21",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 22",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 23",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 24",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 25",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  154ms § 26",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 27",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 28",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 29",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 30",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  110ms § 31",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 32",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 33",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 34",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 35",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 36",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 37",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 38",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 39",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 40",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 41",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 42",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 43",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 44",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 45",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 46",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 47",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 48",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 49",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 50",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 51",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 52",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 53",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 54",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 55",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 56",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 57",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 58",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 59",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 60",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 61",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 62",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 63",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 64",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 65",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 66",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  74ms § 67",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  74ms § 68",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  59ms § 69",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  64ms § 70",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  57ms § 71",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 72",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 73",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  138ms § 74",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  140ms § 75",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  157ms § 76",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  156ms § 77",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 78",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  133ms § 79",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 80",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 81",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 82",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 83",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  139ms § 84",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 85",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 86",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  130ms § 87",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 88",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 89",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  139ms § 90",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  141ms § 91",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 92",
+        "🆔@Hiddify_Nexttt تلگرام 🔓 TR-WS-N/A 🆥🆥  9ms § 93",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 94",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 95",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 96",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 97",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 98",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 99",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 100",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 101",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 102",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  down § 103",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 104",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 105",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 106",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 107",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 108",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 109",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 110",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 111",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 112",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 113",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 114",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 115",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 116",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 117",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 118",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 119",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 120",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 121",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 122",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 123",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 124",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 125",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 126",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 127",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 128",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 129",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 130",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 131",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 132",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 133",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 134",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 135",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 136",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 137",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 138",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 139",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 140",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 141",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 142",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 143",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 144",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 145",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  141ms § 146",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 147",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 148",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 149",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  126ms § 150",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  114ms § 151",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 152",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 153",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  156ms § 154",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  142ms § 155",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  140ms § 156",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 157",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 158",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 159",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 160",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  114ms § 161",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 162",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  157ms § 163",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  152ms § 164",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  147ms § 165",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  136ms § 166",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 167",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  130ms § 168",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 169",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 170",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  158ms § 171",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 172",
+        "🆔@Hiddify_Nexttt تلگرام 🔓 TR-WS-N/A 🆥🆥  9ms § 173",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 174",
+        "👨🏻‍💻 DEVELOPED-BY MrBlackHat § 175",
+        "📌 SUPPORT-CONTACT @Hiddify_Nexttt § 176"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "⚠️ FREE TO USE! § 0",
+        "🔄 LATEST-UPDATE 📅 Sat-30-TIR-1403 🕑 16:20 § 1",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 2",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 3",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 4",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 5",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 6",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 7",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 8",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  9ms § 9",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 10",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 11",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 12",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  325ms § 13",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 14",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 15",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  161ms § 16",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  9ms § 17",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 18",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 19",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 20",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 21",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 22",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 23",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 24",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 25",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  154ms § 26",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 27",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 28",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 29",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 30",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  110ms § 31",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 32",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 33",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 34",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 35",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 36",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 37",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 38",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 39",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 40",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 41",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 42",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 43",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 44",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 45",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 46",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 47",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 48",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 49",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 50",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 51",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 52",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 53",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 54",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 55",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 56",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 57",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 58",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 59",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 60",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 61",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 62",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 63",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 64",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 65",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 66",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  74ms § 67",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  74ms § 68",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  59ms § 69",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  64ms § 70",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  57ms § 71",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 72",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 73",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  138ms § 74",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  140ms § 75",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  157ms § 76",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  156ms § 77",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 78",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  133ms § 79",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 80",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 81",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 82",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 83",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  139ms § 84",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 85",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 86",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  130ms § 87",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 88",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 89",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  139ms § 90",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  141ms § 91",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 92",
+        "🆔@Hiddify_Nexttt تلگرام 🔓 TR-WS-N/A 🆥🆥  9ms § 93",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 94",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 95",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 96",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 97",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 98",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 99",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 100",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 101",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 102",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  down § 103",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 104",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 105",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 106",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 107",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 108",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 109",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 110",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 111",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 112",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 113",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 114",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 115",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 116",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 117",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 118",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 119",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 120",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 121",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 122",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 123",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 124",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 125",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 126",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 127",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 128",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 129",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 130",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 131",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 132",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 133",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 134",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 135",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 136",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 137",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 138",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 139",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 140",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 141",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 142",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 143",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 144",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 145",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  141ms § 146",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 147",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 148",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 149",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  126ms § 150",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  114ms § 151",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 152",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 153",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  156ms § 154",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  142ms § 155",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  140ms § 156",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 157",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 158",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 159",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 160",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  114ms § 161",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 162",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  157ms § 163",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  152ms § 164",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  147ms § 165",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  136ms § 166",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 167",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  130ms § 168",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 169",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 170",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  158ms § 171",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 172",
+        "🆔@Hiddify_Nexttt تلگرام 🔓 TR-WS-N/A 🆥🆥  9ms § 173",
+        "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 174",
+        "👨🏻‍💻 DEVELOPED-BY MrBlackHat § 175",
+        "📌 SUPPORT-CONTACT @Hiddify_Nexttt § 176"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "⚠️ FREE TO USE! § 0",
+      "server": "127.0.0.1",
+      "server_port": 1080,
+      "uuid": "aaacbbc-cbaa-aabc-dacb-acbacbbcaacb",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔄 LATEST-UPDATE 📅 Sat-30-TIR-1403 🕑 16:20 § 1",
+      "server": "127.0.0.1",
+      "server_port": 1080,
+      "uuid": "aaacbbc-cbaa-aabc-dacb-acbacbbcaacb",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 2",
+      "server": "104.17.61.7",
+      "server_port": 443,
+      "password": "   i  ק",
+      "tls": {
+        "enabled": true,
+        "server_name": "jobscareerfortoday.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "jobscareerfortoday.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 3",
+      "server": "172.67.198.177",
+      "server_port": 443,
+      "password": "9yu6m5okr",
+      "tls": {
+        "enabled": true,
+        "server_name": "production.tj.ojan.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "production.tj.ojan.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 4",
+      "server": "131.186.21.135",
+      "server_port": 60954,
+      "password": "huge123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "h.iveze.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 5",
+      "server": "104.17.147.11",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "jobscareerfortoday.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "jobscareerfortoday.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 6",
+      "server": "162.159.152.2",
+      "server_port": 443,
+      "password": "242a3d8eee5e4ed1a6bfa4141d549a25",
+      "tls": {
+        "enabled": true,
+        "server_name": "jobscareerforlawyers.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "jobscareerforlawyers.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 7",
+      "server": "104.18.13.229",
+      "server_port": 2053,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 8",
+      "server": "198.41.220.10",
+      "server_port": 443,
+      "password": "2cba4104747d49d18319e5ade1b93ab5",
+      "tls": {
+        "enabled": true,
+        "server_name": "jobscareerforstudent.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "jobscareerforstudent.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  9ms § 9",
+      "server": "coinspeaker.com",
+      "server_port": 443,
+      "password": "e16e9768-240f-4ff2-8c29-36d220ed2aa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "msnghdfy4c1.iraniancpi.uk",
+        "alpn": "h2",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "4xLDSO3FrWl2DhrWGqHh74mj",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 10",
+      "server": "198.41.220.18",
+      "server_port": 443,
+      "password": "2cba4104747d49d18319e5ade1b93ab5",
+      "tls": {
+        "enabled": true,
+        "server_name": "avianrecruit.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "avianrecruit.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 11",
+      "server": "cumhuriyet.com.tr",
+      "server_port": 443,
+      "password": "e16e9768-240f-4ff2-8c29-36d220ed2aa4",
+      "tls": {
+        "enabled": true,
+        "server_name": "msnghdfy4c1.iraniancpi.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/4xLDSO3FrWl2DhIibUbDFdhZ",
+        "headers": {
+          "Host": "msnghdfy4c1.iraniancpi.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 12",
+      "server": "162.159.136.232",
+      "server_port": 8443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  325ms § 13",
+      "server": "hinet.mjt001.com",
+      "server_port": 443,
+      "password": "74400921-f59f-4009-b52a-c2789b49fab6",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 14",
+      "server": "104.16.159.6",
+      "server_port": 443,
+      "password": "669d0ac7b5b64ebbb1abb75d5d540a5c",
+      "tls": {
+        "enabled": true,
+        "server_name": "bangladeshipatri.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "bangladeshipatri.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 15",
+      "server": "104.16.159.7",
+      "server_port": 443,
+      "password": "   i  ק",
+      "tls": {
+        "enabled": true,
+        "server_name": "bangladeshipatri.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "bangladeshipatri.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  161ms § 16",
+      "server": "131.186.21.135",
+      "server_port": 60954,
+      "password": "huge123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "h.iveze.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  9ms § 17",
+      "server": "flixeon.me",
+      "server_port": 443,
+      "password": "52701795-3c3b-46b4-b7cf-c5978b3a4cf2",
+      "tls": {
+        "enabled": true,
+        "server_name": "hdfyc1.achaemenidempireofpersia.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "xw7uebRG4KlUXGGYTVEagC5V7fI",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 18",
+      "server": "104.20.6.134",
+      "server_port": 443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 19",
+      "server": "104.16.192.1",
+      "server_port": 443,
+      "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a",
+      "tls": {
+        "enabled": true,
+        "server_name": "sherasheba.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "sherasheba.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 20",
+      "server": "h.iveze.com",
+      "server_port": 60954,
+      "password": "huge123456",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 21",
+      "server": "162.159.128.233",
+      "server_port": 8443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 22",
+      "server": "cdnjs.com",
+      "server_port": 443,
+      "password": "dfbbc8de-8a4f-407d-8069-6de38d83c4e1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hdfy4c6.freelines.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Q177OZ8bzrxRWBtLTlTL",
+        "headers": {
+          "Host": "hdfy4c6.freelines.net"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 23",
+      "server": "172.67.204.84",
+      "server_port": 2083,
+      "password": "0e81a9cd-d849-4101-8d64-574c283207de",
+      "tls": {
+        "enabled": true,
+        "server_name": "de1.trojanvpn.de",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/websocket",
+        "headers": {
+          "Host": "de1.trojanvpn.de"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 24",
+      "server": "gitlab.com",
+      "server_port": 443,
+      "password": "jd319hfhd",
+      "tls": {
+        "enabled": true,
+        "server_name": "xiaoer88605trojan-27g.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "xiaoer88605trojan-27g.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 25",
+      "server": "172.67.213.48",
+      "server_port": 443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "esetsecuritylicense2.wawafec355.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "esetsecuritylicense2.wawafec355.workers.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  154ms § 26",
+      "server": "45.11.104.94",
+      "server_port": 3306,
+      "password": "o \u001dצ   ",
+      "tls": {
+        "enabled": true,
+        "server_name": "n2.gladns.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/gateway/connect",
+        "headers": {
+          "Host": "TG.oeo12"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 27",
+      "server": "172.66.44.131",
+      "server_port": 443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 28",
+      "server": "w3.org",
+      "server_port": 443,
+      "password": "2cba4104747d49d18319e5ade1b93ab5",
+      "tls": {
+        "enabled": true,
+        "server_name": "jobscareerforstudent.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "jobscareerforstudent.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 29",
+      "server": "::ffff:6810:9f07",
+      "server_port": 443,
+      "password": "   i  ק",
+      "tls": {
+        "enabled": true,
+        "server_name": "bangladeshipatri.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91?ed",
+        "headers": {
+          "Host": "bangladeshipatri.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 30",
+      "server": "104.26.12.54",
+      "server_port": 443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  110ms § 31",
+      "server": "hinet.mjt001.com",
+      "server_port": 443,
+      "password": "74400921-f59f-4009-b52a-c2789b49fab6",
+      "tls": {
+        "enabled": true,
+        "server_name": "hinet.mjt001.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 32",
+      "server": "198.41.220.4",
+      "server_port": 443,
+      "password": "71409d3e488548e8bb076d229778f008",
+      "tls": {
+        "enabled": true,
+        "server_name": "jobscareerforlawyers.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/6b777a91",
+        "headers": {
+          "Host": "jobscareerforlawyers.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 33",
+      "server": "3.97.110.94",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 34",
+      "server": "15.222.211.204",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 35",
+      "server": "18.224.186.175",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 36",
+      "server": "3.137.1.198",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 37",
+      "server": "52.72.99.51",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 38",
+      "server": "13.48.122.114",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 39",
+      "server": "13.49.189.233",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 40",
+      "server": "3.121.150.24",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 41",
+      "server": "52.57.182.111",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 42",
+      "server": "13.53.215.203",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 43",
+      "server": "13.60.165.212",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 44",
+      "server": "15.188.101.179",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 45",
+      "server": "35.181.231.194",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 46",
+      "server": "3.9.30.228",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 47",
+      "server": "3.10.195.199",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 48",
+      "server": "34.250.203.142",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 49",
+      "server": "54.171.242.5",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 50",
+      "server": "15.222.111.200",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 51",
+      "server": "3.97.144.181",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 52",
+      "server": "3.23.148.74",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 53",
+      "server": "3.141.251.167",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 54",
+      "server": "184.73.6.131",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 55",
+      "server": "16.170.185.192",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 56",
+      "server": "16.171.157.31",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 57",
+      "server": "35.158.66.21",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 58",
+      "server": "3.120.255.93",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 59",
+      "server": "51.21.93.95",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 60",
+      "server": "16.171.228.78",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 61",
+      "server": "13.37.33.27",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 62",
+      "server": "15.188.133.133",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 63",
+      "server": "35.177.169.255",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 64",
+      "server": "13.43.224.96",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 65",
+      "server": "52.19.20.25",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 66",
+      "server": "54.75.165.218",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  74ms § 67",
+      "server": "15.156.233.194",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  74ms § 68",
+      "server": "15.156.2.213",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  59ms § 69",
+      "server": "3.21.109.143",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  64ms § 70",
+      "server": "3.134.150.64",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  57ms § 71",
+      "server": "35.169.212.210",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 72",
+      "server": "13.48.15.143",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 73",
+      "server": "16.170.75.74",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  138ms § 74",
+      "server": "3.69.217.63",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  140ms § 75",
+      "server": "3.126.10.183",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  157ms § 76",
+      "server": "51.21.58.250",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  156ms § 77",
+      "server": "13.51.185.184",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 78",
+      "server": "13.37.143.133",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  133ms § 79",
+      "server": "15.237.245.79",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 80",
+      "server": "18.133.60.93",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 81",
+      "server": "18.135.172.255",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 82",
+      "server": "34.241.207.114",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 83",
+      "server": "52.16.85.89",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  139ms § 84",
+      "server": "15.237.167.70",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 85",
+      "server": "18.199.134.27",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 86",
+      "server": "13.43.224.96",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  130ms § 87",
+      "server": "13.41.144.75",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 88",
+      "server": "35.181.86.17",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 89",
+      "server": "13.37.5.117",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  139ms § 90",
+      "server": "3.69.97.161",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  141ms § 91",
+      "server": "3.79.143.56",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 92",
+      "server": "naiu-hk.05vr9nyqg5.download",
+      "server_port": 13007,
+      "password": "9bd9f0da-cb8b-4bd3-9f80-efa1be67daa0",
+      "tls": {
+        "enabled": true,
+        "server_name": "cloudflare.node-ssl.cdn-alibaba.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔓 TR-WS-N/A 🆥🆥  9ms § 93",
+      "server": "zula.ir",
+      "server_port": 80,
+      "password": "mJ3WWiVb0kGNio7fQNAjnA",
+      "transport": {
+        "type": "ws",
+        "path": "/shop",
+        "headers": {
+          "Host": "shop.fa-behsazan.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 94",
+      "server": "icook.hk",
+      "server_port": 443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "159d770e-fd74-4069-a73b-fe6ececa7951.f82aee4c-752c-4b0c-9793-380d4d76435c.ddnsgeek.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/abbas.ab841vpn.workers.dev/?ed=2560.@AB_841.@AB_841.@AB_841",
+        "headers": {
+          "Host": "159d770e-fd74-4069-a73b-fe6ececa7951.f82aee4c-752c-4b0c-9793-380d4d76435c.ddnsgeek.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 95",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 96",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 97",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 98",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 99",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 100",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 101",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 102",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-GRPC-N/A 🆥🆥  down § 103",
+      "server": "turk-online.zic.internetir.biz.tr",
+      "server_port": 443,
+      "password": "fb89083a4ba1df5",
+      "tls": {
+        "enabled": true,
+        "server_name": "turk-net-shop.internetir.biz.tr",
+        "alpn": [
+          "h2",
+          "http/1.1"
+        ],
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "wwww",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 104",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 105",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 106",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 107",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 108",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 109",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 110",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 111",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 112",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  8ms § 113",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 114",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  17ms § 115",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 116",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 117",
+      "server": "104.18.26.94",
+      "server_port": 8443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 118",
+      "server": "104.17.147.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  16ms § 119",
+      "server": "104.17.148.22",
+      "server_port": 443,
+      "password": "Watashi_VPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-watashi-r-jacket-o-people-jan.watashi-java.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-watashi-r-jacket-o-people-jan.watashi-java.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 120",
+      "server": "52.17.131.32",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 121",
+      "server": "13.60.141.186",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 122",
+      "server": "13.48.191.229",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 123",
+      "server": "3.72.211.42",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 124",
+      "server": "18.158.164.53",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 125",
+      "server": "13.37.48.89",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 126",
+      "server": "15.188.112.175",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 127",
+      "server": "18.168.21.6",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 128",
+      "server": "18.135.231.164",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 129",
+      "server": "63.35.121.108",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 130",
+      "server": "54.155.44.231",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 131",
+      "server": "16.170.99.69",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 132",
+      "server": "13.51.133.1",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 133",
+      "server": "3.120.114.36",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 134",
+      "server": "35.159.185.103",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 135",
+      "server": "15.236.164.193",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 136",
+      "server": "15.237.158.24",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 137",
+      "server": "3.11.201.188",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 138",
+      "server": "18.169.218.213",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 139",
+      "server": "3.254.46.183",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 140",
+      "server": "54.155.250.236",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 141",
+      "server": "13.48.213.143",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 142",
+      "server": "13.48.213.143",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 143",
+      "server": "13.48.159.183",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 144",
+      "server": "13.50.196.127",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 145",
+      "server": "3.125.68.250",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  141ms § 146",
+      "server": "18.199.134.27",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 147",
+      "server": "15.237.167.70",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 148",
+      "server": "13.36.253.41",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 149",
+      "server": "18.134.169.8",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  126ms § 150",
+      "server": "13.41.144.75",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  114ms § 151",
+      "server": "54.170.239.210",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 152",
+      "server": "79.125.61.193",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  down § 153",
+      "server": "51.20.158.11",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  156ms § 154",
+      "server": "16.16.245.173",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  142ms § 155",
+      "server": "3.73.221.30",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  140ms § 156",
+      "server": "3.126.19.87",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 157",
+      "server": "35.181.86.17",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  134ms § 158",
+      "server": "13.37.5.117",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 159",
+      "server": "13.42.117.207",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  129ms § 160",
+      "server": "3.11.219.16",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  114ms § 161",
+      "server": "52.211.154.89",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  115ms § 162",
+      "server": "54.171.164.187",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  157ms § 163",
+      "server": "13.49.235.137",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  152ms § 164",
+      "server": "13.48.185.244",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  147ms § 165",
+      "server": "3.69.97.161",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  136ms § 166",
+      "server": "3.79.143.56",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  135ms § 167",
+      "server": "52.47.62.239",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  130ms § 168",
+      "server": "15.236.2.93",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  128ms § 169",
+      "server": "3.11.106.164",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 170",
+      "server": "3.8.179.113",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  158ms § 171",
+      "server": "54.171.37.29",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-WS-N/A 🆥🆥  9ms § 172",
+      "server": "162.159.136.232",
+      "server_port": 8443,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "e9464f45.trauma-2r4.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e9464f45.trauma-2r4.pages.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔓 TR-WS-N/A 🆥🆥  9ms § 173",
+      "server": "zula.ir",
+      "server_port": 80,
+      "password": "mJ3WWiVb0kGNio7fQNAjnA",
+      "transport": {
+        "type": "ws",
+        "path": "/shop",
+        "headers": {
+          "Host": "shop.fa-behsazan.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🆔@Hiddify_Nexttt تلگرام 🔒 TR-TCP-N/A 🆥🆥  159ms § 174",
+      "server": "15.237.167.70",
+      "server_port": 22222,
+      "password": "telegram-id-@Hiddify_Nexttt تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "👨🏻‍💻 DEVELOPED-BY MrBlackHat § 175",
+      "server": "127.0.0.1",
+      "server_port": 8080,
+      "uuid": "acbabca-acab-bcaa-abdc-bbccaabaccab",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "📌 SUPPORT-CONTACT @Hiddify_Nexttt § 176",
+      "server": "127.0.0.1",
+      "server_port": 8080,
+      "uuid": "acbabca-acab-bcaa-abdc-bbccaabaccab",
+      "tls": {
+        "enabled": true,
+        "disable_sni": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "RzQitd-BC3Sv5mZW"
+    }
+  }
+}
