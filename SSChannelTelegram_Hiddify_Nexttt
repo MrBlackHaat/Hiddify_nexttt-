@@ -1,0 +1,2850 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "www.visa.com",
+          "hidden-f8apfwui9tm20ln9nm.logged.site",
+          "visa.com",
+          "de.hosting-ip.com",
+          "www.parsvds.ir",
+          "www.arizona.edu",
+          "speedtest.net",
+          "hidden-mdkfuydimbtyybeacf.logged.site",
+          "hidden-resnxfp8wya6obhong.logged.site",
+          "us1.x2fast.net",
+          "cbr.roghanali.ir",
+          "avval.ir",
+          "zula.ir",
+          "www.you.com",
+          "nl3.hosting-ip.com",
+          "www.speedtest.net",
+          "ns.cloudflare.com",
+          "sefarat24.com",
+          "hidden-dzupvfznhtyliwlkiq.logged.site",
+          "zula.ir",
+          "hidden-szl3jdcryiprutflck.oiobittsadasin30.shop"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.148.22",
+        "104.17.147.22"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "@Hiddify_Nexttt Telegram § 0",
+        "@Hiddify_Nexttt Telegram § 1",
+        "@Hiddify_Nexttt Telegram § 2",
+        "@Hiddify_Nexttt Telegram § 3",
+        "@Hiddify_Nexttt Telegram § 4",
+        "@Hiddify_Nexttt Telegram § 5",
+        "@Hiddify_Nexttt Telegram § 6",
+        "@Hiddify_Nexttt Telegram § 7",
+        "@Hiddify_Nexttt Telegram § 8",
+        "@Hiddify_Nexttt Telegram § 9",
+        "@Hiddify_Nexttt Telegram § 10",
+        "@Hiddify_Nexttt Telegram § 11",
+        "@Hiddify_Nexttt Telegram§ 12",
+        "@Hiddify_Nexttt Telegram+1 § 13",
+        "@Hiddify_Nexttt Telegram+2 § 14",
+        "@Hiddify_Nexttt Telegram+3 § 15",
+        "@Hiddify_Nexttt Telegram+4 § 16",
+        "@Hiddify_Nexttt Telegram+5 § 17",
+        "@Hiddify_Nexttt Telegram+6 § 18",
+        "@Hiddify_Nexttt Telegram+7 § 19",
+        "@Hiddify_Nexttt Telegram+8 § 20",
+        "@Hiddify_Nexttt Telegram+9 § 21",
+        "@Hiddify_Nexttt Telegram+10 § 22",
+        "@Hiddify_Nexttt Telegram+11+Ipv6 § 23",
+        "@Hiddify_Nexttt Telegram § 24",
+        "@Hiddify_Nexttt Telegram § 25",
+        "@Hiddify_Nexttt Telegram § 26",
+        "@Hiddify_Nexttt Telegram § 27",
+        "@Hiddify_Nexttt Telegram § 28",
+        "@Hiddify_Nexttt Telegram § 29",
+        "@Hiddify_Nexttt Telegram § 30",
+        "@Hiddify_Nexttt Telegram § 31",
+        "@Hiddify_Nexttt Telegram § 32",
+        "@Hiddify_Nexttt Telegram § 33",
+        "@Hiddify_Nexttt Telegram § 34",
+        "@Hiddify_Nexttt Telegram § 35",
+        "@Hiddify_Nexttt Telegram § 36",
+        "@Hiddify_Nexttt Telegram § 37",
+        "🔶39@Hiddify_Nexttt Telegram § 38",
+        "🔶40@Hiddify_Nexttt Telegram § 39",
+        "🔶42@Hiddify_Nexttt Telegram § 40",
+        "🔶45@Hiddify_Nexttt Telegram § 41",
+        "🔶41@Hiddify_Nexttt Telegram § 42",
+        "🔶43@Hiddify_Nexttt Telegram § 43",
+        "🔶46@Hiddify_Nexttt Telegram § 44",
+        "🔶44@Hiddify_Nexttt Telegram § 45",
+        "🔶47@Hiddify_Nexttt Telegram § 46",
+        "🔶48@Hiddify_Nexttt Telegram § 47",
+        "🔶50@Hiddify_Nexttt Telegram § 48",
+        "🔶57@Hiddify_Nexttt Telegram § 49",
+        "🔶56@Hiddify_Nexttt Telegram § 50",
+        "🔶55@Hiddify_Nexttt Telegram § 51",
+        "🔶51@Hiddify_Nexttt Telegram § 52",
+        "🔶49@Hiddify_Nexttt Telegram § 53",
+        "🔶53@Hiddify_Nexttt Telegram § 54",
+        "🔶54@Hiddify_Nexttt Telegram § 55",
+        "🔶52@Hiddify_Nexttt Telegram § 56",
+        "🔶58@Hiddify_Nexttt Telegram § 57",
+        "🔶63@Hiddify_Nexttt Telegram § 58",
+        "🔶59@Hiddify_Nexttt Telegram § 59",
+        "🔶64@Hiddify_Nexttt Telegram § 60",
+        "🔶60@Hiddify_Nexttt Telegram § 61",
+        "🔶66@Hiddify_Nexttt Telegram § 62",
+        "🔶61@Hiddify_Nexttt Telegram § 63",
+        "🔶65@Hiddify_Nexttt Telegram § 64",
+        "🔶62@Hiddify_Nexttt Telegram § 65",
+        "@Hiddify_Nexttt Telegram § 66",
+        "@Hiddify_Nexttt Telegram § 67",
+        "@Hiddify_Nexttt Telegram § 68",
+        "@Hiddify_Nexttt Telegram § 69",
+        "@Hiddify_Nexttt Telegram § 70",
+        "@Hiddify_Nexttt Telegram § 71",
+        "@Hiddify_Nexttt Telegram § 72",
+        "@Hiddify_Nexttt Telegram § 73",
+        "@Hiddify_Nexttt Telegram § 74",
+        "@Hiddify_Nexttt Telegram § 75",
+        "🚀@Hiddify_Nexttt Telegram🚀 § 76",
+        "🚀@Hiddify_Nexttt Telegram🚀 § 77",
+        "🚀@Hiddify_Nexttt Telegram🚀 § 78",
+        "@Hiddify_Nexttt Telegram § 79",
+        "@Hiddify_Nexttt Telegram § 80",
+        "@Hiddify_Nexttt Telegram § 81",
+        "@Hiddify_Nexttt Telegram § 82",
+        "@Hiddify_Nexttt Telegram § 83",
+        "@Hiddify_Nexttt Telegram § 84",
+        "@Hiddify_Nexttt Telegram-1 § 85",
+        "@Hiddify_Nexttt Telegram-2 § 86",
+        "@Hiddify_Nexttt Telegram-3 § 87",
+        "@Hiddify_Nexttt Telegram-4 § 88",
+        "@Hiddify_Nexttt Telegram-5 § 89",
+        "@Hiddify_Nexttt Telegram-6 § 90",
+        "@Hiddify_Nexttt Telegram-7 § 91",
+        "@Hiddify_Nexttt Telegram-8 § 92",
+        "@Hiddify_Nexttt Telegram-9 § 93",
+        "@Hiddify_Nexttt Telegram-10 § 94",
+        "@Hiddify_Nexttt Telegram-11 § 95",
+        "@Hiddify_Nexttt Telegram-12 § 96",
+        "@Hiddify_Nexttt Telegram-13 § 97",
+        "@Hiddify_Nexttt Telegram-14 § 98",
+        "@Hiddify_Nexttt Telegram-15 § 99",
+        "@Hiddify_Nexttt Telegram-16 § 100",
+        "@Hiddify_Nexttt Telegram-17 § 101",
+        "@Hiddify_Nexttt Telegram-18 § 102",
+        "@Hiddify_Nexttt Telegram-19 § 103",
+        "@Hiddify_Nexttt Telegram-20 § 104",
+        "@Hiddify_Nexttt Telegram § 105",
+        "@Hiddify_Nexttt Telegram+MTN+RTL+WIFI § 106",
+        "@Hiddify_Nexttt Telegram § 107",
+        "@Hiddify_Nexttt Telegram+ALL+NET § 108",
+        "@Hiddify_Nexttt Telegram+ALL § 109",
+        "@Hiddify_Nexttt Telegram § 110",
+        "@Hiddify_Nexttt Telegram § 111",
+        "@Hiddify_Nexttt Telegram § 112",
+        "🇩🇪@Hiddify_Nexttt Telegram § 113",
+        "🇩🇪@Hiddify_Nexttt Telegram § 114",
+        "@Hiddify_Nexttt Telegram § 115"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "@Hiddify_Nexttt Telegram § 0",
+        "@Hiddify_Nexttt Telegram § 1",
+        "@Hiddify_Nexttt Telegram § 2",
+        "@Hiddify_Nexttt Telegram § 3",
+        "@Hiddify_Nexttt Telegram § 4",
+        "@Hiddify_Nexttt Telegram § 5",
+        "@Hiddify_Nexttt Telegram § 6",
+        "@Hiddify_Nexttt Telegram § 7",
+        "@Hiddify_Nexttt Telegram § 8",
+        "@Hiddify_Nexttt Telegram § 9",
+        "@Hiddify_Nexttt Telegram § 10",
+        "@Hiddify_Nexttt Telegram § 11",
+        "@Hiddify_Nexttt Telegram§ 12",
+        "@Hiddify_Nexttt Telegram+1 § 13",
+        "@Hiddify_Nexttt Telegram+2 § 14",
+        "@Hiddify_Nexttt Telegram+3 § 15",
+        "@Hiddify_Nexttt Telegram+4 § 16",
+        "@Hiddify_Nexttt Telegram+5 § 17",
+        "@Hiddify_Nexttt Telegram+6 § 18",
+        "@Hiddify_Nexttt Telegram+7 § 19",
+        "@Hiddify_Nexttt Telegram+8 § 20",
+        "@Hiddify_Nexttt Telegram+9 § 21",
+        "@Hiddify_Nexttt Telegram+10 § 22",
+        "@Hiddify_Nexttt Telegram+11+Ipv6 § 23",
+        "@Hiddify_Nexttt Telegram § 24",
+        "@Hiddify_Nexttt Telegram § 25",
+        "@Hiddify_Nexttt Telegram § 26",
+        "@Hiddify_Nexttt Telegram § 27",
+        "@Hiddify_Nexttt Telegram § 28",
+        "@Hiddify_Nexttt Telegram § 29",
+        "@Hiddify_Nexttt Telegram § 30",
+        "@Hiddify_Nexttt Telegram § 31",
+        "@Hiddify_Nexttt Telegram § 32",
+        "@Hiddify_Nexttt Telegram § 33",
+        "@Hiddify_Nexttt Telegram § 34",
+        "@Hiddify_Nexttt Telegram § 35",
+        "@Hiddify_Nexttt Telegram § 36",
+        "@Hiddify_Nexttt Telegram § 37",
+        "🔶39@Hiddify_Nexttt Telegram § 38",
+        "🔶40@Hiddify_Nexttt Telegram § 39",
+        "🔶42@Hiddify_Nexttt Telegram § 40",
+        "🔶45@Hiddify_Nexttt Telegram § 41",
+        "🔶41@Hiddify_Nexttt Telegram § 42",
+        "🔶43@Hiddify_Nexttt Telegram § 43",
+        "🔶46@Hiddify_Nexttt Telegram § 44",
+        "🔶44@Hiddify_Nexttt Telegram § 45",
+        "🔶47@Hiddify_Nexttt Telegram § 46",
+        "🔶48@Hiddify_Nexttt Telegram § 47",
+        "🔶50@Hiddify_Nexttt Telegram § 48",
+        "🔶57@Hiddify_Nexttt Telegram § 49",
+        "🔶56@Hiddify_Nexttt Telegram § 50",
+        "🔶55@Hiddify_Nexttt Telegram § 51",
+        "🔶51@Hiddify_Nexttt Telegram § 52",
+        "🔶49@Hiddify_Nexttt Telegram § 53",
+        "🔶53@Hiddify_Nexttt Telegram § 54",
+        "🔶54@Hiddify_Nexttt Telegram § 55",
+        "🔶52@Hiddify_Nexttt Telegram § 56",
+        "🔶58@Hiddify_Nexttt Telegram § 57",
+        "🔶63@Hiddify_Nexttt Telegram § 58",
+        "🔶59@Hiddify_Nexttt Telegram § 59",
+        "🔶64@Hiddify_Nexttt Telegram § 60",
+        "🔶60@Hiddify_Nexttt Telegram § 61",
+        "🔶66@Hiddify_Nexttt Telegram § 62",
+        "🔶61@Hiddify_Nexttt Telegram § 63",
+        "🔶65@Hiddify_Nexttt Telegram § 64",
+        "🔶62@Hiddify_Nexttt Telegram § 65",
+        "@Hiddify_Nexttt Telegram § 66",
+        "@Hiddify_Nexttt Telegram § 67",
+        "@Hiddify_Nexttt Telegram § 68",
+        "@Hiddify_Nexttt Telegram § 69",
+        "@Hiddify_Nexttt Telegram § 70",
+        "@Hiddify_Nexttt Telegram § 71",
+        "@Hiddify_Nexttt Telegram § 72",
+        "@Hiddify_Nexttt Telegram § 73",
+        "@Hiddify_Nexttt Telegram § 74",
+        "@Hiddify_Nexttt Telegram § 75",
+        "🚀@Hiddify_Nexttt Telegram🚀 § 76",
+        "🚀@Hiddify_Nexttt Telegram🚀 § 77",
+        "🚀@Hiddify_Nexttt Telegram🚀 § 78",
+        "@Hiddify_Nexttt Telegram § 79",
+        "@Hiddify_Nexttt Telegram § 80",
+        "@Hiddify_Nexttt Telegram § 81",
+        "@Hiddify_Nexttt Telegram § 82",
+        "@Hiddify_Nexttt Telegram § 83",
+        "@Hiddify_Nexttt Telegram § 84",
+        "@Hiddify_Nexttt Telegram-1 § 85",
+        "@Hiddify_Nexttt Telegram-2 § 86",
+        "@Hiddify_Nexttt Telegram-3 § 87",
+        "@Hiddify_Nexttt Telegram-4 § 88",
+        "@Hiddify_Nexttt Telegram-5 § 89",
+        "@Hiddify_Nexttt Telegram-6 § 90",
+        "@Hiddify_Nexttt Telegram-7 § 91",
+        "@Hiddify_Nexttt Telegram-8 § 92",
+        "@Hiddify_Nexttt Telegram-9 § 93",
+        "@Hiddify_Nexttt Telegram-10 § 94",
+        "@Hiddify_Nexttt Telegram-11 § 95",
+        "@Hiddify_Nexttt Telegram-12 § 96",
+        "@Hiddify_Nexttt Telegram-13 § 97",
+        "@Hiddify_Nexttt Telegram-14 § 98",
+        "@Hiddify_Nexttt Telegram-15 § 99",
+        "@Hiddify_Nexttt Telegram-16 § 100",
+        "@Hiddify_Nexttt Telegram-17 § 101",
+        "@Hiddify_Nexttt Telegram-18 § 102",
+        "@Hiddify_Nexttt Telegram-19 § 103",
+        "@Hiddify_Nexttt Telegram-20 § 104",
+        "@Hiddify_Nexttt Telegram § 105",
+        "@Hiddify_Nexttt Telegram+MTN+RTL+WIFI § 106",
+        "@Hiddify_Nexttt Telegram § 107",
+        "@Hiddify_Nexttt Telegram+ALL+NET § 108",
+        "@Hiddify_Nexttt Telegram+ALL § 109",
+        "@Hiddify_Nexttt Telegram § 110",
+        "@Hiddify_Nexttt Telegram § 111",
+        "@Hiddify_Nexttt Telegram § 112",
+        "🇩🇪@Hiddify_Nexttt Telegram § 113",
+        "🇩🇪@Hiddify_Nexttt Telegram § 114",
+        "@Hiddify_Nexttt Telegram § 115"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 0",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "1668fbe7-0779-4812-9d70-6a4fabc8490d",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "30.V.v.ww.speedtest.net.zula.ir.pinocchio1.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 1",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "Shh-Proxy",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy--shhPROXY--SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 2",
+      "server": "cbr.roghanali.ir",
+      "server_port": 80,
+      "uuid": "043e1274-0608-430f-821f-78578b636dc8",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 3",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "Shh-Proxy",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy-shhPROXY-SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 4",
+      "server": "avval.ir",
+      "server_port": 2053,
+      "uuid": "cd8002d9-e8fd-4411-8bb6-fc80310ff81d",
+      "tls": {
+        "enabled": true,
+        "server_name": "vip1-romax-tiktok.hsjsak.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws/?ed",
+        "headers": {
+          "Host": "vip1-romax-tiktok.hsjsak.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 5",
+      "server": "151.101.194.133",
+      "server_port": 443,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.Arizona.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "fraud.chase"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 6",
+      "server": "151.101.2.133",
+      "server_port": 443,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.Arizona.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "fraud.chase"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 7",
+      "server": "www.arizona.edu",
+      "server_port": 443,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.Arizona.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "fraud.chase"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 8",
+      "server": "ns.cloudflare.com",
+      "server_port": 80,
+      "uuid": "404711ea-9af9-4f48-c0b9-d3f6953b690a",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray,telegram-AfV2ray",
+        "headers": {
+          "Host": "www.roghanali.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 9",
+      "server": "104.18.5.2",
+      "server_port": 2096,
+      "uuid": "85b94f20-e563-498b-9d4b-a75438a51101",
+      "tls": {
+        "enabled": true,
+        "server_name": "VFIvE-teLeGram.PAGEs.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "headers": {
+          "Host": "VFIvE-teLeGram.PAGEs.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 10",
+      "server": "104.19.255.197",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "headers": {
+          "Host": "mmdv2.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 11",
+      "server": "sefarat24.com",
+      "server_port": 443,
+      "uuid": "6a89dc04-7781-46fe-b35c-e14a6b6e60b8",
+      "tls": {
+        "enabled": true,
+        "server_name": "tESt-tEst-TesT-Test.paGEs.DEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "headers": {
+          "Host": "TEsT-teSt-test-Test.pAgES.DeV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram§ 12",
+      "server": "104.21.58.76",
+      "server_port": 443,
+      "uuid": "5f3db645-ae0b-4cf6-aee1-838a92b6ea68",
+      "tls": {
+        "enabled": true,
+        "server_name": "javad.rbj5847.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws/?ed=/TELEGRAM-MARAMBASHI-MARAMBASHI/?ed=2048",
+        "headers": {
+          "Host": "javad.rbj5847.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+1 § 13",
+      "server": "89.47.198.98",
+      "server_port": 51011,
+      "uuid": "f1652ca5-c3fc-4ec6-83af-2f85579da0ed",
+      "transport": {
+        "type": "http",
+        "host": "telewebion.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+2 § 14",
+      "server": "www.visa.com",
+      "server_port": 443,
+      "uuid": "5e0eb74b-51f4-42b1-a0bb-55863ca79568",
+      "tls": {
+        "enabled": true,
+        "server_name": "us2.vless.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+3 § 15",
+      "server": "185.173.130.24",
+      "server_port": 443,
+      "uuid": "32ed7d06-9d3d-4cf5-b58c-b67e8fc4e189",
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+4 § 16",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "16292a0c-0e9e-4f43-b5dd-6a574d57b3f2",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-free-v2ryyy",
+        "headers": {
+          "Host": "6.www.speedtest.net.zula.ir.zemestanil.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+5 § 17",
+      "server": "5.202.12.211",
+      "server_port": 8097,
+      "uuid": "ed62468c-4f11-4864-97ef-34a98aa05fc7",
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+6 § 18",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "67ce895d-e92f-41ed-a243-071f6d4d1b21",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+7 § 19",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "SVNTEAMx",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "torb.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+8 § 20",
+      "server": "188.121.118.55",
+      "server_port": 443,
+      "uuid": "54ef4ecf-ff37-436a-be13-95c8a8a1114d",
+      "tls": {
+        "enabled": true,
+        "server_name": "vIrGiNiAvPn-nL.pAgEs.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "ViRgInIaVpN-Nl.PaGeS.DeV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+9 § 21",
+      "server": "172.66.44.135",
+      "server_port": 80,
+      "uuid": "5df7962e-f9fe-41e6-ab49-ed96ccb856a7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "v2ra1.ecrgpk.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+10 § 22",
+      "server": "87.248.139.180",
+      "server_port": 16820,
+      "uuid": "fe9f6d64-3c61-43da-b799-5b0549d04408",
+      "transport": {
+        "type": "http",
+        "host": "host:nasa.gov",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+11+Ipv6 § 23",
+      "server": "2a03:b0c0:3:d0::1c3b:3001",
+      "server_port": 9124,
+      "uuid": "2c86cf39-266b-413c-816b-2f77fd0f30b5",
+      "transport": {
+        "type": "http",
+        "host": "fast.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 24",
+      "server": "hidden-mdkfuydimbtyybeacf.logged.site",
+      "server_port": 443,
+      "uuid": "fcce600f-90f4-45c9-a5fd-940fc05bebc2",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.logged.store",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "apple.logged.store"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 25",
+      "server": "hidden-dzupvfznhtyliwlkiq.logged.site",
+      "server_port": 443,
+      "uuid": "6db60c81-5e1b-456f-959e-e3508a872e19",
+      "tls": {
+        "enabled": true,
+        "server_name": "beach.logged.store",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "beach.logged.store"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 26",
+      "server": "hidden-f8apfwui9tm20ln9nm.logged.site",
+      "server_port": 443,
+      "uuid": "8554bc46-51a5-4e6b-aa0d-d466a2e61b77",
+      "tls": {
+        "enabled": true,
+        "server_name": "cloud.logged.store",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cloud.logged.store"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 27",
+      "server": "hidden-resnxfp8wya6obhong.logged.site",
+      "server_port": 443,
+      "uuid": "44b0c1fa-e78b-4483-8d36-aeb7658014a8",
+      "tls": {
+        "enabled": true,
+        "server_name": "dance.logged.store",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "dance.logged.store"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 28",
+      "server": "zula.ir",
+      "server_port": 80,
+      "uuid": "5779d821-693b-4573-b71d-d332199ead38",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--ihqvlaa157dbvciyg50okggl0r2f5bcj1a.25.buydeskapp.com."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 29",
+      "server": "zula.ir",
+      "server_port": 80,
+      "uuid": "5779d821-693b-4573-b71d-d332199ead38",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--ihqvlaa157dbvciyg50okggl0r2f5bcj1a.32.buydeskapp.com."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 30",
+      "server": "zula.ir",
+      "server_port": 80,
+      "uuid": "5779d821-693b-4573-b71d-d332199ead38",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--ihqvlaa157dbvciyg50okggl0r2f5bcj1a.7.buydeskapp.com."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 31",
+      "server": "zula.ir",
+      "server_port": 80,
+      "uuid": "5779d821-693b-4573-b71d-d332199ead38",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--ihqvlaa157dbvciyg50okggl0r2f5bcj1a.26.buydeskapp.com."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 32",
+      "server": "zula.ir",
+      "server_port": 80,
+      "uuid": "5779d821-693b-4573-b71d-d332199ead38",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--ihqvlaa157dbvciyg50okggl0r2f5bcj1a.39.buydeskapp.com."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 33",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "6db60c81-5e1b-456f-959e-e3508a872e19",
+      "tls": {
+        "enabled": true,
+        "server_name": "beach.oiobittsadasin30.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "beach.oiobittsadasin30.shop"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 34",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "8554bc46-51a5-4e6b-aa0d-d466a2e61b77",
+      "tls": {
+        "enabled": true,
+        "server_name": "cloud.oiobittsadasin30.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "cloud.oiobittsadasin30.shop"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 35",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "44b0c1fa-e78b-4483-8d36-aeb7658014a8",
+      "tls": {
+        "enabled": true,
+        "server_name": "dance.oiobittsadasin30.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "dance.oiobittsadasin30.shop"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 36",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "c75aa965-10f0-4a75-b431-52c958c742cb",
+      "tls": {
+        "enabled": true,
+        "server_name": "hidden-ffm8czocbugvz07qeg.oiobittsadasin30.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hidden-ffm8czocbugvz07qeg.oiobittsadasin30.shop"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 37",
+      "server": "hidden-szl3jdcryiprutflck.oiobittsadasin30.shop",
+      "server_port": 443,
+      "uuid": "8d833986-e33e-4809-90f9-8a159e8f0df0",
+      "tls": {
+        "enabled": true,
+        "server_name": "hidden-szl3jdcryiprutflck.oiobittsadasin30.shop",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "hidden-szl3jdcryiprutflck.oiobittsadasin30.shop"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶39@Hiddify_Nexttt Telegram § 38",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "telegram-id-PcV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/-PcV2ry--PcV2ry-TEL--PcV2ry-TEL--PcV2ry",
+        "headers": {
+          "Host": "2.V.V2.www.speedtest.net.V.www.speedtest.net.mashtimji.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶40@Hiddify_Nexttt Telegram § 39",
+      "server": "172.66.45.32",
+      "server_port": 443,
+      "uuid": "a8a09765-7681-47ba-9ea0-e0ae79d51088",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-netplus-4vx.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-netplus-4vx.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶42@Hiddify_Nexttt Telegram § 40",
+      "server": "www.arizona.edu",
+      "server_port": 443,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.Arizona.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "fraud.chase"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶45@Hiddify_Nexttt Telegram § 41",
+      "server": "zula.ir",
+      "server_port": 2095,
+      "uuid": "DIgiV2RAY",
+      "transport": {
+        "type": "ws",
+        "path": "/DigiconnecT",
+        "headers": {
+          "Host": "wWw.vArZeSh3.Com.QUENTIN.1.1.1.1.radiotehran.org."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🔶41@Hiddify_Nexttt Telegram § 42",
+      "server": "185.146.173.64",
+      "server_port": 443,
+      "uuid": "7723ee31-039b-48d0-bfd8-d591ca4baf4e",
+      "security": "none",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "nl1.vmess.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "headers": {
+          "Host": "nl1.vmess.site"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🔶43@Hiddify_Nexttt Telegram § 43",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "85ceb245-40ee-433b-9e51-4c7a3167a70b",
+      "tls": {
+        "enabled": true,
+        "server_name": "a17cabb5-3f13-4056-b0ce-476143491d4b.blackbeautifulman.cloudns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/c3afc49f.ab841-rcb.pages.dev/?ed=2048.@AB_841.@AB_841.@AB_841.@AB_841",
+        "headers": {
+          "Host": "a17cabb5-3f13-4056-b0ce-476143491d4b.blackbeautifulman.cloudns.org"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🔶46@Hiddify_Nexttt Telegram § 44",
+      "server": "104.21.25.32",
+      "server_port": 2052,
+      "uuid": "7723ee31-039b-48d0-bfd8-d591ca4baf4e",
+      "security": "none",
+      "authenticated_length": true,
+      "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "headers": {
+          "Host": "Nl1.vmess.site."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🔶44@Hiddify_Nexttt Telegram § 45",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "67ce895d-e92f-41ed-a243-071f6d4d1b21",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶47@Hiddify_Nexttt Telegram § 46",
+      "server": "172.67.156.27",
+      "server_port": 443,
+      "uuid": "f5a78514-1a94-486e-92a7-3bc9817095a6",
+      "tls": {
+        "enabled": true,
+        "server_name": "nitriding.appreviewcenter.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/nimws",
+        "headers": {
+          "Host": "nitriding.appreviewcenter.com"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vmess",
+      "tag": "🔶48@Hiddify_Nexttt Telegram § 47",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "950db6aa-4926-4616-816e-ec0312dcb87b",
+      "security": "auto",
+      "authenticated_length": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "jahfkjha.cfd",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/linkws",
+        "headers": {
+          "Host": "jahfkjha.cfd"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🔶50@Hiddify_Nexttt Telegram § 48",
+      "server": "185.219.84.207",
+      "server_port": 2096,
+      "uuid": "851bf028-eeaa-4f8d-91b3-8cbda91e3c21",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "dash.cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Kcn7dLh3iQeiMuJdQwaLoWsQb67El0cfPPKztdKSYHA",
+          "short_id": "d154163159"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶57@Hiddify_Nexttt Telegram § 49",
+      "server": "157.230.222.237",
+      "server_port": 443,
+      "uuid": "b927294d-b137-45ff-ac76-86d774a15c0a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypqMZeJHgAmookEe0qEObGo4kiEcTIu3nyV6AFfGDRU",
+          "short_id": "f394b7d3"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶56@Hiddify_Nexttt Telegram § 50",
+      "server": "207.148.31.152",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶55@Hiddify_Nexttt Telegram § 51",
+      "server": "208.167.239.252",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶51@Hiddify_Nexttt Telegram § 52",
+      "server": "141.95.75.212",
+      "server_port": 443,
+      "uuid": "200e059b-51ec-4825-8e95-5e49db5d22ad",
+      "tls": {
+        "enabled": true,
+        "server_name": "analytics.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "yiHA11T4BplJbQxAfsQkiiAzAmyxWau-KR7dQptwjDU",
+          "short_id": "c741ad33"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶49@Hiddify_Nexttt Telegram § 53",
+      "server": "136.244.84.182",
+      "server_port": 443,
+      "uuid": "abaf193b-eeb9-4a8a-afa7-6b6385156e94",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.iranserver.com",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "JiXxyKEi_TmEqRzyvOsBEKciioXup7SbW5rvTa6CnA4",
+          "short_id": "f1"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶53@Hiddify_Nexttt Telegram § 54",
+      "server": "185.247.184.115",
+      "server_port": 2096,
+      "uuid": "16747acc-95c8-44ba-9b66-3d8a0c035347",
+      "tls": {
+        "enabled": true,
+        "server_name": "dash.cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "c3R5_lORnQd1X3A2E0ulHJn396G2X_ZYIs66ldEVQWI",
+          "short_id": "28f58957"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶54@Hiddify_Nexttt Telegram § 55",
+      "server": "185.125.171.13",
+      "server_port": 8443,
+      "uuid": "a09373e2-e120-457d-9ec9-ea7fe8bedb52",
+      "tls": {
+        "enabled": true,
+        "server_name": "partner.g2.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "g2com",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶52@Hiddify_Nexttt Telegram § 56",
+      "server": "45.63.117.10",
+      "server_port": 8080,
+      "uuid": "e3e5f5fa-862d-4246-8fdf-59ab37d6415c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.coinmarketcap.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "zLaDmeXeP0TOHAlx8Q3LiKcsIy5fN2B4lx2wNQwdNmI",
+          "short_id": "02"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶58@Hiddify_Nexttt Telegram § 57",
+      "server": "208.167.239.252",
+      "server_port": 443,
+      "uuid": "b927294d-b137-45ff-ac76-86d774a15c0a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypqMZeJHgAmookEe0qEObGo4kiEcTIu3nyV6AFfGDRU",
+          "short_id": "f394b7d3"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶63@Hiddify_Nexttt Telegram § 58",
+      "server": "207.148.31.152",
+      "server_port": 443,
+      "uuid": "b927294d-b137-45ff-ac76-86d774a15c0a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypqMZeJHgAmookEe0qEObGo4kiEcTIu3nyV6AFfGDRU",
+          "short_id": "f394b7d3"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶59@Hiddify_Nexttt Telegram § 59",
+      "server": "147.182.136.103",
+      "server_port": 443,
+      "uuid": "b927294d-b137-45ff-ac76-86d774a15c0a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypqMZeJHgAmookEe0qEObGo4kiEcTIu3nyV6AFfGDRU",
+          "short_id": "f394b7d3"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶64@Hiddify_Nexttt Telegram § 60",
+      "server": "92.246.138.27",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶60@Hiddify_Nexttt Telegram § 61",
+      "server": "137.184.200.33",
+      "server_port": 443,
+      "uuid": "b927294d-b137-45ff-ac76-86d774a15c0a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypqMZeJHgAmookEe0qEObGo4kiEcTIu3nyV6AFfGDRU",
+          "short_id": "f394b7d3"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶66@Hiddify_Nexttt Telegram § 62",
+      "server": "132.226.172.147",
+      "server_port": 62001,
+      "uuid": "f61e2705-1fa7-4202-9724-d8a9e4d63917",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "swdist.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "9rx7JwMO-KRZZEM9TQBO19BOAmmGjJyjN86ll2J7uVc"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶61@Hiddify_Nexttt Telegram § 63",
+      "server": "45.63.5.65",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶65@Hiddify_Nexttt Telegram § 64",
+      "server": "74.119.194.136",
+      "server_port": 12345,
+      "uuid": "177dfbdf-8337-40ea-8791-906924b9fb2f",
+      "tls": {
+        "enabled": true,
+        "server_name": "refersion.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0hue6xKKmwuEefA0eMXQszxESSoagq2kqLB_gPrRc3s",
+          "short_id": "c57d2373"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🔶62@Hiddify_Nexttt Telegram § 65",
+      "server": "137.184.69.5",
+      "server_port": 443,
+      "uuid": "b927294d-b137-45ff-ac76-86d774a15c0a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zula.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypqMZeJHgAmookEe0qEObGo4kiEcTIu3nyV6AFfGDRU",
+          "short_id": "f394b7d3"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 66",
+      "server": "172.66.44.135",
+      "server_port": 80,
+      "uuid": "5df7962e-f9fe-41e6-ab49-ed96ccb856a7",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "v2ra1.ecrgpk.workers.dev"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 67",
+      "server": "us1.x2fast.net",
+      "server_port": 443,
+      "uuid": "58a92045-21e7-4668-867c-7bc906c54428",
+      "tls": {
+        "enabled": true,
+        "server_name": "xxx-----------------AstroVPN-official-----------------xxxx---d.xxxx-----------pornhub-com-------------AstroVPN-official------x.workers.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "http",
+        "host": "us1.x2fast.net",
+        "path": "/http"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 68",
+      "server": "www.you.com",
+      "server_port": 443,
+      "uuid": "5e0eb74b-51f4-42b1-a0bb-55863ca79568",
+      "tls": {
+        "enabled": true,
+        "server_name": "us2.vless.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram-@AstroVPN_Official",
+        "headers": {
+          "Host": "us2.vless.site"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 69",
+      "server": "www.visa.com",
+      "server_port": 443,
+      "uuid": "5e0eb74b-51f4-42b1-a0bb-55863ca79568",
+      "tls": {
+        "enabled": true,
+        "server_name": "us2.vless.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "vless-grpc",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 70",
+      "server": "nl3.hosting-ip.com",
+      "server_port": 8080,
+      "uuid": "e0087803-fd63-45bb-8671-42cd96fc703d",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILYConfigs",
+        "headers": {
+          "Host": "dailyCONFIGS-DAILYconfigs-DAILYconfigs.speedtest.net.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 71",
+      "server": "185.146.173.50",
+      "server_port": 8080,
+      "uuid": "de95fc1b-0a06-408c-ab80-eb57d54975c6",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILYConfigs",
+        "headers": {
+          "Host": "dailyCONFIGS-DAILYconfigs-DAILYconfigs.speedtest.net.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 72",
+      "server": "de.hosting-ip.com",
+      "server_port": 8080,
+      "uuid": "641e9b7e-b286-4be6-8283-dd0ea34bb61b",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILYConfigs",
+        "headers": {
+          "Host": "dailyCONFIGS-DAILYconfigs-DAILYconfigs.speedtest.net.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 73",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "593ed8b7-8625-4c61-ae36-91dcff5cc51f",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILYConfigs",
+        "headers": {
+          "Host": "dailyCONFIGS-DAILYconfigs-DAILYconfigs.speedtest.net.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 74",
+      "server": "Zula.ir",
+      "server_port": 8080,
+      "uuid": "b1d051cc-7a06-4dd1-9264-e9272e56c15b",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILYConfigs",
+        "headers": {
+          "Host": "dailyCONFIGS-DAILYconfigs-DAILYconfigs.speedtest.net.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 75",
+      "server": "visa.com",
+      "server_port": 8080,
+      "uuid": "12161dcd-5db3-4c2c-876d-2949f5e70521",
+      "transport": {
+        "type": "ws",
+        "path": "/DAILYConfigs",
+        "headers": {
+          "Host": "dailyCONFIGS-DAILYconfigs-DAILYconfigs.speedtest.net.vigilantecollection.com."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🚀@Hiddify_Nexttt Telegram🚀 § 76",
+      "server": "172.66.45.32",
+      "server_port": 443,
+      "uuid": "a8a09765-7681-47ba-9ea0-e0ae79d51088",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-netplus-4vx.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "t-netplus-4vx.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🚀@Hiddify_Nexttt Telegram🚀 § 77",
+      "server": "45.158.171.131",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "🚀@Hiddify_Nexttt Telegram🚀 § 78",
+      "server": "31.7.78.80",
+      "server_port": 46036,
+      "uuid": "3fa4c645-f6a7-4a02-85ee-7289530a6d1e",
+      "transport": {
+        "type": "http",
+        "host": "skype.com",
+        "path": "/",
+        "method": "GET"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 79",
+      "server": "185.146.173.93",
+      "server_port": 2095,
+      "uuid": "ed66c352-647e-483b-b1e4-a4cbebfaed1c",
+      "transport": {
+        "type": "ws",
+        "path": "/@V2RAXX",
+        "headers": {
+          "Host": "WwW.vaRzesh3.Com.Ftp.debian.Org.Content.tabnak.org."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 80",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "afc57645-59fd-47d0-a370-eb7f300e61d6",
+      "transport": {
+        "type": "ws",
+        "path": "/V2raxx",
+        "headers": {
+          "Host": "www.speedtest.net.ftp.debian.org.xn--79qr8bwg980ayroj80c.website."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 81",
+      "server": "zula.ir",
+      "server_port": 2095,
+      "uuid": "ed66c352-647e-483b-b1e4-a4cbebfaed1c",
+      "transport": {
+        "type": "ws",
+        "path": "/@V2RAXX",
+        "headers": {
+          "Host": "WwW.vaRzesh3.Com.Ftp.debian.Org.Content.tabnak.org."
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 82",
+      "server": "172.67.223.232",
+      "server_port": 443,
+      "uuid": "3575bdad-99d2-4742-a3ed-c7fc7bdaa60d",
+      "tls": {
+        "enabled": true,
+        "server_name": "maRgBarSEFASEd-molA-cHApI-moJaHED.PaGeS.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "headers": {
+          "Host": "MARgBarsefASEd-MOlA-CHapI-MOJaheD.PAGes.deV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 83",
+      "server": "172.67.198.111",
+      "server_port": 443,
+      "uuid": "11e5b771-1d4d-4362-b4b5-e39e75981f01",
+      "tls": {
+        "enabled": true,
+        "server_name": "3e8B07A5.PUb000bpB.PAGes.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI/",
+        "headers": {
+          "Host": "3e8B07A5.PUb000bpB.PAGes.Dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 84",
+      "server": "zula.ir",
+      "server_port": 443,
+      "uuid": "83aa2634-96a7-4ee6-aac1-07fd96f1c6c0",
+      "tls": {
+        "enabled": true,
+        "server_name": "aMI-02-SJsD6TExaRobDu76.THIekliNlNT9.WorkErs.dEV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-MARAMBASHI-MARAMBASHI/",
+        "headers": {
+          "Host": "aMI-02-SJsD6TExaRobDu76.THIekliNlNT9.WorkErs.dEV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt Telegram-1 § 85",
+      "server": "69.50.95.138",
+      "server_port": 7307,
+      "method": "aes-256-gcm",
+      "password": "FoOiGlkAA9yPEGP"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt Telegram-2 § 86",
+      "server": "205.134.180.139",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "lWaGPVFjmnag"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt Telegram-3 § 87",
+      "server": "45.158.171.129",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt Telegram-4 § 88",
+      "server": "195.15.243.171",
+      "server_port": 2048,
+      "method": "chacha20-poly1305",
+      "password": "FDfrXXL5TYb3LfBUFSAgDp46/BCAzQZFronMWDV5J54="
+    },
+    {
+      "type": "trojan",
+      "tag": "@Hiddify_Nexttt Telegram-5 § 89",
+      "server": "zula.ir",
+      "server_port": 80,
+      "password": "H9j6Vrbp82TKagCFTSyZZA",
+      "transport": {
+        "type": "ws",
+        "path": "/shop",
+        "headers": {
+          "Host": "shop.fa-behsazan.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-6 § 90",
+      "server": "104.19.42.139",
+      "server_port": 443,
+      "uuid": "d9eb0df3-3190-4447-86b6-656fe5ff1119",
+      "tls": {
+        "enabled": true,
+        "server_name": "mmdv2.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "mmdv2.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-7 § 91",
+      "server": "104.18.41.138",
+      "server_port": 8443,
+      "uuid": "9a39f63e-28c8-4560-af18-b01b9916ef1b",
+      "tls": {
+        "enabled": true,
+        "server_name": "pardazesh-tgws.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "pardazesh-tgws.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-8 § 92",
+      "server": "172.66.45.32",
+      "server_port": 443,
+      "uuid": "a8a09765-7681-47ba-9ea0-e0ae79d51088",
+      "tls": {
+        "enabled": true,
+        "server_name": "t-netplus-4vx.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "t-netplus-4vx.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-9 § 93",
+      "server": "104.19.230.57",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "523afb17.IRS23.pAgES.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "523AfB17.IRS23.pagES.DEv"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-10 § 94",
+      "server": "188.114.96.2",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "miumiUMadReKoSE.pAgES.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "miumiUMadReKoSE.pAgES.dEv"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-11 § 95",
+      "server": "172.66.47.126",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "00e463Dc.beSTVPn-4xi.PAgES.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "00e463Dc.beSTVPn-4xi.PAgES.dEv"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-12 § 96",
+      "server": "188.114.97.3",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "936a99B4.Vde5-MlX81LANeo.pAgES.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "936a99B4.Vde5-MlX81LANeo.pAgES.dEv"
+        },
+        "max_early_data": 6094,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-13 § 97",
+      "server": "172.66.47.185",
+      "server_port": 443,
+      "uuid": "8ceac519-7b18-47a5-b53e-d37ba318b0aa",
+      "tls": {
+        "enabled": true,
+        "server_name": "c1c569fc.irani-eub.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "c1c569fc.irani-eub.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-14 § 98",
+      "server": "172.66.46.214",
+      "server_port": 2053,
+      "uuid": "8545c44f-b1b4-4295-ae98-f0b6301a537f",
+      "tls": {
+        "enabled": true,
+        "server_name": "ios-azadnet.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "ios-azadnet.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-15 § 99",
+      "server": "www.speedtest.net",
+      "server_port": 2096,
+      "uuid": "b41e1631-ceb3-47c9-ba87-c65a46f2f5a8",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpNeRor.SAjadHADadi.WEbsiTe",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "VPnerOr.sajAdHaDaDI.WEbSITe"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-16 § 100",
+      "server": "104.16.190.131",
+      "server_port": 443,
+      "uuid": "17a7bf97-fef5-4101-a5c5-7c730fabeeee",
+      "tls": {
+        "enabled": true,
+        "server_name": "bpb-worker-panel-h5f.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "bpb-worker-panel-h5f.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-17 § 101",
+      "server": "www.speedtest.net",
+      "server_port": 443,
+      "uuid": "1f1a45c5-8d95-40d1-9b1d-3f654c7e63d9",
+      "tls": {
+        "enabled": true,
+        "server_name": "alecruiz.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "alecruiz.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-18 § 102",
+      "server": "104.18.22.19",
+      "server_port": 443,
+      "uuid": "49aacdab-c9b9-4031-8e64-514e9cd72089",
+      "tls": {
+        "enabled": true,
+        "server_name": "ShahANsHahi.paGEs.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "shAHaNShahi.pagES.deV"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-19 § 103",
+      "server": "104.18.84.115",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "B458aB02.caA-CHAnel-worKer-Page-FREE-JhUiHNujHPHjKL-NIhGKJn.PaGEs.deV",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "B458aB02.caA-CHAnel-worKer-Page-FREE-JhUiHNujHPHjKL-NIhGKJn.PaGEs.deV"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram-20 § 104",
+      "server": "172.66.44.55",
+      "server_port": 443,
+      "uuid": "104380d8-f859-421a-bd11-29b2c9fbfa99",
+      "tls": {
+        "enabled": true,
+        "server_name": "famil-5c8.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/Tel-@V2ray_Alpha/",
+        "headers": {
+          "Host": "famil-5c8.pages.dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 105",
+      "server": "151.101.194.133",
+      "server_port": 443,
+      "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.Arizona.edu",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "fraud.chase"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+MTN+RTL+WIFI § 106",
+      "server": "104.24.196.20",
+      "server_port": 2053,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "936a99B4.Vde5-MlX81LANeo.pAgES.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "randomized"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/TELEGRAM-PROXY_MTM/",
+        "headers": {
+          "Host": "936a99B4.vDE5-MLx81LANeO.pAgeS.DEV"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 107",
+      "server": "172.66.46.214",
+      "server_port": 2053,
+      "uuid": "8545c44f-b1b4-4295-ae98-f0b6301a537f",
+      "tls": {
+        "enabled": true,
+        "server_name": "ios-azadnet.pages.dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "ios-azadnet.pages.dev"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram+ALL+NET § 108",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "-Shh-Proxy-",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy--shhPROXY--SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "@Hiddify_Nexttt Telegram+ALL § 109",
+      "server": "45.158.171.129",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "a8bt9fY0QsLS6eLnXUe0Ym"
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 110",
+      "server": "104.18.5.2",
+      "server_port": 2096,
+      "uuid": "85b94f20-e563-498b-9d4b-a75438a51101",
+      "tls": {
+        "enabled": true,
+        "server_name": "VFIvE-teLeGram.PAGEs.Dev",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/5fz4m1ggihzpkyya",
+        "headers": {
+          "Host": "VFIvE-teLeGram.PAGEs.Dev"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 111",
+      "server": "172.66.47.126",
+      "server_port": 443,
+      "uuid": "89b3cbba-e6ac-485a-9481-976a0415eab9",
+      "tls": {
+        "enabled": true,
+        "server_name": "00e463Dc.beSTVPn-4xi.PAgES.dEv",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/yuyg5ujoovohfscy",
+        "headers": {
+          "Host": "00e463Dc.beSTVPn-4xi.PAgES.dEv"
+        },
+        "max_early_data": 2560,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 112",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "e8f8236e-5f83-419d-8b0c-5b6ff27c2da6",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪@Hiddify_Nexttt Telegram § 113",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "-Shh-Proxy-",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy-shhPROXY-SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪@Hiddify_Nexttt Telegram § 114",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "-Shh-Proxy-",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy--shhPROXY--SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "@Hiddify_Nexttt Telegram § 115",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "914fdeef-41a3-4ef0-ab53-f4c5cee31161",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "6UIMNOwiWd8CRnGG"
+    }
+  }
+}
