@@ -1,0 +1,3698 @@
+{
+  "log": {
+    "level": "warn",
+    "output": "box.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "udp://1.1.1.1",
+        "address_resolver": "dns-direct"
+      },
+      {
+        "tag": "dns-trick-direct",
+        "address": "https://sky.rethinkdns.com/",
+        "detour": "direct-fragment"
+      },
+      {
+        "tag": "dns-direct",
+        "address": "1.1.1.1",
+        "address_resolver": "dns-local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-local",
+        "address": "local",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "domain": [
+          "www.speedtest.net",
+          "www.visa.com",
+          "zula.ir",
+          "mtn.vpnprosec.com",
+          "www.speedtest.net",
+          "parsvds.ir",
+          "avval.ir",
+          "zedmodeon-join-zedmodeon.kanal-asli-zedmodeon.shop",
+          "test.denanetw.top",
+          "www.parsvds.com",
+          "series-a2-mec.varzesh360.co",
+          "zula.ir",
+          "www.parsvds.ir",
+          "xn--tr8h.snappfoodi.com.",
+          "speedtest.net",
+          "series-a1.samanehha.co"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "domain": "cp.cloudflare.com",
+        "server": "dns-remote",
+        "rewrite_ttl": 3000
+      },
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-remote",
+    "static_ips": {
+      "sky.rethinkdns.com": [
+        "188.114.97.3",
+        "188.114.96.3",
+        "2a06:98c1:3120::3",
+        "2a06:98c1:3121::3",
+        "104.17.147.22",
+        "104.17.148.22"
+      ]
+    },
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 9000,
+      "inet4_address": "172.19.0.1/28",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "auto_route": true,
+      "strict_route": true,
+      "endpoint_independent_nat": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2334,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "127.0.0.1",
+      "listen_port": 6450
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🌐 به روزرسانی شده درTir-31 | 21:17 | @Hiddify_Nexttt  § 0",
+        "🌐سرور 1 | Tir-31| Tel @Hiddify_Nexttt Tel § 1",
+        "🌐سرور 2 | Tir-31| Tel @Hiddify_Nexttt Tel § 2",
+        "🌐سرور 3 | Tir-31| Tel @Hiddify_Nexttt Tel § 3",
+        "🌐سرور 4 | Tir-31| Tel @Hiddify_Nexttt Tel § 4",
+        "🌐سرور 5 | Tir-31| Tel @Hiddify_Nexttt Tel § 5",
+        "🌐سرور 6 | Tir-31| Tel @Hiddify_Nexttt Tel § 6",
+        "🌐سرور 7 | Tir-31| Tel @Hiddify_Nexttt Tel § 7",
+        "🌐سرور 10 | Tir-31| Tel @Hiddify_Nexttt Tel § 8",
+        "🌐سرور 11 | Tir-31| Tel @Hiddify_Nexttt Tel § 9",
+        "🌐سرور 12 | Tir-31| Tel @Hiddify_Nexttt Tel § 10",
+        "🌐سرور 13 | Tir-31| Tel @Hiddify_Nexttt Tel § 11",
+        "🌐سرور 14 | Tir-31| Tel @Hiddify_Nexttt Tel § 12",
+        "🌐سرور 15 | Tir-31| Tel @Hiddify_Nexttt Tel § 13",
+        "🌐سرور 16 | Tir-31| Tel @Hiddify_Nexttt Tel § 14",
+        "🌐سرور 17 | Tir-31| Tel @Hiddify_Nexttt Tel § 15",
+        "🌐سرور 18 | Tir-31| Tel @Hiddify_Nexttt Tel § 16",
+        "🌐سرور 19 | Tir-31| Tel @Hiddify_Nexttt Tel § 17",
+        "🌐سرور 20 | Tir-31| Tel @Hiddify_Nexttt Tel § 18",
+        "🌐سرور 21 | Tir-31| Tel @Hiddify_Nexttt Tel § 19",
+        "🌐سرور 22 | Tir-31| Tel @Hiddify_Nexttt Tel § 20",
+        "🌐سرور 23 | Tir-31| Tel @Hiddify_Nexttt Tel § 21",
+        "🌐سرور 24 | Tir-31| Tel @Hiddify_Nexttt Tel § 22",
+        "🌐سرور 25 | Tir-31| Tel @Hiddify_Nexttt Tel § 23",
+        "🌐سرور 26 | Tir-31| Tel @Hiddify_Nexttt Tel § 24",
+        "🌐سرور 27 | Tir-31| Tel @Hiddify_Nexttt Tel § 25",
+        "🌐سرور 28 | Tir-31| Tel @Hiddify_Nexttt Tel § 26",
+        "🌐سرور 29 | Tir-31| Tel @Hiddify_Nexttt Tel § 27",
+        "🌐سرور 30 | Tir-31| Tel @Hiddify_Nexttt Tel § 28",
+        "🌐سرور 31 | Tir-31| Tel @Hiddify_Nexttt Tel § 29",
+        "🌐سرور 32 | Tir-31| Tel @Hiddify_Nexttt Tel § 30",
+        "🌐سرور 33 | Tir-31| Tel @Hiddify_Nexttt Tel § 31",
+        "🌐سرور 34 | Tir-31| Tel @Hiddify_Nexttt Tel § 32",
+        "🌐سرور 35 | Tir-31| Tel @Hiddify_Nexttt Tel § 33",
+        "🌐سرور 36 | Tir-31| Tel @Hiddify_Nexttt Tel § 34",
+        "🌐سرور 37 | Tir-31| Tel @Hiddify_Nexttt Tel § 35",
+        "🌐سرور 38 | Tir-31| Tel @Hiddify_Nexttt Tel § 36",
+        "🌐سرور 39 | Tir-31| Tel @Hiddify_Nexttt Tel § 37",
+        "🌐سرور 40 | Tir-31| Tel @Hiddify_Nexttt Tel § 38",
+        "🌐سرور 41 | Tir-31| Tel @Hiddify_Nexttt Tel § 39",
+        "🌐سرور 42 | Tir-31| Tel @Hiddify_Nexttt Tel § 40",
+        "🌐سرور 43 | Tir-31| Tel @Hiddify_Nexttt Tel § 41",
+        "🌐سرور 44 | Tir-31| Tel @Hiddify_Nexttt Tel § 42",
+        "🌐سرور 45 | Tir-31| Tel @Hiddify_Nexttt Tel § 43",
+        "🌐سرور 46 | Tir-31| Tel @Hiddify_Nexttt Tel § 44",
+        "🌐سرور 47 | Tir-31| Tel @Hiddify_Nexttt Tel § 45",
+        "🌐سرور 48 | Tir-31| Tel @Hiddify_Nexttt Tel § 46",
+        "🌐سرور 49 | Tir-31| Tel @Hiddify_Nexttt Tel § 47",
+        "🌐سرور 50 | Tir-31| Tel @Hiddify_Nexttt Tel § 48",
+        "🌐سرور 51 | Tir-31| Tel @Hiddify_Nexttt Tel § 49",
+        "🌐سرور 52 | Tir-31| Tel @Hiddify_Nexttt Tel § 50",
+        "🌐سرور 53 | Tir-31| Tel @Hiddify_Nexttt Tel § 51",
+        "🌐سرور 54 | Tir-31| Tel @Hiddify_Nexttt Tel § 52",
+        "🌐سرور 55 | Tir-31| Tel @Hiddify_Nexttt Tel § 53",
+        "🌐سرور 56 | Tir-31| Tel @Hiddify_Nexttt Tel § 54",
+        "🌐سرور 57 | Tir-31| Tel @Hiddify_Nexttt Tel § 55",
+        "🌐سرور 58 | Tir-31| Tel @Hiddify_Nexttt Tel § 56",
+        "🌐سرور 59 | Tir-31| Tel @Hiddify_Nexttt Tel § 57",
+        "🌐سرور 60 | Tir-31| Tel @Hiddify_Nexttt Tel § 58",
+        "🌐سرور 63 | Tir-31| Tel @Hiddify_Nexttt Tel § 59",
+        "🌐سرور 64 | Tir-31| Tel @Hiddify_Nexttt Tel § 60",
+        "🌐سرور 65 | Tir-31| Tel @Hiddify_Nexttt Tel § 61",
+        "🌐سرور 66 | Tir-31| Tel @Hiddify_Nexttt Tel § 62",
+        "🌐سرور 67 | Tir-31| Tel @Hiddify_Nexttt Tel § 63",
+        "🌐سرور 68 | Tir-31| Tel @Hiddify_Nexttt Tel § 64",
+        "🌐سرور 69 | Tir-31| Tel @Hiddify_Nexttt Tel § 65",
+        "🌐سرور 70 | Tir-31| Tel @Hiddify_Nexttt Tel § 66",
+        "🌐سرور 71 | Tir-31| Tel @Hiddify_Nexttt Tel § 67",
+        "🌐سرور 72 | Tir-31| Tel @Hiddify_Nexttt Tel § 68",
+        "🌐سرور 73 | Tir-31| Tel @Hiddify_Nexttt Tel § 69",
+        "🌐سرور 74 | Tir-31| Tel @Hiddify_Nexttt Tel § 70",
+        "🌐سرور 75 | Tir-31| Tel @Hiddify_Nexttt Tel § 71",
+        "🌐سرور 76 | Tir-31| Tel @Hiddify_Nexttt Tel § 72",
+        "🌐سرور 77 | Tir-31| Tel @Hiddify_Nexttt Tel § 73",
+        "🌐سرور 78 | Tir-31| Tel @Hiddify_Nexttt Tel § 74",
+        "🌐سرور 79 | Tir-31| Tel @Hiddify_Nexttt Tel § 75",
+        "🌐سرور 80 | Tir-31| Tel @Hiddify_Nexttt Tel § 76",
+        "🌐سرور 81 | Tir-31| Tel @Hiddify_Nexttt Tel § 77",
+        "🌐سرور 82 | Tir-31| Tel @Hiddify_Nexttt Tel § 78",
+        "🌐سرور 83 | Tir-31| Tel @Hiddify_Nexttt Tel § 79",
+        "🌐سرور 84 | Tir-31| Tel @Hiddify_Nexttt Tel § 80",
+        "🌐سرور 85 | Tir-31| Tel @Hiddify_Nexttt Tel § 81",
+        "🌐سرور 86 | Tir-31| Tel @Hiddify_Nexttt Tel § 82",
+        "🌐سرور 87 | Tir-31| Tel @Hiddify_Nexttt Tel § 83",
+        "🌐سرور 88 | Tir-31| Tel @Hiddify_Nexttt Tel § 84",
+        "🌐سرور 89 | Tir-31| Tel @Hiddify_Nexttt Tel § 85",
+        "🌐سرور 90 | Tir-31| Tel @Hiddify_Nexttt Tel § 86",
+        "🌐سرور 91 | Tir-31| Tel @Hiddify_Nexttt Tel § 87",
+        "🌐سرور 92 | Tir-31| Tel @Hiddify_Nexttt Tel § 88",
+        "🌐سرور 93 | Tir-31| Tel @Hiddify_Nexttt Tel § 89",
+        "🌐سرور 94 | Tir-31| Tel @Hiddify_Nexttt Tel § 90",
+        "🌐سرور 95 | Tir-31| Tel @Hiddify_Nexttt Tel § 91",
+        "🌐سرور 96 | Tir-31| Tel @Hiddify_Nexttt Tel § 92",
+        "🌐سرور 97 | Tir-31| Tel @Hiddify_Nexttt Tel § 93",
+        "🌐سرور 98 | Tir-31| Tel @Hiddify_Nexttt Tel § 94",
+        "🌐سرور 99 | Tir-31| Tel @Hiddify_Nexttt Tel § 95",
+        "🌐سرور 100 | Tir-31| Tel @Hiddify_Nexttt Tel § 96",
+        "🌐سرور 101 | Tir-31| Tel @Hiddify_Nexttt Tel § 97",
+        "🌐سرور 102 | Tir-31| Tel @Hiddify_Nexttt Tel § 98",
+        "🌐سرور 103 | Tir-31| Tel @Hiddify_Nexttt Tel § 99",
+        "🌐سرور 104 | Tir-31| Tel @Hiddify_Nexttt Tel § 100",
+        "🌐سرور 105 | Tir-31| Tel @Hiddify_Nexttt Tel § 101",
+        "🌐سرور 106 | Tir-31| Tel @Hiddify_Nexttt Tel § 102",
+        "🌐سرور 107 | Tir-31| Tel @Hiddify_Nexttt Tel § 103",
+        "🌐سرور 108 | Tir-31| Tel @Hiddify_Nexttt Tel § 104",
+        "🌐سرور 111 | Tir-31| Tel @Hiddify_Nexttt Tel § 105",
+        "🌐سرور 112 | Tir-31| Tel @Hiddify_Nexttt Tel § 106",
+        "🌐سرور 113 | Tir-31| Tel @Hiddify_Nexttt Tel § 107",
+        "🌐سرور 114 | Tir-31| Tel @Hiddify_Nexttt Tel § 108",
+        "🌐سرور 115 | Tir-31| Tel @Hiddify_Nexttt Tel § 109",
+        "🌐سرور 116 | Tir-31| Tel @Hiddify_Nexttt Tel § 110",
+        "🌐سرور 117 | Tir-31| Tel @Hiddify_Nexttt Tel § 111",
+        "🌐سرور 118 | Tir-31| Tel @Hiddify_Nexttt Tel § 112",
+        "🌐سرور 119 | Tir-31| Tel @Hiddify_Nexttt Tel § 113",
+        "🌐سرور 120 | Tir-31| Tel @Hiddify_Nexttt Tel § 114",
+        "🌐سرور 121 | Tir-31| Tel @Hiddify_Nexttt Tel § 115",
+        "🌐سرور 122 | Tir-31| Tel @Hiddify_Nexttt Tel § 116",
+        "🌐سرور 123 | Tir-31| Tel @Hiddify_Nexttt Tel § 117",
+        "🌐سرور 124 | Tir-31| Tel @Hiddify_Nexttt Tel § 118",
+        "🌐سرور 125 | Tir-31| Tel @Hiddify_Nexttt Tel § 119",
+        "🌐سرور 126 | Tir-31| Tel @Hiddify_Nexttt Tel § 120",
+        "🌐سرور 127 | Tir-31| Tel @Hiddify_Nexttt Tel § 121",
+        "🌐سرور 128 | Tir-31| Tel @Hiddify_Nexttt Tel § 122",
+        "🌐سرور 129 | Tir-31| Tel @Hiddify_Nexttt Tel § 123",
+        "🌐سرور 131 | Tir-31| Tel @Hiddify_Nexttt Tel § 124",
+        "🌐سرور 132 | Tir-31| Tel @Hiddify_Nexttt Tel § 125",
+        "🌐سرور 133 | Tir-31| Tel @Hiddify_Nexttt Tel § 126",
+        "🌐سرور 134 | Tir-31| Tel @Hiddify_Nexttt Tel § 127",
+        "🌐سرور 135 | Tir-31| Tel @Hiddify_Nexttt Tel § 128",
+        "🌐سرور 136 | Tir-31| Tel @Hiddify_Nexttt Tel § 129",
+        "🌐سرور 137 | Tir-31| Tel @Hiddify_Nexttt Tel § 130",
+        "🌐سرور 138 | Tir-31| Tel @Hiddify_Nexttt Tel § 131",
+        "🌐سرور 139 | Tir-31| Tel @Hiddify_Nexttt Tel § 132",
+        "🌐سرور 140 | Tir-31| Tel @Hiddify_Nexttt Tel § 133",
+        "🌐سرور 141 | Tir-31| Tel @Hiddify_Nexttt Tel § 134",
+        "🌐سرور 142 | Tir-31| Tel @Hiddify_Nexttt Tel § 135",
+        "🌐سرور 143 | Tir-31| Tel @Hiddify_Nexttt Tel § 136",
+        "🌐سرور 144 | Tir-31| Tel @Hiddify_Nexttt Tel § 137",
+        "🌐سرور 145 | Tir-31| Tel @Hiddify_Nexttt Tel § 138",
+        "🌐سرور 146 | Tir-31| Tel @Hiddify_Nexttt Tel § 139",
+        "🌐سرور 147 | Tir-31| Tel @Hiddify_Nexttt Tel § 140",
+        "🌐سرور 148 | Tir-31| Tel @Hiddify_Nexttt Tel § 141",
+        "🌐سرور 149 | Tir-31| Tel @Hiddify_Nexttt Tel § 142",
+        "🌐سرور 150 | Tir-31| Tel @Hiddify_Nexttt Tel § 143",
+        "🌐سرور 151 | Tir-31| Tel @Hiddify_Nexttt Tel § 144",
+        "🌐سرور 152 | Tir-31| Tel @Hiddify_Nexttt Tel § 145",
+        "🌐سرور 153 | Tir-31| Tel @Hiddify_Nexttt Tel § 146",
+        "🌐سرور 154 | Tir-31| Tel @Hiddify_Nexttt Tel § 147",
+        "🌐سرور 155 | Tir-31| Tel @Hiddify_Nexttt Tel § 148",
+        "🌐سرور 156 | Tir-31| Tel @Hiddify_Nexttt Tel § 149",
+        "🌐سرور 157 | Tir-31| Tel @Hiddify_Nexttt Tel § 150",
+        "🌐سرور 158 | Tir-31| Tel @Hiddify_Nexttt Tel § 151",
+        "🌐سرور 159 | Tir-31| Tel @Hiddify_Nexttt Tel § 152",
+        "🌐سرور 160 | Tir-31| Tel @Hiddify_Nexttt Tel § 153",
+        "🌐سرور 161 | Tir-31| Tel @Hiddify_Nexttt Tel § 154",
+        "🌐سرور 162 | Tir-31| Tel @Hiddify_Nexttt Tel § 155",
+        "🌐سرور 163 | Tir-31| Tel @Hiddify_Nexttt Tel § 156",
+        "🌐سرور 164 | Tir-31| Tel @Hiddify_Nexttt Tel § 157",
+        "🌐سرور 165 | Tir-31| Tel @Hiddify_Nexttt Tel § 158",
+        "🌐سرور 166 | Tir-31| Tel @Hiddify_Nexttt Tel § 159",
+        "🌐سرور 167 | Tir-31| Tel @Hiddify_Nexttt Tel § 160",
+        "🌐سرور 168 | Tir-31| Tel @Hiddify_Nexttt Tel § 161",
+        "🌐سرور 169 | Tir-31| Tel @Hiddify_Nexttt Tel § 162",
+        "🌐سرور 170 | Tir-31| Tel @Hiddify_Nexttt Tel § 163",
+        "🌐سرور 171 | Tir-31| Tel @Hiddify_Nexttt Tel § 164",
+        "🌐سرور 172 | Tir-31| Tel @Hiddify_Nexttt Tel § 165",
+        "🌐سرور 173 | Tir-31| Tel @Hiddify_Nexttt Tel § 166",
+        "🌐سرور 174 | Tir-31| Tel @Hiddify_Nexttt Tel § 167",
+        "🌐سرور 175 | Tir-31| Tel @Hiddify_Nexttt Tel § 168",
+        "🌐سرور 177 | Tir-31| Tel @Hiddify_Nexttt Tel § 169",
+        "🌐سرور 178 | Tir-31| Tel @Hiddify_Nexttt Tel § 170",
+        "🌐سرور 179 | Tir-31| Tel @Hiddify_Nexttt Tel § 171",
+        "🌐سرور 181 | Tir-31| Tel @Hiddify_Nexttt Tel § 172",
+        "🌐سرور 182 | Tir-31| Tel @Hiddify_Nexttt Tel § 173",
+        "🌐سرور 183 | Tir-31| Tel @Hiddify_Nexttt Tel § 174",
+        "🌐سرور 184 | Tir-31| Tel @Hiddify_Nexttt Tel § 175",
+        "🌐سرور 185 | Tir-31| Tel @Hiddify_Nexttt Tel § 176",
+        "🌐سرور 186 | Tir-31| Tel @Hiddify_Nexttt Tel § 177",
+        "🌐سرور 187 | Tir-31| Tel @Hiddify_Nexttt Tel § 178",
+        "🌐سرور 188 | Tir-31| Tel @Hiddify_Nexttt Tel § 179",
+        "🌐سرور 189 | Tir-31| Tel @Hiddify_Nexttt Tel § 180",
+        "🌐سرور 190 | Tir-31| Tel @Hiddify_Nexttt Tel § 181"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🌐 به روزرسانی شده درTir-31 | 21:17 | @Hiddify_Nexttt  § 0",
+        "🌐سرور 1 | Tir-31| Tel @Hiddify_Nexttt Tel § 1",
+        "🌐سرور 2 | Tir-31| Tel @Hiddify_Nexttt Tel § 2",
+        "🌐سرور 3 | Tir-31| Tel @Hiddify_Nexttt Tel § 3",
+        "🌐سرور 4 | Tir-31| Tel @Hiddify_Nexttt Tel § 4",
+        "🌐سرور 5 | Tir-31| Tel @Hiddify_Nexttt Tel § 5",
+        "🌐سرور 6 | Tir-31| Tel @Hiddify_Nexttt Tel § 6",
+        "🌐سرور 7 | Tir-31| Tel @Hiddify_Nexttt Tel § 7",
+        "🌐سرور 10 | Tir-31| Tel @Hiddify_Nexttt Tel § 8",
+        "🌐سرور 11 | Tir-31| Tel @Hiddify_Nexttt Tel § 9",
+        "🌐سرور 12 | Tir-31| Tel @Hiddify_Nexttt Tel § 10",
+        "🌐سرور 13 | Tir-31| Tel @Hiddify_Nexttt Tel § 11",
+        "🌐سرور 14 | Tir-31| Tel @Hiddify_Nexttt Tel § 12",
+        "🌐سرور 15 | Tir-31| Tel @Hiddify_Nexttt Tel § 13",
+        "🌐سرور 16 | Tir-31| Tel @Hiddify_Nexttt Tel § 14",
+        "🌐سرور 17 | Tir-31| Tel @Hiddify_Nexttt Tel § 15",
+        "🌐سرور 18 | Tir-31| Tel @Hiddify_Nexttt Tel § 16",
+        "🌐سرور 19 | Tir-31| Tel @Hiddify_Nexttt Tel § 17",
+        "🌐سرور 20 | Tir-31| Tel @Hiddify_Nexttt Tel § 18",
+        "🌐سرور 21 | Tir-31| Tel @Hiddify_Nexttt Tel § 19",
+        "🌐سرور 22 | Tir-31| Tel @Hiddify_Nexttt Tel § 20",
+        "🌐سرور 23 | Tir-31| Tel @Hiddify_Nexttt Tel § 21",
+        "🌐سرور 24 | Tir-31| Tel @Hiddify_Nexttt Tel § 22",
+        "🌐سرور 25 | Tir-31| Tel @Hiddify_Nexttt Tel § 23",
+        "🌐سرور 26 | Tir-31| Tel @Hiddify_Nexttt Tel § 24",
+        "🌐سرور 27 | Tir-31| Tel @Hiddify_Nexttt Tel § 25",
+        "🌐سرور 28 | Tir-31| Tel @Hiddify_Nexttt Tel § 26",
+        "🌐سرور 29 | Tir-31| Tel @Hiddify_Nexttt Tel § 27",
+        "🌐سرور 30 | Tir-31| Tel @Hiddify_Nexttt Tel § 28",
+        "🌐سرور 31 | Tir-31| Tel @Hiddify_Nexttt Tel § 29",
+        "🌐سرور 32 | Tir-31| Tel @Hiddify_Nexttt Tel § 30",
+        "🌐سرور 33 | Tir-31| Tel @Hiddify_Nexttt Tel § 31",
+        "🌐سرور 34 | Tir-31| Tel @Hiddify_Nexttt Tel § 32",
+        "🌐سرور 35 | Tir-31| Tel @Hiddify_Nexttt Tel § 33",
+        "🌐سرور 36 | Tir-31| Tel @Hiddify_Nexttt Tel § 34",
+        "🌐سرور 37 | Tir-31| Tel @Hiddify_Nexttt Tel § 35",
+        "🌐سرور 38 | Tir-31| Tel @Hiddify_Nexttt Tel § 36",
+        "🌐سرور 39 | Tir-31| Tel @Hiddify_Nexttt Tel § 37",
+        "🌐سرور 40 | Tir-31| Tel @Hiddify_Nexttt Tel § 38",
+        "🌐سرور 41 | Tir-31| Tel @Hiddify_Nexttt Tel § 39",
+        "🌐سرور 42 | Tir-31| Tel @Hiddify_Nexttt Tel § 40",
+        "🌐سرور 43 | Tir-31| Tel @Hiddify_Nexttt Tel § 41",
+        "🌐سرور 44 | Tir-31| Tel @Hiddify_Nexttt Tel § 42",
+        "🌐سرور 45 | Tir-31| Tel @Hiddify_Nexttt Tel § 43",
+        "🌐سرور 46 | Tir-31| Tel @Hiddify_Nexttt Tel § 44",
+        "🌐سرور 47 | Tir-31| Tel @Hiddify_Nexttt Tel § 45",
+        "🌐سرور 48 | Tir-31| Tel @Hiddify_Nexttt Tel § 46",
+        "🌐سرور 49 | Tir-31| Tel @Hiddify_Nexttt Tel § 47",
+        "🌐سرور 50 | Tir-31| Tel @Hiddify_Nexttt Tel § 48",
+        "🌐سرور 51 | Tir-31| Tel @Hiddify_Nexttt Tel § 49",
+        "🌐سرور 52 | Tir-31| Tel @Hiddify_Nexttt Tel § 50",
+        "🌐سرور 53 | Tir-31| Tel @Hiddify_Nexttt Tel § 51",
+        "🌐سرور 54 | Tir-31| Tel @Hiddify_Nexttt Tel § 52",
+        "🌐سرور 55 | Tir-31| Tel @Hiddify_Nexttt Tel § 53",
+        "🌐سرور 56 | Tir-31| Tel @Hiddify_Nexttt Tel § 54",
+        "🌐سرور 57 | Tir-31| Tel @Hiddify_Nexttt Tel § 55",
+        "🌐سرور 58 | Tir-31| Tel @Hiddify_Nexttt Tel § 56",
+        "🌐سرور 59 | Tir-31| Tel @Hiddify_Nexttt Tel § 57",
+        "🌐سرور 60 | Tir-31| Tel @Hiddify_Nexttt Tel § 58",
+        "🌐سرور 63 | Tir-31| Tel @Hiddify_Nexttt Tel § 59",
+        "🌐سرور 64 | Tir-31| Tel @Hiddify_Nexttt Tel § 60",
+        "🌐سرور 65 | Tir-31| Tel @Hiddify_Nexttt Tel § 61",
+        "🌐سرور 66 | Tir-31| Tel @Hiddify_Nexttt Tel § 62",
+        "🌐سرور 67 | Tir-31| Tel @Hiddify_Nexttt Tel § 63",
+        "🌐سرور 68 | Tir-31| Tel @Hiddify_Nexttt Tel § 64",
+        "🌐سرور 69 | Tir-31| Tel @Hiddify_Nexttt Tel § 65",
+        "🌐سرور 70 | Tir-31| Tel @Hiddify_Nexttt Tel § 66",
+        "🌐سرور 71 | Tir-31| Tel @Hiddify_Nexttt Tel § 67",
+        "🌐سرور 72 | Tir-31| Tel @Hiddify_Nexttt Tel § 68",
+        "🌐سرور 73 | Tir-31| Tel @Hiddify_Nexttt Tel § 69",
+        "🌐سرور 74 | Tir-31| Tel @Hiddify_Nexttt Tel § 70",
+        "🌐سرور 75 | Tir-31| Tel @Hiddify_Nexttt Tel § 71",
+        "🌐سرور 76 | Tir-31| Tel @Hiddify_Nexttt Tel § 72",
+        "🌐سرور 77 | Tir-31| Tel @Hiddify_Nexttt Tel § 73",
+        "🌐سرور 78 | Tir-31| Tel @Hiddify_Nexttt Tel § 74",
+        "🌐سرور 79 | Tir-31| Tel @Hiddify_Nexttt Tel § 75",
+        "🌐سرور 80 | Tir-31| Tel @Hiddify_Nexttt Tel § 76",
+        "🌐سرور 81 | Tir-31| Tel @Hiddify_Nexttt Tel § 77",
+        "🌐سرور 82 | Tir-31| Tel @Hiddify_Nexttt Tel § 78",
+        "🌐سرور 83 | Tir-31| Tel @Hiddify_Nexttt Tel § 79",
+        "🌐سرور 84 | Tir-31| Tel @Hiddify_Nexttt Tel § 80",
+        "🌐سرور 85 | Tir-31| Tel @Hiddify_Nexttt Tel § 81",
+        "🌐سرور 86 | Tir-31| Tel @Hiddify_Nexttt Tel § 82",
+        "🌐سرور 87 | Tir-31| Tel @Hiddify_Nexttt Tel § 83",
+        "🌐سرور 88 | Tir-31| Tel @Hiddify_Nexttt Tel § 84",
+        "🌐سرور 89 | Tir-31| Tel @Hiddify_Nexttt Tel § 85",
+        "🌐سرور 90 | Tir-31| Tel @Hiddify_Nexttt Tel § 86",
+        "🌐سرور 91 | Tir-31| Tel @Hiddify_Nexttt Tel § 87",
+        "🌐سرور 92 | Tir-31| Tel @Hiddify_Nexttt Tel § 88",
+        "🌐سرور 93 | Tir-31| Tel @Hiddify_Nexttt Tel § 89",
+        "🌐سرور 94 | Tir-31| Tel @Hiddify_Nexttt Tel § 90",
+        "🌐سرور 95 | Tir-31| Tel @Hiddify_Nexttt Tel § 91",
+        "🌐سرور 96 | Tir-31| Tel @Hiddify_Nexttt Tel § 92",
+        "🌐سرور 97 | Tir-31| Tel @Hiddify_Nexttt Tel § 93",
+        "🌐سرور 98 | Tir-31| Tel @Hiddify_Nexttt Tel § 94",
+        "🌐سرور 99 | Tir-31| Tel @Hiddify_Nexttt Tel § 95",
+        "🌐سرور 100 | Tir-31| Tel @Hiddify_Nexttt Tel § 96",
+        "🌐سرور 101 | Tir-31| Tel @Hiddify_Nexttt Tel § 97",
+        "🌐سرور 102 | Tir-31| Tel @Hiddify_Nexttt Tel § 98",
+        "🌐سرور 103 | Tir-31| Tel @Hiddify_Nexttt Tel § 99",
+        "🌐سرور 104 | Tir-31| Tel @Hiddify_Nexttt Tel § 100",
+        "🌐سرور 105 | Tir-31| Tel @Hiddify_Nexttt Tel § 101",
+        "🌐سرور 106 | Tir-31| Tel @Hiddify_Nexttt Tel § 102",
+        "🌐سرور 107 | Tir-31| Tel @Hiddify_Nexttt Tel § 103",
+        "🌐سرور 108 | Tir-31| Tel @Hiddify_Nexttt Tel § 104",
+        "🌐سرور 111 | Tir-31| Tel @Hiddify_Nexttt Tel § 105",
+        "🌐سرور 112 | Tir-31| Tel @Hiddify_Nexttt Tel § 106",
+        "🌐سرور 113 | Tir-31| Tel @Hiddify_Nexttt Tel § 107",
+        "🌐سرور 114 | Tir-31| Tel @Hiddify_Nexttt Tel § 108",
+        "🌐سرور 115 | Tir-31| Tel @Hiddify_Nexttt Tel § 109",
+        "🌐سرور 116 | Tir-31| Tel @Hiddify_Nexttt Tel § 110",
+        "🌐سرور 117 | Tir-31| Tel @Hiddify_Nexttt Tel § 111",
+        "🌐سرور 118 | Tir-31| Tel @Hiddify_Nexttt Tel § 112",
+        "🌐سرور 119 | Tir-31| Tel @Hiddify_Nexttt Tel § 113",
+        "🌐سرور 120 | Tir-31| Tel @Hiddify_Nexttt Tel § 114",
+        "🌐سرور 121 | Tir-31| Tel @Hiddify_Nexttt Tel § 115",
+        "🌐سرور 122 | Tir-31| Tel @Hiddify_Nexttt Tel § 116",
+        "🌐سرور 123 | Tir-31| Tel @Hiddify_Nexttt Tel § 117",
+        "🌐سرور 124 | Tir-31| Tel @Hiddify_Nexttt Tel § 118",
+        "🌐سرور 125 | Tir-31| Tel @Hiddify_Nexttt Tel § 119",
+        "🌐سرور 126 | Tir-31| Tel @Hiddify_Nexttt Tel § 120",
+        "🌐سرور 127 | Tir-31| Tel @Hiddify_Nexttt Tel § 121",
+        "🌐سرور 128 | Tir-31| Tel @Hiddify_Nexttt Tel § 122",
+        "🌐سرور 129 | Tir-31| Tel @Hiddify_Nexttt Tel § 123",
+        "🌐سرور 131 | Tir-31| Tel @Hiddify_Nexttt Tel § 124",
+        "🌐سرور 132 | Tir-31| Tel @Hiddify_Nexttt Tel § 125",
+        "🌐سرور 133 | Tir-31| Tel @Hiddify_Nexttt Tel § 126",
+        "🌐سرور 134 | Tir-31| Tel @Hiddify_Nexttt Tel § 127",
+        "🌐سرور 135 | Tir-31| Tel @Hiddify_Nexttt Tel § 128",
+        "🌐سرور 136 | Tir-31| Tel @Hiddify_Nexttt Tel § 129",
+        "🌐سرور 137 | Tir-31| Tel @Hiddify_Nexttt Tel § 130",
+        "🌐سرور 138 | Tir-31| Tel @Hiddify_Nexttt Tel § 131",
+        "🌐سرور 139 | Tir-31| Tel @Hiddify_Nexttt Tel § 132",
+        "🌐سرور 140 | Tir-31| Tel @Hiddify_Nexttt Tel § 133",
+        "🌐سرور 141 | Tir-31| Tel @Hiddify_Nexttt Tel § 134",
+        "🌐سرور 142 | Tir-31| Tel @Hiddify_Nexttt Tel § 135",
+        "🌐سرور 143 | Tir-31| Tel @Hiddify_Nexttt Tel § 136",
+        "🌐سرور 144 | Tir-31| Tel @Hiddify_Nexttt Tel § 137",
+        "🌐سرور 145 | Tir-31| Tel @Hiddify_Nexttt Tel § 138",
+        "🌐سرور 146 | Tir-31| Tel @Hiddify_Nexttt Tel § 139",
+        "🌐سرور 147 | Tir-31| Tel @Hiddify_Nexttt Tel § 140",
+        "🌐سرور 148 | Tir-31| Tel @Hiddify_Nexttt Tel § 141",
+        "🌐سرور 149 | Tir-31| Tel @Hiddify_Nexttt Tel § 142",
+        "🌐سرور 150 | Tir-31| Tel @Hiddify_Nexttt Tel § 143",
+        "🌐سرور 151 | Tir-31| Tel @Hiddify_Nexttt Tel § 144",
+        "🌐سرور 152 | Tir-31| Tel @Hiddify_Nexttt Tel § 145",
+        "🌐سرور 153 | Tir-31| Tel @Hiddify_Nexttt Tel § 146",
+        "🌐سرور 154 | Tir-31| Tel @Hiddify_Nexttt Tel § 147",
+        "🌐سرور 155 | Tir-31| Tel @Hiddify_Nexttt Tel § 148",
+        "🌐سرور 156 | Tir-31| Tel @Hiddify_Nexttt Tel § 149",
+        "🌐سرور 157 | Tir-31| Tel @Hiddify_Nexttt Tel § 150",
+        "🌐سرور 158 | Tir-31| Tel @Hiddify_Nexttt Tel § 151",
+        "🌐سرور 159 | Tir-31| Tel @Hiddify_Nexttt Tel § 152",
+        "🌐سرور 160 | Tir-31| Tel @Hiddify_Nexttt Tel § 153",
+        "🌐سرور 161 | Tir-31| Tel @Hiddify_Nexttt Tel § 154",
+        "🌐سرور 162 | Tir-31| Tel @Hiddify_Nexttt Tel § 155",
+        "🌐سرور 163 | Tir-31| Tel @Hiddify_Nexttt Tel § 156",
+        "🌐سرور 164 | Tir-31| Tel @Hiddify_Nexttt Tel § 157",
+        "🌐سرور 165 | Tir-31| Tel @Hiddify_Nexttt Tel § 158",
+        "🌐سرور 166 | Tir-31| Tel @Hiddify_Nexttt Tel § 159",
+        "🌐سرور 167 | Tir-31| Tel @Hiddify_Nexttt Tel § 160",
+        "🌐سرور 168 | Tir-31| Tel @Hiddify_Nexttt Tel § 161",
+        "🌐سرور 169 | Tir-31| Tel @Hiddify_Nexttt Tel § 162",
+        "🌐سرور 170 | Tir-31| Tel @Hiddify_Nexttt Tel § 163",
+        "🌐سرور 171 | Tir-31| Tel @Hiddify_Nexttt Tel § 164",
+        "🌐سرور 172 | Tir-31| Tel @Hiddify_Nexttt Tel § 165",
+        "🌐سرور 173 | Tir-31| Tel @Hiddify_Nexttt Tel § 166",
+        "🌐سرور 174 | Tir-31| Tel @Hiddify_Nexttt Tel § 167",
+        "🌐سرور 175 | Tir-31| Tel @Hiddify_Nexttt Tel § 168",
+        "🌐سرور 177 | Tir-31| Tel @Hiddify_Nexttt Tel § 169",
+        "🌐سرور 178 | Tir-31| Tel @Hiddify_Nexttt Tel § 170",
+        "🌐سرور 179 | Tir-31| Tel @Hiddify_Nexttt Tel § 171",
+        "🌐سرور 181 | Tir-31| Tel @Hiddify_Nexttt Tel § 172",
+        "🌐سرور 182 | Tir-31| Tel @Hiddify_Nexttt Tel § 173",
+        "🌐سرور 183 | Tir-31| Tel @Hiddify_Nexttt Tel § 174",
+        "🌐سرور 184 | Tir-31| Tel @Hiddify_Nexttt Tel § 175",
+        "🌐سرور 185 | Tir-31| Tel @Hiddify_Nexttt Tel § 176",
+        "🌐سرور 186 | Tir-31| Tel @Hiddify_Nexttt Tel § 177",
+        "🌐سرور 187 | Tir-31| Tel @Hiddify_Nexttt Tel § 178",
+        "🌐سرور 188 | Tir-31| Tel @Hiddify_Nexttt Tel § 179",
+        "🌐سرور 189 | Tir-31| Tel @Hiddify_Nexttt Tel § 180",
+        "🌐سرور 190 | Tir-31| Tel @Hiddify_Nexttt Tel § 181"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m0s",
+      "idle_timeout": "1h40m0s"
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐 به روزرسانی شده درTir-31 | 21:17 | @Hiddify_Nexttt  § 0",
+      "server": "34.248.93.146",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 1 | Tir-31| Tel @Hiddify_Nexttt Tel § 1",
+      "server": "34.248.93.146",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 2 | Tir-31| Tel @Hiddify_Nexttt Tel § 2",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "1333101e-2858-485c-a173-2f45aa3cbc57",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 3 | Tir-31| Tel @Hiddify_Nexttt Tel § 3",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "4.V.V2.www.speedtest.net.v.www.speedtest.net.bahrane.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 4 | Tir-31| Tel @Hiddify_Nexttt Tel § 4",
+      "server": "99.81.159.9",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 5 | Tir-31| Tel @Hiddify_Nexttt Tel § 5",
+      "server": "99.81.159.9",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 6 | Tir-31| Tel @Hiddify_Nexttt Tel § 6",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "SVNTEAM",
+      "transport": {
+        "type": "ws",
+        "path": "/teleGram-SvnTeam,teleGram-SvnTeam,TeleGram-SvnTeam,TeleGram-SvnTeam,TeleGram-SvnTeamTeleGram-SvnTeam,TeleGram-SvnTeam,TeleGram-SvnTeam,Telegram-SvnTeam",
+        "headers": {
+          "Host": "69.6.9.69.6.9.69.6.9.69.6.9.69.6.9.arminvpnteam.online."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 7 | Tir-31| Tel @Hiddify_Nexttt Tel § 7",
+      "server": "2a0d:5940:48:11::",
+      "server_port": 25365,
+      "uuid": "bia--ZEDMODEON",
+      "tls": {
+        "enabled": true,
+        "server_name": "sourceforge.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "VBV743nCoGQ4C6_Fs2auTn7XUMO7eNTD5VYL4Chxb2M",
+          "short_id": "74ab1761"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON-ZEDMODEON",
+        "idle_timeout": "15s",
+        "ping_timeout": "15s"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 10 | Tir-31| Tel @Hiddify_Nexttt Tel § 8",
+      "server": "15.237.4.255",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 11 | Tir-31| Tel @Hiddify_Nexttt Tel § 9",
+      "server": "35.182.42.77",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 12 | Tir-31| Tel @Hiddify_Nexttt Tel § 10",
+      "server": "www.speedtest.net",
+      "server_port": 2087,
+      "uuid": "87862517-3c41-4e22-aaa9-46a02bd3d72a",
+      "tls": {
+        "enabled": true,
+        "server_name": "LiV2ry.lightning1.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-@LiV2ray",
+        "headers": {
+          "Host": "LiV2ry.lightning1.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 13 | Tir-31| Tel @Hiddify_Nexttt Tel § 11",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "SVNTEAMm",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "e.E.e.E.e.E.e.E.e.E.e.E.e.E.e.E.e.svn2team.online."
+        },
+        "max_early_data": 2052,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 14 | Tir-31| Tel @Hiddify_Nexttt Tel § 12",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "3a160c55-5212-4194-95c2-dd5ee4376747",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "7.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 15 | Tir-31| Tel @Hiddify_Nexttt Tel § 13",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "biato--ZEDMODEON",
+      "transport": {
+        "type": "ws",
+        "path": "/ZEDMODEON",
+        "headers": {
+          "Host": "www.speedtest.net.列列上列列上列列上.らわなさ.tech."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 16 | Tir-31| Tel @Hiddify_Nexttt Tel § 14",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "8ac234a1-d84e-4e93-99eb-3ff9414b5722",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 17 | Tir-31| Tel @Hiddify_Nexttt Tel § 15",
+      "server": "15.236.120.44",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 18 | Tir-31| Tel @Hiddify_Nexttt Tel § 16",
+      "server": "188.114.97.3",
+      "server_port": 80,
+      "uuid": "39848671-e667-4b6d-bff6-e38e34f536c4",
+      "transport": {
+        "type": "ws",
+        "path": "/PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM",
+        "headers": {
+          "Host": "1.www.speedtest.net.zula.ir.zemestanil.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 19 | Tir-31| Tel @Hiddify_Nexttt Tel § 17",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "8.V.V2.www.speedtest.net.ftp.debian.org.bahrane.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 20 | Tir-31| Tel @Hiddify_Nexttt Tel § 18",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "831c7fe1-b65b-45e8-aa47-f6b7397afcaf",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 21 | Tir-31| Tel @Hiddify_Nexttt Tel § 19",
+      "server": "www.parsvds.ir",
+      "server_port": 2095,
+      "uuid": "8b40a3d6-910c-443b-9400-d945a21b312f",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "37.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 22 | Tir-31| Tel @Hiddify_Nexttt Tel § 20",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "51866260-8c74-4788-8ded-a0e25741df2c",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 23 | Tir-31| Tel @Hiddify_Nexttt Tel § 21",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "d1d0ec5f-fb1f-4373-8de6-6f44c9238697",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 24 | Tir-31| Tel @Hiddify_Nexttt Tel § 22",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "4.V.V2.www.speedtest.net.s.www.speedtest.net.bahrane.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 25 | Tir-31| Tel @Hiddify_Nexttt Tel § 23",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "914fdeef-41a3-4ef0-ab53-f4c5cee31161",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 26 | Tir-31| Tel @Hiddify_Nexttt Tel § 24",
+      "server": "www.speedtest.net",
+      "server_port": 2087,
+      "uuid": "SVNTEAMm",
+      "transport": {
+        "type": "ws",
+        "path": "/SVNTEAM-SVNTEAM-SVNTEAM",
+        "headers": {
+          "Host": "wWw.SPeedTeSt.Net.HoMe.SeVen.iRaNi-1.QiSvn.iR."
+        },
+        "max_early_data": 80,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 27 | Tir-31| Tel @Hiddify_Nexttt Tel § 25",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "SVNTEAMm",
+      "transport": {
+        "type": "ws",
+        "path": "/teleGram-SvnTeam,teleGram-SvnTeam,TeleGram-SvnTeam,TeleGram-SvnTeam,TeleGram-SvnTeamTeleGram-SvnTeam,TeleGram-SvnTeam,TeleGram-SvnTeam,Telegram-SvnTeam",
+        "headers": {
+          "Host": "69.6.9.69.6.9.69.6.9.69.6.9.69.6.9.arminvpnteam.online."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 28 | Tir-31| Tel @Hiddify_Nexttt Tel § 26",
+      "server": "zula.ir",
+      "server_port": 2087,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "Df.bahrane.IR",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "Df.bahrane.IR"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 29 | Tir-31| Tel @Hiddify_Nexttt Tel § 27",
+      "server": "mtn.VPNPROSEC.com",
+      "server_port": 80,
+      "uuid": "SVNTEAM",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "wWw.mObIlEtAk.cOm.ShOp1.qIsVn.iR."
+        },
+        "max_early_data": 443,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 30 | Tir-31| Tel @Hiddify_Nexttt Tel § 28",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "67ce895d-e92f-41ed-a243-071f6d4d1b21",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 31 | Tir-31| Tel @Hiddify_Nexttt Tel § 29",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER?ed=2048?ed=2048",
+        "headers": {
+          "Host": "6.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 32 | Tir-31| Tel @Hiddify_Nexttt Tel § 30",
+      "server": "xn--tr8h.snappfoodi.com.",
+      "server_port": 8081,
+      "uuid": "SVNTEAM",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "discord.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "0eHwd7gjc3HkKzk1mCWhSt-Yt2efpwH4gA6bFZ7IRCA",
+          "short_id": "eab22c4c"
+        }
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 33 | Tir-31| Tel @Hiddify_Nexttt Tel § 31",
+      "server": "13.37.165.226",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 34 | Tir-31| Tel @Hiddify_Nexttt Tel § 32",
+      "server": "13.37.165.226",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 35 | Tir-31| Tel @Hiddify_Nexttt Tel § 33",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "1.V.V2.www.speedtest.net.ftp.debian.org.dnschecker.tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 36 | Tir-31| Tel @Hiddify_Nexttt Tel § 34",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "7.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 37 | Tir-31| Tel @Hiddify_Nexttt Tel § 35",
+      "server": "3.97.221.174",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 38 | Tir-31| Tel @Hiddify_Nexttt Tel § 36",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "9.V.V2.www.speedtest.net.zula.ir.cloudflare.com.mashtimji.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 39 | Tir-31| Tel @Hiddify_Nexttt Tel § 37",
+      "server": "18.132.221.224",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 40 | Tir-31| Tel @Hiddify_Nexttt Tel § 38",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "8.V.V2.www.speedtest.net.deb.debian.org.bahrane.ir."
+        },
+        "max_early_data": 2095,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 41 | Tir-31| Tel @Hiddify_Nexttt Tel § 39",
+      "server": "13.50.118.116",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 42 | Tir-31| Tel @Hiddify_Nexttt Tel § 40",
+      "server": "13.50.118.116",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 43 | Tir-31| Tel @Hiddify_Nexttt Tel § 41",
+      "server": "99.80.255.145",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 44 | Tir-31| Tel @Hiddify_Nexttt Tel § 42",
+      "server": "34.247.18.174",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 45 | Tir-31| Tel @Hiddify_Nexttt Tel § 43",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "10.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 46 | Tir-31| Tel @Hiddify_Nexttt Tel § 44",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "SVNTEAMx",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "torb.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 47 | Tir-31| Tel @Hiddify_Nexttt Tel § 45",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "7.V.v.v.www.speedtest.net.dv.cloudflare.com.mehpow.ir."
+        },
+        "max_early_data": 2095,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 48 | Tir-31| Tel @Hiddify_Nexttt Tel § 46",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "2f5821ce-bbd7-4a83-8316-610b85b2ef7c",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 49 | Tir-31| Tel @Hiddify_Nexttt Tel § 47",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "9.V.V2.www.speedtest.net.debian.org.mashtimji.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 50 | Tir-31| Tel @Hiddify_Nexttt Tel § 48",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "SVNTEAM",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "www.com.ir.sote.shop.net.store.QiSvn.iR."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 51 | Tir-31| Tel @Hiddify_Nexttt Tel § 49",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "joinin--ZEDMODEON",
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20@ZeV2ray",
+        "headers": {
+          "Host": "asan.net.v2rayng6.6.6.6.ir.com.site.列男事事列上赛男.acountifyable.BUZZ."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 52 | Tir-31| Tel @Hiddify_Nexttt Tel § 50",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "7.V.v.v.www.speedtest.net.dev.cloudflare.com.mehpow.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 53 | Tir-31| Tel @Hiddify_Nexttt Tel § 51",
+      "server": "3.228.227.164",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 54 | Tir-31| Tel @Hiddify_Nexttt Tel § 52",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "4.V.V2.www.speedtest.net.s.www.speedtest.net.bahrane.ir."
+        },
+        "max_early_data": 2095,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 55 | Tir-31| Tel @Hiddify_Nexttt Tel § 53",
+      "server": "188.114.97.3",
+      "server_port": 80,
+      "uuid": "c75176b4-b733-451e-bdd6-1df3da357cb8",
+      "transport": {
+        "type": "ws",
+        "path": "/PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM",
+        "headers": {
+          "Host": "1.www.speedtest.net.zula.ir.zemestanil.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 56 | Tir-31| Tel @Hiddify_Nexttt Tel § 54",
+      "server": "16.16.15.252",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 57 | Tir-31| Tel @Hiddify_Nexttt Tel § 55",
+      "server": "16.16.15.252",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 58 | Tir-31| Tel @Hiddify_Nexttt Tel § 56",
+      "server": "Www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "9.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 59 | Tir-31| Tel @Hiddify_Nexttt Tel § 57",
+      "server": "series-a1.samanehha.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "W74XFALLLuw6m5IA"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 60 | Tir-31| Tel @Hiddify_Nexttt Tel § 58",
+      "server": "series-a1.samanehha.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "W74XFALLLuw6m5IA"
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 63 | Tir-31| Tel @Hiddify_Nexttt Tel § 59",
+      "server": "13.50.47.134",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 64 | Tir-31| Tel @Hiddify_Nexttt Tel § 60",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "its-VPNCUSTOMIZE",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 65 | Tir-31| Tel @Hiddify_Nexttt Tel § 61",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "6.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 66 | Tir-31| Tel @Hiddify_Nexttt Tel § 62",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "6a9a47cf-7944-4dd0-8156-17e92e54736c",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "10.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 67 | Tir-31| Tel @Hiddify_Nexttt Tel § 63",
+      "server": "34.248.134.165",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 68 | Tir-31| Tel @Hiddify_Nexttt Tel § 64",
+      "server": "34.248.134.165",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 69 | Tir-31| Tel @Hiddify_Nexttt Tel § 65",
+      "server": "18.153.177.78",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 70 | Tir-31| Tel @Hiddify_Nexttt Tel § 66",
+      "server": "speedtest.net",
+      "server_port": 443,
+      "uuid": "SVNTEAM",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "torb.com"
+        },
+        "max_early_data": 1024,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 71 | Tir-31| Tel @Hiddify_Nexttt Tel § 67",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "3.V2.www.speedtest.net.salatinmacvc.ir."
+        },
+        "max_early_data": 2095,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 72 | Tir-31| Tel @Hiddify_Nexttt Tel § 68",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "adcea684-2a0f-4888-9256-bc7b514818c7",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 73 | Tir-31| Tel @Hiddify_Nexttt Tel § 69",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "2a093825-5348-4597-b9ce-02ddf2d8fe7a",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 74 | Tir-31| Tel @Hiddify_Nexttt Tel § 70",
+      "server": "www.parsvds.ir",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "10.V.V2.www.speedtest.net.ftp.debian.org.mashtimji.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 75 | Tir-31| Tel @Hiddify_Nexttt Tel § 71",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "5.V.V2.www.speedtest.net.deb.debian.org.mehpow.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 76 | Tir-31| Tel @Hiddify_Nexttt Tel § 72",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "8.V.V2.www.speedtest.net.deb.debian.org.bahrane.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 77 | Tir-31| Tel @Hiddify_Nexttt Tel § 73",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "8.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 78 | Tir-31| Tel @Hiddify_Nexttt Tel § 74",
+      "server": "35.177.168.44",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 79 | Tir-31| Tel @Hiddify_Nexttt Tel § 75",
+      "server": "35.177.168.44",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 80 | Tir-31| Tel @Hiddify_Nexttt Tel § 76",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "111bcefe-653e-4e94-8b2b-b5f1a29c8cd0",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "10.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 81 | Tir-31| Tel @Hiddify_Nexttt Tel § 77",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "f93c6da4-f76f-4e8e-b952-3a378e10305d",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "7.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 82 | Tir-31| Tel @Hiddify_Nexttt Tel § 78",
+      "server": "188.114.97.3",
+      "server_port": 80,
+      "uuid": "7a6e9384-c282-4396-b647-5b1ec159b075",
+      "transport": {
+        "type": "ws",
+        "path": "/PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM-PROXY_MTM",
+        "headers": {
+          "Host": "1.www.speedtest.net.zula.ir.zemestanil.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 83 | Tir-31| Tel @Hiddify_Nexttt Tel § 79",
+      "server": "35.177.39.101",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 84 | Tir-31| Tel @Hiddify_Nexttt Tel § 80",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "TM_VPNCUSTOMIZE",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 85 | Tir-31| Tel @Hiddify_Nexttt Tel § 81",
+      "server": "23.150.152.56",
+      "server_port": 5601,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 86 | Tir-31| Tel @Hiddify_Nexttt Tel § 82",
+      "server": "23.150.152.56",
+      "server_port": 5601,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 87 | Tir-31| Tel @Hiddify_Nexttt Tel § 83",
+      "server": "13.60.128.253",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 88 | Tir-31| Tel @Hiddify_Nexttt Tel § 84",
+      "server": "avval.ir",
+      "server_port": 2053,
+      "uuid": "cd8002d9-e8fd-4411-8bb6-fc80310ff81d",
+      "tls": {
+        "enabled": true,
+        "server_name": "vip1-romax-tiktok.hsjsak.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/vless-ws/?ed",
+        "headers": {
+          "Host": "vip1-romax-tiktok.hsjsak.ir"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 89 | Tir-31| Tel @Hiddify_Nexttt Tel § 85",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "8.V.V2.www.speedtest.net.ftp.debian.org.bahrane.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 90 | Tir-31| Tel @Hiddify_Nexttt Tel § 86",
+      "server": "www.parsvds.ir",
+      "server_port": 2095,
+      "uuid": "7ad17490-2e19-468c-9d3a-51474bba4a77",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "9.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 91 | Tir-31| Tel @Hiddify_Nexttt Tel § 87",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "62f87825-d93f-448a-9b40-7c991f661dfa",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 92 | Tir-31| Tel @Hiddify_Nexttt Tel § 88",
+      "server": "70.34.212.138",
+      "server_port": 25365,
+      "uuid": "0eb5abac-e3a6-48ea-bd24-36e5c5dcfa92",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 93 | Tir-31| Tel @Hiddify_Nexttt Tel § 89",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "5.V.V2.www.speedtest.net.de.debian.org.mehpow.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 94 | Tir-31| Tel @Hiddify_Nexttt Tel § 90",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "99220cd7-d674-4c91-b1bd-8297d61c92fd",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 95 | Tir-31| Tel @Hiddify_Nexttt Tel § 91",
+      "server": "www.speedtest.net",
+      "server_port": 2086,
+      "uuid": "24033439-ce0e-45dc-bca1-5b9470de3abe",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "6.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 96 | Tir-31| Tel @Hiddify_Nexttt Tel § 92",
+      "server": "52.51.41.201",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 97 | Tir-31| Tel @Hiddify_Nexttt Tel § 93",
+      "server": "52.51.41.201",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 98 | Tir-31| Tel @Hiddify_Nexttt Tel § 94",
+      "server": "www.parsvds.ir",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "6.V.V.www.zula.ir.www.speedtest.net.mashtimji.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 99 | Tir-31| Tel @Hiddify_Nexttt Tel § 95",
+      "server": "18.159.245.9",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 100 | Tir-31| Tel @Hiddify_Nexttt Tel § 96",
+      "server": "18.159.245.9",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 101 | Tir-31| Tel @Hiddify_Nexttt Tel § 97",
+      "server": "188.114.97.2",
+      "server_port": 8880,
+      "uuid": "20285635-e8e8-40f0-b6b2-c4312751d817",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "116.v.v.y.www.speedtest.net.ftp.debian.org.bklink.iR."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 102 | Tir-31| Tel @Hiddify_Nexttt Tel § 98",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "3a2c2063-6841-4c31-859e-0054573b7bf3",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "6.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 103 | Tir-31| Tel @Hiddify_Nexttt Tel § 99",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "2.V.V2.www.speedtest.net.deb.debian.org.mehpow.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 104 | Tir-31| Tel @Hiddify_Nexttt Tel § 100",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "7.V.v.v.www.speedtest.net.dv.cloudflare.com.mehpow.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 105 | Tir-31| Tel @Hiddify_Nexttt Tel § 101",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "77c41047-a1d4-4682-9a20-29e24da6cb4c",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 106 | Tir-31| Tel @Hiddify_Nexttt Tel § 102",
+      "server": "138.201.191.71",
+      "server_port": 443,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.mashtimji.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 107 | Tir-31| Tel @Hiddify_Nexttt Tel § 103",
+      "server": "www.speedtest.net",
+      "server_port": 2087,
+      "uuid": "7b234c64-3dcd-445d-9009-34eb75287780",
+      "tls": {
+        "enabled": true,
+        "server_name": "LiV2ry.lightning1.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-@LiV2ray",
+        "headers": {
+          "Host": "LiV2ry.lightning1.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 108 | Tir-31| Tel @Hiddify_Nexttt Tel § 104",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "8dc244dc-d5db-4683-91ec-4a46b811060a",
+      "transport": {
+        "type": "ws",
+        "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6",
+        "headers": {
+          "Host": "www.speedtest.net.kkkkklllkokowkfwofkfkfekojg.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 111 | Tir-31| Tel @Hiddify_Nexttt Tel § 105",
+      "server": "35.181.183.94",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 112 | Tir-31| Tel @Hiddify_Nexttt Tel § 106",
+      "server": "35.181.183.94",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 113 | Tir-31| Tel @Hiddify_Nexttt Tel § 107",
+      "server": "3.11.195.100",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 114 | Tir-31| Tel @Hiddify_Nexttt Tel § 108",
+      "server": "3.11.195.100",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 115 | Tir-31| Tel @Hiddify_Nexttt Tel § 109",
+      "server": "15.188.69.178",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 116 | Tir-31| Tel @Hiddify_Nexttt Tel § 110",
+      "server": "15.188.69.178",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 117 | Tir-31| Tel @Hiddify_Nexttt Tel § 111",
+      "server": "3.78.98.171",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 118 | Tir-31| Tel @Hiddify_Nexttt Tel § 112",
+      "server": "3.78.98.171",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 119 | Tir-31| Tel @Hiddify_Nexttt Tel § 113",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "join--ZEDMODEON",
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20@ZeV2ray",
+        "headers": {
+          "Host": "asan.net.v2rayng6.6.6.6.ir.com.site.列男事事列上赛男.acountifyable.BUZZ."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 120 | Tir-31| Tel @Hiddify_Nexttt Tel § 114",
+      "server": "54.220.251.227",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 121 | Tir-31| Tel @Hiddify_Nexttt Tel § 115",
+      "server": "51.21.112.238",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 122 | Tir-31| Tel @Hiddify_Nexttt Tel § 116",
+      "server": "51.21.112.238",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 123 | Tir-31| Tel @Hiddify_Nexttt Tel § 117",
+      "server": "190.93.247.155",
+      "server_port": 2095,
+      "uuid": "join--ZEDMODEON",
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEO",
+        "headers": {
+          "Host": "молния-qhanayawi-زدمودآن-閃電d.らわなさ.tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 124 | Tir-31| Tel @Hiddify_Nexttt Tel § 118",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "Telegram-NUFiLTER",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "10.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 125 | Tir-31| Tel @Hiddify_Nexttt Tel § 119",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "9e056622-1b80-4161-8a0c-3371d6a02f71",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "7.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 126 | Tir-31| Tel @Hiddify_Nexttt Tel § 120",
+      "server": "test.denanetw.top",
+      "server_port": 24318,
+      "uuid": "e2655b66-ee8f-4c68-d547-bb73bb961f2c",
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 127 | Tir-31| Tel @Hiddify_Nexttt Tel § 121",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "5.V.V2.www.speedtest.net.de.debian.org.mehpow.ir."
+        },
+        "max_early_data": 2095,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 128 | Tir-31| Tel @Hiddify_Nexttt Tel § 122",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "11.V.V2.www.speedtest.net.salatinmacvc.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 129 | Tir-31| Tel @Hiddify_Nexttt Tel § 123",
+      "server": "172.67.137.11",
+      "server_port": 8080,
+      "uuid": "416f18ec-11f3-4648-9693-8c6480d0662d",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "PbDpGsCo7.HaMeCi-dSsTeMaNe.oRg"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 131 | Tir-31| Tel @Hiddify_Nexttt Tel § 124",
+      "server": "51.44.57.239",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 132 | Tir-31| Tel @Hiddify_Nexttt Tel § 125",
+      "server": "parsvds.ir",
+      "server_port": 8080,
+      "uuid": "e47e056b-5c33-48d1-83a9-1980f8b33f5a",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "6.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 133 | Tir-31| Tel @Hiddify_Nexttt Tel § 126",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "1fcbe196-eecb-4344-91eb-0024682748f1",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 134 | Tir-31| Tel @Hiddify_Nexttt Tel § 127",
+      "server": "3.86.132.216",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 135 | Tir-31| Tel @Hiddify_Nexttt Tel § 128",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "c7f86a29-0720-4266-8f60-f3db180354a9",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 136 | Tir-31| Tel @Hiddify_Nexttt Tel § 129",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "d20516f0-e12c-44be-a47c-99da1deb3132",
+      "transport": {
+        "type": "ws",
+        "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6",
+        "headers": {
+          "Host": "www.speedtest.net.kkkkklllkokowkfwofkfkfekojg.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 137 | Tir-31| Tel @Hiddify_Nexttt Tel § 130",
+      "server": "3.67.106.95",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 138 | Tir-31| Tel @Hiddify_Nexttt Tel § 131",
+      "server": "3.67.106.95",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 139 | Tir-31| Tel @Hiddify_Nexttt Tel § 132",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "8a32fec7-04c3-431b-855b-ca42643298cc",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 140 | Tir-31| Tel @Hiddify_Nexttt Tel § 133",
+      "server": "www.parsvds.com",
+      "server_port": 80,
+      "uuid": "518bd7b3-f67c-4fce-f601-54506be8969c",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@Client_Proo-Telegram:@Client_Proo-Telegram:@Client_Proo-Telegram:@Client_Proo-Telegram:@Client_Proo",
+        "headers": {
+          "Host": "Tgju.orG.BaZar.ir.visAa.CoM.SairKop.WebSitE."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 141 | Tir-31| Tel @Hiddify_Nexttt Tel § 134",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "1f809b68-4d30-4e5f-b820-c654edec24c5",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 142 | Tir-31| Tel @Hiddify_Nexttt Tel § 135",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "e7ee0d94-44b2-4bc6-a772-4938db61ead2",
+      "transport": {
+        "type": "ws",
+        "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6",
+        "headers": {
+          "Host": "www.speedtest.net.kkkkklllkokowkfwofkfkfekojg.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 143 | Tir-31| Tel @Hiddify_Nexttt Tel § 136",
+      "server": "www.ViSa.com",
+      "server_port": 80,
+      "uuid": "518bd7b3-f67c-4fce-f601-54506be8969c",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@Client_Proo-Telegram:@Client_Proo-Telegram:@Client_Proo-Telegram:@Client_Proo-Telegram:@Client_Proo",
+        "headers": {
+          "Host": "Tgju.orG.BaZar.ir.visAa.CoM.SairKop.WebSitE."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 144 | Tir-31| Tel @Hiddify_Nexttt Tel § 137",
+      "server": "52.18.193.148",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 145 | Tir-31| Tel @Hiddify_Nexttt Tel § 138",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "f949cc8f-9d1a-4d56-9c6e-3daec4c92010",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 146 | Tir-31| Tel @Hiddify_Nexttt Tel § 139",
+      "server": "zula.ir",
+      "server_port": 2087,
+      "uuid": "telegram-id-ArV2ray",
+      "tls": {
+        "enabled": true,
+        "server_name": "UC.mashtimji.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray,telegram-ArV2ray",
+        "headers": {
+          "Host": "UC.mashtimji.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 147 | Tir-31| Tel @Hiddify_Nexttt Tel § 140",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "4.V.V2.www.speedtest.net.v.www.speedtest.net.bahrane.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 148 | Tir-31| Tel @Hiddify_Nexttt Tel § 141",
+      "server": "15.204.87.222",
+      "server_port": 5499,
+      "method": "aes-256-gcm",
+      "password": "lGqs95QkFHo2NV"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 149 | Tir-31| Tel @Hiddify_Nexttt Tel § 142",
+      "server": "15.204.87.222",
+      "server_port": 5499,
+      "method": "aes-256-gcm",
+      "password": "lGqs95QkFHo2NV"
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 150 | Tir-31| Tel @Hiddify_Nexttt Tel § 143",
+      "server": "www.speedtest.net",
+      "server_port": 2087,
+      "uuid": "f5e57c6f-fa43-4cb2-a883-cbcf7cff9877",
+      "tls": {
+        "enabled": true,
+        "server_name": "LiV2ry.lightning1.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-@LiV2ray",
+        "headers": {
+          "Host": "LiV2ry.lightning1.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 151 | Tir-31| Tel @Hiddify_Nexttt Tel § 144",
+      "server": "13.49.190.10",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 152 | Tir-31| Tel @Hiddify_Nexttt Tel § 145",
+      "server": "13.49.190.10",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 153 | Tir-31| Tel @Hiddify_Nexttt Tel § 146",
+      "server": "18.198.66.112",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 154 | Tir-31| Tel @Hiddify_Nexttt Tel § 147",
+      "server": "18.198.66.112",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 155 | Tir-31| Tel @Hiddify_Nexttt Tel § 148",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "e21c01a9-51fd-4176-ad61-1f2e0fedf190",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 156 | Tir-31| Tel @Hiddify_Nexttt Tel § 149",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "0b2f0dd1-248a-4f3c-b125-6609c52e98ba",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 157 | Tir-31| Tel @Hiddify_Nexttt Tel § 150",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "a764a4d0-efae-49fd-ae25-87aa01328186",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 158 | Tir-31| Tel @Hiddify_Nexttt Tel § 151",
+      "server": "www.parsvds.ir",
+      "server_port": 2095,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "6.V.V.ww.zula.ir.www.speedtest.net.mashtimji.ir."
+        },
+        "max_early_data": 2095,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 159 | Tir-31| Tel @Hiddify_Nexttt Tel § 152",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "Its-VPNCUSTOMIZE",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 160 | Tir-31| Tel @Hiddify_Nexttt Tel § 153",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "bea33381-de3f-4943-a651-b2aeb082840b",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 161 | Tir-31| Tel @Hiddify_Nexttt Tel § 154",
+      "server": "www.speedtest.net",
+      "server_port": 2087,
+      "uuid": "3bd43160-6821-42a6-ae64-6f1ce6f92690",
+      "tls": {
+        "enabled": true,
+        "server_name": "LiV2ry.lightning1.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-@LiV2ray",
+        "headers": {
+          "Host": "LiV2ry.lightning1.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 162 | Tir-31| Tel @Hiddify_Nexttt Tel § 155",
+      "server": "series-a2-mec.varzesh360.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 163 | Tir-31| Tel @Hiddify_Nexttt Tel § 156",
+      "server": "series-a2-mec.varzesh360.co",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "u17T3BvpYaaiuW2c"
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 164 | Tir-31| Tel @Hiddify_Nexttt Tel § 157",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "13e3944d-2c37-4d6d-b3d0-c493f73d4984",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 165 | Tir-31| Tel @Hiddify_Nexttt Tel § 158",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "35a9f156-bb69-4bf1-b358-12860ec8f574",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 166 | Tir-31| Tel @Hiddify_Nexttt Tel § 159",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "92009113-97b4-40b6-b6ec-05e0f2776f62",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 167 | Tir-31| Tel @Hiddify_Nexttt Tel § 160",
+      "server": "www.speedtest.net",
+      "server_port": 2095,
+      "uuid": "biato--ZEDMODEON",
+      "transport": {
+        "type": "ws",
+        "path": "/ZEDMODEON",
+        "headers": {
+          "Host": "www.speedtest.net.列列上列列上列列上.らわなさ.tech."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 168 | Tir-31| Tel @Hiddify_Nexttt Tel § 161",
+      "server": "zedmodeon-join-zedmodeon.kanal-asli-zedmodeon.shop",
+      "server_port": 25367,
+      "method": "aes-128-gcm",
+      "password": "bia--ZEDMODEON"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 169 | Tir-31| Tel @Hiddify_Nexttt Tel § 162",
+      "server": "zedmodeon-join-zedmodeon.kanal-asli-zedmodeon.shop",
+      "server_port": 25367,
+      "method": "aes-128-gcm",
+      "password": "bia--ZEDMODEON"
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 170 | Tir-31| Tel @Hiddify_Nexttt Tel § 163",
+      "server": "Zula.ir",
+      "server_port": 8880,
+      "uuid": "46785cd1-8bb6-41e4-9775-9da1c5d382c1",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER",
+        "headers": {
+          "Host": "8.v.v.y.www.speedtest.net.ftp.debian.org.bklink.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 171 | Tir-31| Tel @Hiddify_Nexttt Tel § 164",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "e8f8236e-5f83-419d-8b0c-5b6ff27c2da6",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 172 | Tir-31| Tel @Hiddify_Nexttt Tel § 165",
+      "server": "www.parsvds.ir",
+      "server_port": 80,
+      "uuid": "a0ec908f-7bae-4624-9afb-0c3c32fe8e9b",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 173 | Tir-31| Tel @Hiddify_Nexttt Tel § 166",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "194fa5dd-bda8-4842-94ea-d72f25d6482b",
+      "transport": {
+        "type": "ws",
+        "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6",
+        "headers": {
+          "Host": "www.speedtest.net.kkkkklllkokowkfwofkfkfekojg.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 174 | Tir-31| Tel @Hiddify_Nexttt Tel § 167",
+      "server": "www.speedtest.net",
+      "server_port": 8880,
+      "uuid": "c0456484-b1c4-4f5e-8f54-8cf9c84e1433",
+      "transport": {
+        "type": "ws",
+        "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6",
+        "headers": {
+          "Host": "www.speedtest.net.kkkkklllkokowkfwofkfkfekojg.ir."
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 175 | Tir-31| Tel @Hiddify_Nexttt Tel § 168",
+      "server": "104.16.11.133",
+      "server_port": 80,
+      "uuid": "e7847a8b-a9e3-45fd-b0b8-07842de67608",
+      "transport": {
+        "type": "ws",
+        "path": "/@Vpn_Mikey%D8%8C@Vpn_Mikey",
+        "headers": {
+          "Host": "Vpn_Mikey-speedtest.net.Amir-Mikey.Tech."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 177 | Tir-31| Tel @Hiddify_Nexttt Tel § 169",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "fa7219d6-6203-4c8c-abb4-f6c1b6b4057f",
+      "transport": {
+        "type": "ws",
+        "path": "/SHHPROXY",
+        "headers": {
+          "Host": "SHHproxy-shhPROXY-SHHproxy.ntherspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 178 | Tir-31| Tel @Hiddify_Nexttt Tel § 170",
+      "server": "www.parsvds.ir",
+      "server_port": 8080,
+      "uuid": "TM-VPNCUSTOMIZE",
+      "transport": {
+        "type": "ws",
+        "path": "/VPNCUSTOMIZE",
+        "headers": {
+          "Host": "VPNcustomize-vpnCUSTOMIZE-VPNcustomize.CUSTOMIZEspeedtest.net."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 179 | Tir-31| Tel @Hiddify_Nexttt Tel § 171",
+      "server": "zula.ir",
+      "server_port": 8080,
+      "uuid": "a53fe8de-91a7-403f-9fbe-cbdefd077b34",
+      "transport": {
+        "type": "ws",
+        "path": "/Telegram:@UnlimitedDev-Telegram:@UnlimitedDev",
+        "headers": {
+          "Host": "unlimiteddev-vpn.unlimiteddev.Community."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 181 | Tir-31| Tel @Hiddify_Nexttt Tel § 172",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "9.V.V2.www.speedtest.net.debian.org.mashtimji.ir."
+        },
+        "max_early_data": 8080,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 182 | Tir-31| Tel @Hiddify_Nexttt Tel § 173",
+      "server": "www.speedtest.net",
+      "server_port": 80,
+      "uuid": "joinin--ZEDMODEON",
+      "transport": {
+        "type": "ws",
+        "path": "/@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20JOIN%20@ZEDMODEON%20TEL%C2%A0%20@ZEDMODEON%20@ZeV2ray",
+        "headers": {
+          "Host": "asan.net.v2rayng6.6.6.6.ir.com.site.列男事事列上赛男.acountifyable.BUZZ."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 183 | Tir-31| Tel @Hiddify_Nexttt Tel § 174",
+      "server": "69.50.95.138",
+      "server_port": 7307,
+      "method": "aes-256-gcm",
+      "password": "FoOiGlkAA9yPEGP"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🌐سرور 184 | Tir-31| Tel @Hiddify_Nexttt Tel § 175",
+      "server": "69.50.95.138",
+      "server_port": 7307,
+      "method": "aes-256-gcm",
+      "password": "FoOiGlkAA9yPEGP"
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 185 | Tir-31| Tel @Hiddify_Nexttt Tel § 176",
+      "server": "13.37.92.74",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 186 | Tir-31| Tel @Hiddify_Nexttt Tel § 177",
+      "server": "35.159.144.242",
+      "server_port": 22222,
+      "uuid": "05519058-d2ac-4f28-9e4a-2b2a1386749e",
+      "tls": {
+        "enabled": true,
+        "server_name": "telegram-channel-vlessconfig.sohala.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-channel-vlessconfig-ws",
+        "headers": {
+          "Host": "telegram-channel-vlessconfig.sohala.uk"
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 187 | Tir-31| Tel @Hiddify_Nexttt Tel § 178",
+      "server": "www.speedtest.net",
+      "server_port": 8080,
+      "uuid": "telegram-id-ArV2ray",
+      "transport": {
+        "type": "ws",
+        "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry",
+        "headers": {
+          "Host": "9.V.V2.www.speedtest.net.zula.ir.cloudflare.com.mashtimji.ir."
+        },
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 188 | Tir-31| Tel @Hiddify_Nexttt Tel § 179",
+      "server": "15.188.236.216",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🌐سرور 189 | Tir-31| Tel @Hiddify_Nexttt Tel § 180",
+      "server": "15.188.236.216",
+      "server_port": 22222,
+      "password": "telegram-id-privatevpns",
+      "tls": {
+        "enabled": true,
+        "server_name": "trojan.burgerip.co.uk",
+        "alpn": "http/1.1",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🌐سرور 190 | Tir-31| Tel @Hiddify_Nexttt Tel § 181",
+      "server": "www.speedtest.net",
+      "server_port": 2087,
+      "uuid": "0cd74081-1259-4864-9a87-98b7056d330e",
+      "tls": {
+        "enabled": true,
+        "server_name": "LiV2ry.lightning1.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-@LiV2ray",
+        "headers": {
+          "Host": "LiV2ry.lightning1.ir"
+        },
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "packet_encoding": ""
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "direct",
+      "tag": "direct-fragment",
+      "tls_fragment": {
+        "enabled": true,
+        "size": "10-30",
+        "sleep": "2-8"
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "bypass"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "rule_set": [
+          "geoip-ir",
+          "geosite-ir"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "inbound": "dns-in",
+        "outbound": "dns-out"
+      },
+      {
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "select"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geoip-ir.srs",
+        "update_interval": "120h0m0s"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-ir",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/hiddify/hiddify-geo/rule-set/country/geosite-ir.srs",
+        "update_interval": "120h0m0s"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "override_android_vpn": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "clash.db"
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:6756",
+      "secret": "ViKwqwxFnup_tM0s"
+    }
+  }
+}
